@@ -1,4 +1,4 @@
-﻿# Q3 — Merging k Sorted Arrays: Sequential vs. Divide-and-Conquer
+# Q3 — Merging k Sorted Arrays: Sequential vs. Divide-and-Conquer
 
 ## Problem Statement
 
@@ -134,41 +134,6 @@ Also prints a theoretical conclusion to the console.
 gcc -O2 -o q3_merging_k_sorted_arrays q3_merging_k_sorted_arrays.c
 ./q3_merging_k_sorted_arrays
 ```
-
----
-
-### `q3_merging_k_sorted_arrays.py` — Graph Generation Script
-**Language:** Python 3 | **Lines:** 273
-**Dependencies:** `pandas`, `numpy`, `matplotlib`
-
-Reads `merging_k_sorted_arrays.csv` and produces **3 PNG graphs** with full theoretical overlay curves.
-
-**Fallback behavior:** If the CSV is not found, the script attempts to:
-1. Compile and run the C program automatically via `gcc` + subprocess
-2. If compilation fails, fall back to a pure-Python simulation of both algorithms for standalone plotting
-
-#### `plot_vs_k()` — Time vs. Number of Arrays (lines 160–191)
-Uses the `vary_k` series. Plots measured timings for both methods AND overlays **least-squares-fit theoretical curves**:
-- Method 1 theoretical: `C1 * n * k^2`
-- Method 2 theoretical: `C2 * n * k * log2(k)`
-
-The constants C1, C2 are fitted to the data (absorbing hardware/malloc overhead) so only the **growth shape** is validated, not absolute values.
-
-#### `plot_vs_n()` — Time vs. Elements per Array (lines 194–214)
-Uses the `vary_n` series. Plots raw measured timings for both methods on a linear scale.
-- Both methods scale linearly in n (for fixed k), as each element is touched a bounded number of times per round
-- The slope ratio between the two methods reflects the ~log(k) factor difference
-
-#### `plot_loglog()` — Log-Log View (lines 217–243)
-Uses the `vary_k` series on a log-log scale. Includes a **slope-2 reference line** anchored at the smallest k.
-- Method 1's slope ≈ 2 on the log-log plot confirms O(k^2) growth
-- Method 2 stays visibly sub-quadratic (slope < 2), confirming O(k log k)
-
-**How to run:**
-```bash
-python q3_merging_k_sorted_arrays.py
-```
-> Must be run from the Q3/ directory, or ensure `merging_k_sorted_arrays.csv` is in the working directory.
 
 ---
 
