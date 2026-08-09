@@ -1,4 +1,4 @@
-﻿# Q1 — Dictionary Operations: Asymptotic Analysis Across Data Structures
+# Q1 — Dictionary Operations: Asymptotic Analysis Across Data Structures
 
 ## Problem Statement
 
@@ -104,29 +104,6 @@ This is the primary implementation file. It contains:
 gcc -O2 -o q1_dictionary_operations q1_dictionary_operations.c
 ./q1_dictionary_operations
 ```
-
----
-
-### `q1_dictionary_operations_graphs.py` — Graph Generation Script
-**Language:** Python 3 | **Lines:** 58
-**Dependencies:** `pandas`, `matplotlib`
-
-Reads `dictionary_operations.csv` and generates **7 separate PNG graphs**, one per operation. Each graph plots execution time (seconds) vs. input size N for all 6 data structures simultaneously, using distinct colors and markers:
-
-| Data Structure  | Color          | Marker |
-|-----------------|----------------|--------|
-| Unsorted Array  | Red (#e74c3c)  | o      |
-| Sorted Array    | Blue (#3498db) | s      |
-| Singly Unsorted | Green (#2ecc71)| ^      |
-| Singly Sorted   | Orange (#f39c12)| d     |
-| Doubly Unsorted | Purple (#9b59b6)| v     |
-| Doubly Sorted   | Teal (#1abc9c) | P      |
-
-**How to run:**
-```bash
-python q1_dictionary_operations_graphs.py
-```
-> Must be run from the Q1/ directory, or ensure `dictionary_operations.csv` is in the working directory.
 
 ---
 
