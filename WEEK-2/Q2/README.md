@@ -1,4 +1,4 @@
-﻿# Q2 — Standard 2-Way Merge Sort vs. Modified 3-Way Merge Sort
+# Q2 — Standard 2-Way Merge Sort vs. Modified 3-Way Merge Sort
 
 ## Problem Statement
 
@@ -135,34 +135,6 @@ gcc -O2 -o q2_merge_sort_vs_modified_merge_sort q2_merge_sort_vs_modified_merge_
 
 ---
 
-### `q2_merge_sort_vs_modified_merge_sort.py` — Graph Generation Script
-**Language:** Python 3 | **Lines:** 79
-**Dependencies:** `pandas`, `matplotlib`, `numpy`
-
-Produces a **dual-panel figure** saved as `merge_sort_vs_modified_merge_sort_graph_analysis.png`:
-
-**Panel 1 — Absolute Execution Time Scaling:**
-- X-axis: Input array size N (10,000 to 100,000)
-- Y-axis: Execution time in seconds
-- Shows both algorithms' raw execution times growing together in log-linear fashion
-
-**Panel 2 — Normalized Efficiency Validation (Time / (N log₂ N)):**
-- Divides each measured time by `N * log2(N)` to extract the **constant factor**
-- If both algorithms are truly Theta(n log n), the normalized curves should flatten to horizontal lines (constant multiples of each other)
-- This panel confirms that the growth rate is log-linear — structural differences only affect the constant multiplier
-
-**Color scheme:**
-- 2-Way Merge Sort: Blue (`#1f77b4`) with `o` markers
-- 3-Way Merge Sort: Red (`#d62728`) with `s` markers
-
-**How to run:**
-```bash
-python q2_merge_sort_vs_modified_merge_sort.py
-```
-> Must be run from the Q2/ directory, or ensure `merge_sort_vs_modified_merge_sort.csv` is in the working directory.
-
----
-
 ### `merge_sort_vs_modified_merge_sort.csv` — Benchmark Data
 **Format:** CSV with 3 columns | **Rows:** 21 (10 N-values x 2 algorithms + header)
 
@@ -185,7 +157,7 @@ N,Algorithm,Time
 
 ---
 
-### `merge_sort_vs_modified_merge_sort_graph_analysis.png` — Analysis Graph
+### `detailed_merge_sort_analysis.png` — Analysis Graph
 **Format:** PNG (dual-panel, 15×6 inches, 300 DPI)
 
 This single image contains two side-by-side plots:
@@ -234,6 +206,6 @@ Q2/
 ├── q2_merge_sort_vs_modified_merge_sort.c    # C source: 2-way and 3-way implementations + benchmark
 ├── q2_merge_sort_vs_modified_merge_sort.py   # Python: reads CSV, generates dual-panel graph
 ├── merge_sort_vs_modified_merge_sort.csv     # Benchmark data (21 rows)
-├── merge_sort_vs_modified_merge_sort_graph_analysis.png  # Dual-panel analysis graph
+├── detailed_merge_sort_analysis.png              # Dual-panel analysis graph
 └── README.md                                 # This file
 ```
