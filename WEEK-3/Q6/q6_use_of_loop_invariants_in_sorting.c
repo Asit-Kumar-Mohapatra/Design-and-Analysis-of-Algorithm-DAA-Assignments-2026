@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -7,9 +8,6 @@ void selectionSort(int* A, int n);
 void printArray(const int* A, int n);
 void printExplanation(int n);
 
-/**
- * Inline swap function for memory clean abstraction and branch optimization.
- */
 static inline void swap(int* a, int* b) {
     int temp = *a;
     *a = *b;
