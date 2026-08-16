@@ -7,16 +7,6 @@ int weighScale(const int* coins, int leftStart, int leftEnd, int rightStart, int
 int findDefectiveCoin(const int* coins, int n);
 void printExplanation(int n);
 
-/**
- * BALANCE SCALE ORACLE
- * Simulates the physical balance scale provided in the problem statement.
- * Compares total weight on left pan vs. right pan.
- * 
- * Returns:
- *  -1 : Left pan is lighter
- *   1 : Right pan is lighter
- *   0 : Both pans balance perfectly
- */
 int weighScale(const int* coins, int leftStart, int leftEnd, int rightStart, int rightEnd) {
     long long weightLeft = 0;   /* long long sums prevent overflow for large n */
     long long weightRight = 0;
@@ -33,17 +23,6 @@ int weighScale(const int* coins, int leftStart, int leftEnd, int rightStart, int
     return 0;
 }
 
-/**
- * PURE DIVIDE & CONQUER ALGORITHM
- *
- * Physical Weighings : O(log2 n) — only one scale operation per iteration
- * Computational Time : O(n log n) — each weighScale() call sums n/2 elements
- * Space Complexity   : O(1) auxiliary space (Iterative; zero call stack depth)
- *
- * NOTE: The question asks for log2(n) + c scale WEIGHINGS, which this satisfies.
- *       However, because weighScale() runs a loop over n/2 elements to sum weights
- *       (O(n) per call), the total CPU computation is O(n log n), not O(log n).
- */
 int findDefectiveCoin(const int* coins, int n) {
     // NOTE: n < 2 is already validated and handled in main() before this call.
     // The guard below is retained only as a defensive safety net.
