@@ -60,25 +60,6 @@ int main(void) {
     return 0;
 }
 
-/**
- * PAIRWISE (TOURNAMENT) DIVIDE-AND-CONQUER MIN-MAX
- *
- * Instead of splitting the array into two BALANCED halves at every level
- * (which pays a +2 "combine" cost at every level of a log(n)-deep tree,
- * and can exceed 3n/2 comparisons for many values of n), this version
- * peels off ONE PAIR of elements at a time:
- *
- *   - Base case, 1 element  : 0 comparisons
- *   - Base case, 2 elements : 1 comparison (order the pair)
- *   - General case          : 1 comparison to order the front pair,
- *                              recurse on the remaining (n-2) elements,
- *                              then 2 comparisons to merge the pair's
- *                              local min/max into the global min/max.
- *
- * This specific recursion shape is what guarantees the worst-case
- * comparison count is exactly ceil(3n/2) - 2 for EVERY n (not just
- * powers of two), which correctly satisfies the O(3n/2) requirement.
- */
 void getMinMaxDNC(const int arr[], int low, int high, int *min, int *max, long long *comparisons) {
     int n = high - low + 1;
 
