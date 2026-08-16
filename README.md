@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-2-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-3-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -66,6 +66,13 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q1 — Dictionary Operations](#q1--dictionary-operations-asymptotic-analysis-across-data-structures)
   - [Q2 — Merge Sort vs 3-Way Merge Sort](#q2--standard-2-way-merge-sort-vs-modified-3-way-merge-sort)
   - [Q3 — Merging k Sorted Arrays](#q3--merging-k-sorted-arrays-sequential-vs-divide-and-conquer)
+- [🚀 LAB-3 Overview](#-lab-3--divide-and-conquer--search-algorithms)
+  - [Q1 — Binary vs Ternary Search](#q1--binary-vs-ternary-search)
+  - [Q2 — Search the Defective Coin](#q2--search-the-defective-coin)
+  - [Q3 — Max and Min using D&C](#q3--max-and-min-using-dc-approach)
+  - [Q4 — Strassen's Matrix Multiplication](#q4--matrix-multiplication-using-dc-approach)
+  - [Q5 — Pattern Square Matrices](#q5--multiply-special-pattern-square-matrices-using-dc-approach)
+  - [Q6 — Loop Invariants in Sorting](#q6--use-of-loop-invariants-in-sorting)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -89,6 +96,9 @@ timeline
     August 2026 : LAB-2 Submitted  ·  05-08-2026
                 : 3 Questions
                 : Dictionary Operations · Merge Sort Variants · k-Way Merging
+                : LAB-3 Submitted  ·  11-08-2026
+                : 6 Questions
+                : Search Algorithms · Divide and Conquer · Loop Invariants
 ```
 
 ### Lab Index Table
@@ -99,6 +109,7 @@ timeline
 |:---:|:---|:---:|:---:|:---:|
 | [**LAB-1**](WEEK-1) | Asymptotic Ordering, Randomized Simulations & Divide-and-Conquer | 6 | 29-07-2026 | ✅ Done |
 | [**LAB-2**](WEEK-2) | Dictionary Operations, Merge Sort Variants & k-Way Merging | 3 | 05-08-2026 | ✅ Done |
+| [**LAB-3**](WEEK-3) | Search Algorithms, Divide and Conquer & Loop Invariants | 6 | 11-08-2026 | ✅ Done |
 
 </div>
 
@@ -106,7 +117,7 @@ timeline
 
 - [x] **LAB-1** — Asymptotic Ordering, Simulations & Divide-and-Conquer *(6 / 6 questions)*
 - [x] **LAB-2** — Dictionary Operations, Merge Sort Variants & k-Way Merging *(3 / 3 questions)*
-- [ ] **LAB-3** — *(upcoming)*
+- [x] **LAB-3** — Search Algorithms, Divide and Conquer & Loop Invariants *(6 / 6 questions)*
 
 ---
 
@@ -150,6 +161,38 @@ timeline
         └── 🖼️  merging_k_sorted_arrays_vs_k.png
                  merging_k_sorted_arrays_vs_n.png
                  merging_k_sorted_arrays_loglog.png
+│
+└── 📁 WEEK-3/
+    ├── 📑 2026_Week3_DAA_Lab_03.pdf
+    │
+    ├── 📁 Q1/   ← Binary vs Ternary Search
+    │   ├── 🔵 q1_binary_vs_ternary_search.c
+    │   ├── 🐍 q1_binary_vs_ternary_search_graph.py
+    │   └── 🖼️  full_complexity_analysis.png
+    │
+    ├── 📁 Q2/   ← Search the Defective Coin
+    │   └── 🔵 q2_search_the_defective_coin.c
+    │
+    ├── 📁 Q3/   ← Max and Min using D&C
+    │   ├── 🔵 q3_max_and_min_using_D_and_C_approach.c
+    │   ├── 🐍 q3_max_and_min_using_D_and_C_approach_graph.py
+    │   └── 🖼️  max_min_comparison_graph.png
+    │
+    ├── 📁 Q4/   ← Strassen's Matrix Multiplication
+    │   ├── 🔵 q4_matrix_multiplication_using_D_and_C_approach.c
+    │   ├── 🐍 q4_matrix_multiplication_using_D_and_C_approach_graph.py
+    │   └── 🖼️  strassen_matrix_multiplication_graph.png
+    │
+    ├── 📁 Q5/   ← Pattern Square Matrices
+    │   ├── 🔵 q5_multiply_special_pattern_square_matrices_using_D_and_C_approach.c
+    │   ├── 🐍 q5_multiply_special_pattern_square_matrices_using_D_and_C_approach_graph.py
+    │   └── 🖼️  Matrix_Complexity_Analysis.png
+    │
+    └── 📁 Q6/   ← Loop Invariants in Sorting
+        ├── 🔵 q6_use_of_loop_invariants_in_sorting.c
+        ├── 🐍 q6_use_of_loop_invariants_in_sorting_graph.py
+        ├── 📄 pseudocode.txt
+        └── 🖼️  Selection_Sort_Complexity_Analysis.png
 ```
 
 ---
@@ -717,6 +760,259 @@ vary_n,64,6400,67.336100,22.175167   ← both scale linearly in n
 
 ---
 
+## 🚀 LAB-3 — Divide-and-Conquer & Search Algorithms
+
+**Date:** 11-08-2026 &nbsp;|&nbsp; **Total Questions:** 6
+
+### LAB-3 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-3))
+    Q1 · Search Algos
+      Binary Search
+      Ternary Search
+    Q2 · Defective Coin
+      Log2 n Weighings
+    Q3 · Max & Min D&C
+      3n/2 Comparisons
+    Q4 · Strassen's Matrix
+      O n^2.81 Multiplication
+    Q5 · Pattern Matrix
+      O n^2 D&C Multiplication
+    Q6 · Loop Invariant Sorting
+      Selection Sort
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Binary vs Ternary Search](#q1--binary-vs-ternary-search) | Divide & Conquer | `O(log n)` | `O(1)` |
+| **Q2** | [Search the Defective Coin](#q2--search-the-defective-coin) | Divide & Conquer | `O(log n)` | `O(log n)` |
+| **Q3** | [Max and Min using D&C](#q3--max-and-min-using-dc-approach) | Divide & Conquer | `O(n)` | `O(log n)` |
+| **Q4** | [Strassen's Matrix Multiplication](#q4--matrix-multiplication-using-dc-approach) | Strassen's Method | `O(n^2.81)` | `O(n^2)` |
+| **Q5** | [Pattern Square Matrices](#q5--multiply-special-pattern-square-matrices-using-dc-approach) | Divide & Conquer | `O(n^2)` | `O(n^2)` |
+| **Q6** | [Loop Invariants in Sorting](#q6--use-of-loop-invariants-in-sorting) | Selection Sort | `Θ(n^2)` | `O(1)` |
+
+</div>
+
+---
+
+### Q1 — Binary vs Ternary Search
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Search for an element `x` in a sorted list of size `n` using binary and ternary search, and validate that binary search is computationally superior despite having a larger logarithmic base.
+
+#### Algorithmic Comparison
+
+| Feature | Binary Search | Ternary Search |
+|---|---|---|
+| **Division** | 2 equal halves | 3 equal intervals |
+| **Comparisons / step** | 1 (worst case: `<` or `>`) | Up to 2 (worst case: 2 boundaries) |
+| **Max Depth** | $\log_2 n$ | $\log_3 n$ |
+| **Max Comparisons** | $\log_2 n$ | $2 \log_3 n$ |
+
+#### Complexity Proof
+
+```math
+\text{Ternary vs Binary Ratio} = \frac{2 \log_3 n}{\log_2 n} = \frac{2}{\log_2 3} \approx 1.26
+```
+
+> [!TIP]
+> While $\log_3 n < \log_2 n$, the number of comparisons per split makes ternary search do **~26% more comparisons** in the worst case. The empirical Python plot (`full_complexity_analysis.png`) confirms this constant-factor overhead.
+
+</details>
+
+---
+
+### Q2 — Search the Defective Coin
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Find a single defective (lighter) coin among `n` identical-looking coins using a balance weighing scale in $O(\log n)$ time.
+
+#### The Divide and Conquer Strategy
+
+1. **Divide:** Split the `n` coins into two equal halves. If `n` is odd, leave one coin aside.
+2. **Weigh:** Place the two halves on the balance scale.
+3. **Conquer:**
+   - If **balanced**: The defective coin is the one left aside (terminates).
+   - If **unbalanced**: The lighter side contains the defective coin. Recursively apply the strategy to this lighter half.
+
+#### Recurrence Relation
+
+```math
+T(n) = T(n/2) + O(1) \implies T(n) = O(\log_2 n)
+```
+
+> [!NOTE]
+> Since we eliminate half of the coins with a single `O(1)` weighing operation, the maximum number of weighings strictly bounded by $\lfloor \log_2 n \rfloor + 1$.
+
+</details>
+
+---
+
+### Q3 — Max and Min using D&C Approach
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Find both the maximum and minimum elements in an array using divide and conquer, rigorously bounding the number of comparisons to $\frac{3n}{2} - 2$.
+
+#### Method Comparison
+
+| Algorithm | Strategy | Comparisons |
+|---|---|:---:|
+| **Naive Scan** | Track min/max via separate linear scans | $2n - 2$ |
+| **Tournament D&C** | Divide into halves, find min/max of each, then compare | $\frac{3n}{2} - 2$ |
+
+#### Recursion Tree & Cost Derivation
+
+```mermaid
+graph TD
+    A["T(n)"] --> B["T(n/2)"]
+    A --> C["T(n/2)"]
+    B -. "Compare Maxs & Mins" .-> A
+    C -. "+ 2 comparisons" .-> A
+```
+
+```math
+T(n) = \begin{cases} 
+0 & \text{if } n = 1 \\
+1 & \text{if } n = 2 \\
+2\,T(n/2) + 2 & \text{if } n > 2 
+\end{cases}
+```
+Expanding the recurrence reveals the total cost:
+```math
+T(n) = \frac{3n}{2} - 2
+```
+
+> [!TIP]
+> This algorithm proves that you can achieve a **25% reduction** in comparisons over the naive approach by pairing elements up. The `max_min_comparison_graph.png` empirically verifies the exact $\frac{3n}{2} - 2$ slope.
+
+</details>
+
+---
+
+### Q4 — Matrix Multiplication using D&C Approach
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Multiply two `n × n` square matrices using Strassen's Method, bypassing the cubic $O(n^3)$ lower bound of standard multiplication.
+
+#### Standard vs Strassen
+
+- **Standard D&C:** Computes 8 recursive multiplications of size $(n/2) \times (n/2)$.
+  $T(n) = 8T(n/2) + O(n^2) \implies O(n^3)$
+- **Strassen's D&C:** Uses algebraic combinations to compute only **7 recursive multiplications**.
+  $T(n) = 7T(n/2) + O(n^2) \implies O(n^{\log_2 7})$
+
+#### Complexity Matrix
+
+| Method | Recursive Multiplications | Matrix Additions | Asymptotic Bound |
+|---|:---:|:---:|:---:|
+| **Standard** | 8 | 4 | $O(n^3)$ |
+| **Strassen** | 7 | 18 | $O(n^{2.807})$ |
+
+> [!WARNING]
+> While Strassen's algorithm is asymptotically superior, the massive constant factor generated by the 18 matrix additions/subtractions makes it slower for small $n$. The generated plot `strassen_matrix_multiplication_graph.png` perfectly captures the crossover point where Strassen's begins to outperform the standard approach.
+
+</details>
+
+---
+
+### Q5 — Multiply special-pattern square matrices using D&C approach
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Exploit a recursive symmetric block structure to achieve an optimal $O(n^2)$ matrix multiplication algorithm.
+
+#### The Special Structure
+
+A matrix $M$ (where $n = 2^k$) is recursively composed of identical diagonal and off-diagonal blocks:
+```math
+M = \begin{pmatrix} M_1 & M_2 \\ M_2 & M_1 \end{pmatrix} \quad , \quad N = \begin{pmatrix} N_1 & N_2 \\ N_2 & N_1 \end{pmatrix}
+```
+
+#### Multiplication Algebra
+
+When multiplying $M \times N$, the result inherits the exact same structure:
+```math
+M \times N = \begin{pmatrix} M_1 N_1 + M_2 N_2 & M_1 N_2 + M_2 N_1 \\ M_2 N_1 + M_1 N_2 & M_2 N_2 + M_1 N_1 \end{pmatrix} = \begin{pmatrix} R_1 & R_2 \\ R_2 & R_1 \end{pmatrix}
+```
+
+#### The Sub-Quadratic Hack
+
+Instead of computing all 4 quadrants (which would require 8 multiplications), we only need to compute two unique blocks ($R_1$ and $R_2$):
+1. $R_1 = M_1 N_1 + M_2 N_2$ (2 multiplications, 1 addition)
+2. $R_2 = M_1 N_2 + M_2 N_1$ (2 multiplications, 1 addition)
+
+Total cost per level: **4 multiplications** instead of 8.
+
+```math
+T(n) = 4\,T(n/2) + O(n^2) \implies \Theta(n^2)
+```
+
+> [!TIP]
+> Standard matrix multiplication requires $O(n^3)$ because reading the output takes $O(n^2)$ and computing each cell takes $O(n)$. Because of the fractal symmetry here, we can compute the entire matrix in exactly $O(n^2)$ — proportional solely to the number of cells!
+
+</details>
+
+---
+
+### Q6 — Use of loop invariants in sorting
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Formulate mathematical loop invariants for Selection Sort to formally prove its correctness, and empirically analyze its quadratic complexity bounds.
+
+#### Algorithm: Selection Sort
+
+Iteratively find the smallest element in the unsorted portion $A[i \dots n]$ and swap it with $A[i]$.
+
+#### Formal Loop Invariant Proof
+
+At the start of each iteration $i$ (from $1$ to $n-1$), the subarray $A[1 \dots i-1]$ contains the $(i-1)$ smallest elements of $A$ in sorted order.
+
+| Phase | Proof Requirement | State in Selection Sort |
+|---|---|---|
+| **Initialization** | True before first iteration ($i=1$) | $A[1 \dots 0]$ is empty. An empty array is trivially sorted and contains the $0$ smallest elements. |
+| **Maintenance** | If true before iteration $i$, remains true before $i+1$ | We find the absolute minimum in $A[i \dots n]$ and place it at $A[i]$. Now $A[1 \dots i]$ contains the $i$ smallest elements in sorted order. |
+| **Termination** | Loop ends ($i=n$); invariant gives useful property | Loop terminates at $i=n$. The invariant states $A[1 \dots n-1]$ contains the $(n-1)$ smallest elements sorted. Thus, $A[n]$ must be the maximum, and the entire array $A[1 \dots n]$ is sorted. |
+
+#### Complexity Bound
+
+```math
+\text{Comparisons} = \sum_{i=1}^{n-1} (n - i) = \frac{n(n-1)}{2} = \Theta(n^2)
+```
+
+> [!NOTE]
+> The proof explains why the outer loop only needs to run $(n-1)$ times. The $n$-th iteration is mathematically redundant!
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -802,6 +1098,40 @@ gcc -O2 -std=c99 -o q3_merging_k_sorted_arrays q3_merging_k_sorted_arrays.c
 # ↳ Writes: merging_k_sorted_arrays.csv + 200-trial correctness report
 ```
 
+### WEEK-3
+
+```bash
+# Q1 — Binary vs Ternary Search
+cd WEEK-3/Q1
+gcc -O2 -std=c99 -o q1_binary_vs_ternary_search q1_binary_vs_ternary_search.c -lm
+./q1_binary_vs_ternary_search
+
+# Q2 — Search the Defective Coin
+cd ../Q2
+gcc -O2 -std=c99 -o q2_search_the_defective_coin q2_search_the_defective_coin.c -lm
+./q2_search_the_defective_coin
+
+# Q3 — Max and Min using D&C Approach
+cd ../Q3
+gcc -O2 -std=c99 -o q3_max_and_min_using_D_and_C_approach q3_max_and_min_using_D_and_C_approach.c
+./q3_max_and_min_using_D_and_C_approach
+
+# Q4 — Matrix Multiplication using D&C Approach
+cd ../Q4
+gcc -O2 -std=c99 -o q4_matrix_multiplication_using_D_and_C_approach q4_matrix_multiplication_using_D_and_C_approach.c
+./q4_matrix_multiplication_using_D_and_C_approach
+
+# Q5 — Multiply special-pattern square matrices using D&C approach
+cd ../Q5
+gcc -O2 -std=c99 -o q5_multiply_special_pattern_square_matrices_using_D_and_C_approach q5_multiply_special_pattern_square_matrices_using_D_and_C_approach.c
+./q5_multiply_special_pattern_square_matrices_using_D_and_C_approach
+
+# Q6 — Use of loop invariants in sorting
+cd ../Q6
+gcc -O2 -std=c99 -o q6_use_of_loop_invariants_in_sorting q6_use_of_loop_invariants_in_sorting.c
+./q6_use_of_loop_invariants_in_sorting
+```
+
 > [!NOTE]
 > Run each WEEK-2 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
@@ -825,6 +1155,7 @@ gcc -O2 -std=c99 -o q3_merging_k_sorted_arrays q3_merging_k_sorted_arrays.c
 | LAB-1 | Q5 | Element count, then that many 0s and 1s — **0s must precede all 1s** |
 | LAB-1 | Q6 | Element count, then that many integers |
 | LAB-2 | Q1–Q3 | **None** — all parameters hardcoded in each benchmark driver |
+| LAB-3 | Q1–Q6 | Expected formats vary (refer to source code for details) |
 
 ---
 
@@ -852,6 +1183,18 @@ gcc -O2 -std=c99 -o q3_merging_k_sorted_arrays q3_merging_k_sorted_arrays.c
 | Q2 — 3-Way Merge Sort | `Θ(n log n)` | `Θ(n log n)` | `O(n)` |
 | Q3 — Sequential k-Merge | `O(nk²)` | `O(nk²)` | `O(nk)` |
 | Q3 — Pairwise D&C k-Merge | **`O(nk log k)`** | **`O(nk log k)`** | `O(nk)` |
+
+### LAB-3
+
+| Question | Best Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|
+| Q1 — Binary Search | `O(1)` | `O(log n)` | `O(1)` |
+| Q1 — Ternary Search | `O(1)` | `O(log n)` | `O(1)` |
+| Q2 — Defective Coin | `O(1)` | `O(log n)` | `O(log n)` |
+| Q3 — Max and Min (D&C) | `O(n)` | `O(n)` | `O(log n)` |
+| Q4 — Strassen's Matrix | `O(n^2.81)` | `O(n^2.81)` | `O(n^2)` |
+| Q5 — Pattern Matrix | `O(n^2)` | `O(n^2)` | `O(n^2)` |
+| Q6 — Selection Sort | `Θ(n^2)` | `Θ(n^2)` | `O(1)` |
 
 </div>
 
@@ -881,6 +1224,18 @@ gcc -O2 -std=c99 -o q3_merging_k_sorted_arrays q3_merging_k_sorted_arrays.c
   - **POSIX / Linux:** `clock_gettime(CLOCK_MONOTONIC)` — nanosecond precision
   - This avoids the ~10–16 ms coarse granularity of the standard `clock()` function.
 - **Q3**'s adaptive timing loop self-calibrates the repeat count — it reruns each configuration until cumulative elapsed time exceeds 50 ms, then divides — ensuring stable non-zero measurements even for very small `(k, n)` combinations.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-3 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-3 programs** also use <kbd>-O2</kbd> for timing benchmarks and performance measurements.
+- **Q1, Q3, Q4, Q5, Q6** all generate data and use python plotting scripts (e.g., `q1_binary_vs_ternary_search_graph.py`) to generate the corresponding `.png` graphs representing their empirical analysis. You will need `python` with `matplotlib` to reproduce the graphs from the csv outputs.
+- **Q4 & Q5** allocate contiguous memory blocks or 2D array blocks via `malloc` and must carefully `free` memory after completion, especially when matrices reach larger bounds where stack memory would overflow.
+- **Q6** features an additional `pseudocode.txt` file demonstrating the structural loop invariants validation logic prior to implementation.
 
 </details>
 
