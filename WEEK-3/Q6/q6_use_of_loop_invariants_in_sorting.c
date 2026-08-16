@@ -16,14 +16,6 @@ static inline void swap(int* a, int* b) {
     *b = temp;
 }
 
-/**
- * Selection Sort Algorithm
- *
- * Loop Invariant : At the start of iteration i, A[0..i-1] contains the
- *                  i smallest elements of A in sorted order.
- * Time Complexity : Theta(n^2) for both Best and Worst Case
- * Space Complexity: O(1) Auxiliary Memory (in-place sort)
- */
 void selectionSort(int* A, int n) {
     if (!A || n < 2) return;
 
