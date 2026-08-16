@@ -271,11 +271,11 @@ timeline
 
 **Complexity:**
 
-```math
+$$
 \text{Time} = O(k \cdot n) \quad \text{where } k = \text{coins},\ n = \text{flips per coin}
 \qquad
 \text{Space} = O(k)
-```
+$$
 
 > [!TIP]
 > Phase 1 is the core insight: as the sample size grows 10×, the absolute error from the true bias shrinks by approximately $\frac{1}{\sqrt{10}}$ — a direct empirical validation of CLT convergence at rate $\frac{1}{\sqrt{n}}$.
@@ -320,9 +320,9 @@ Both variants receive **clones of the same base array** so comparison counts are
 
 **Recurrence and closed form:**
 
-```math
+$$
 T(n) = 2\,T(n-1) + 1 \implies T(n) = 2^n - 1
-```
+$$
 
 - Step-by-step trace printed for `n = 3`
 - Solver runs silently for `n = 1…25`; simulated count verified against $2^n - 1$ for every `n`
@@ -366,9 +366,9 @@ T(n) = 2\,T(n-1) + 1 \implies T(n) = 2^n - 1
 | All ones | Transition at index `0` |
 | Mixed | Index of the **first** `1` |
 
-```math
+$$
 \text{Time} = O(\log n) \qquad \text{Space} = O(1)
-```
+$$
 
 </details>
 
@@ -593,26 +593,26 @@ graph TD
 
 **2-Way Merge Sort:**
 
-```math
+$$
 T(n) = 2\,T\!\left(\frac{n}{2}\right) + \Theta(n)
 \quad \xrightarrow{\text{Master Thm Case 2}} \quad
 T(n) = \Theta(n \log_2 n)
-```
+$$
 
 **3-Way Merge Sort:**
 
-```math
+$$
 T(n) = 3\,T\!\left(\frac{n}{3}\right) + \Theta(n)
 \quad \xrightarrow{\text{Master Thm Case 2}} \quad
 T(n) = \Theta(n \log_3 n) = \Theta(n \log n)
-```
+$$
 
 **Why Case 2 applies to both:**
 
-```math
+$$
 n^{\log_b a} = n^{\log_2 2} = n^1 = \Theta(n) = f(n)
 \qquad \Rightarrow \qquad \text{Case 2: } T(n) = \Theta\!\left(n^{\log_b a} \log n\right)
-```
+$$
 
 #### Head-to-Head Summary
 
@@ -687,18 +687,18 @@ flowchart LR
 
 **Method 1 — Sequential:**
 
-```math
+$$
 \text{Total} = \sum_{i=2}^{k} O(i \cdot n)
 = O\!\left(n \cdot \frac{k(k+1)}{2}\right)
 = O(n \cdot k^2)
-```
+$$
 
 **Method 2 — Pairwise Divide-and-Conquer:**
 
-```math
+$$
 \text{Each of } \log_2 k \text{ rounds costs } O(k \cdot n)
 \implies \text{Total} = O(k \cdot n) \times \log_2 k = O(n \cdot k \log k)
-```
+$$
 
 #### Complexity Comparison
 
@@ -819,9 +819,9 @@ mindmap
 
 #### Complexity Proof
 
-```math
+$$
 \text{Ternary vs Binary Ratio} = \frac{2 \log_3 n}{\log_2 n} = \frac{2}{\log_2 3} \approx 1.26
-```
+$$
 
 > [!TIP]
 > While $\log_3 n < \log_2 n$, the number of comparisons per split makes ternary search do **~26% more comparisons** in the worst case. The empirical Python plot (`full_complexity_analysis.png`) confirms this constant-factor overhead.
@@ -849,9 +849,9 @@ mindmap
 
 #### Recurrence Relation
 
-```math
+$$
 T(n) = T(n/2) + O(1) \implies T(n) = O(\log_2 n)
-```
+$$
 
 > [!NOTE]
 > Since we eliminate half of the coins with a single `O(1)` weighing operation, the maximum number of weighings strictly bounded by $\lfloor \log_2 n \rfloor + 1$.
@@ -886,17 +886,17 @@ graph TD
     C -. "+ 2 comparisons" .-> A
 ```
 
-```math
+$$
 T(n) = \begin{cases} 
 0 & \text{if } n = 1 \\
 1 & \text{if } n = 2 \\
 2\,T(n/2) + 2 & \text{if } n > 2 
 \end{cases}
-```
+$$
 Expanding the recurrence reveals the total cost:
-```math
+$$
 T(n) = \frac{3n}{2} - 2
-```
+$$
 
 > [!TIP]
 > This algorithm proves that you can achieve a **25% reduction** in comparisons over the naive approach by pairing elements up. The `max_min_comparison_graph.png` empirically verifies the exact $\frac{3n}{2} - 2$ slope.
@@ -917,9 +917,13 @@ T(n) = \frac{3n}{2} - 2
 #### Standard vs Strassen
 
 - **Standard D&C:** Computes 8 recursive multiplications of size $(n/2) \times (n/2)$.
-  $T(n) = 8T(n/2) + O(n^2) \implies O(n^3)$
+$$
+T(n) = 8T(n/2) + O(n^2) \implies O(n^3)
+$$
 - **Strassen's D&C:** Uses algebraic combinations to compute only **7 recursive multiplications**.
-  $T(n) = 7T(n/2) + O(n^2) \implies O(n^{\log_2 7})$
+$$
+T(n) = 7T(n/2) + O(n^2) \implies O(n^{\log_2 7})
+$$
 
 #### Complexity Matrix
 
@@ -947,16 +951,35 @@ T(n) = \frac{3n}{2} - 2
 #### The Special Structure
 
 A matrix $M$ (where $n = 2^k$) is recursively composed of identical diagonal and off-diagonal blocks:
-```math
-M = \begin{pmatrix} M_1 & M_2 \\ M_2 & M_1 \end{pmatrix} \quad , \quad N = \begin{pmatrix} N_1 & N_2 \\ N_2 & N_1 \end{pmatrix}
-```
+$$
+M = 
+\begin{pmatrix} 
+  M_1 & M_2 \\ 
+  M_2 & M_1 
+\end{pmatrix} 
+\quad , \quad 
+N = 
+\begin{pmatrix} 
+  N_1 & N_2 \\ 
+  N_2 & N_1 
+\end{pmatrix}
+$$
 
 #### Multiplication Algebra
 
 When multiplying $M \times N$, the result inherits the exact same structure:
-```math
-M \times N = \begin{pmatrix} M_1 N_1 + M_2 N_2 & M_1 N_2 + M_2 N_1 \\ M_2 N_1 + M_1 N_2 & M_2 N_2 + M_1 N_1 \end{pmatrix} = \begin{pmatrix} R_1 & R_2 \\ R_2 & R_1 \end{pmatrix}
-```
+$$
+M \times N = 
+\begin{pmatrix} 
+  M_1 N_1 + M_2 N_2 & M_1 N_2 + M_2 N_1 \\ 
+  M_2 N_1 + M_1 N_2 & M_2 N_2 + M_1 N_1 
+\end{pmatrix} 
+= 
+\begin{pmatrix} 
+  R_1 & R_2 \\ 
+  R_2 & R_1 
+\end{pmatrix}
+$$
 
 #### The Sub-Quadratic Hack
 
@@ -966,9 +989,9 @@ Instead of computing all 4 quadrants (which would require 8 multiplications), we
 
 Total cost per level: **4 multiplications** instead of 8.
 
-```math
+$$
 T(n) = 4\,T(n/2) + O(n^2) \implies \Theta(n^2)
-```
+$$
 
 > [!TIP]
 > Standard matrix multiplication requires $O(n^3)$ because reading the output takes $O(n^2)$ and computing each cell takes $O(n)$. Because of the fractal symmetry here, we can compute the entire matrix in exactly $O(n^2)$ — proportional solely to the number of cells!
@@ -1002,9 +1025,9 @@ At the start of each iteration $i$ (from $1$ to $n-1$), the subarray $A[1 \dots 
 
 #### Complexity Bound
 
-```math
+$$
 \text{Comparisons} = \sum_{i=1}^{n-1} (n - i) = \frac{n(n-1)}{2} = \Theta(n^2)
-```
+$$
 
 > [!NOTE]
 > The proof explains why the outer loop only needs to run $(n-1)$ times. The $n$-th iteration is mathematically redundant!
