@@ -167,7 +167,6 @@ timeline
     │
     ├── 📁 Q1/   ← Binary vs Ternary Search
     │   ├── 🔵 q1_binary_vs_ternary_search.c
-    │   ├── 🐍 q1_binary_vs_ternary_search_graph.py
     │   └── 🖼️  full_complexity_analysis.png
     │
     ├── 📁 Q2/   ← Search the Defective Coin
@@ -175,22 +174,18 @@ timeline
     │
     ├── 📁 Q3/   ← Max and Min using D&C
     │   ├── 🔵 q3_max_and_min_using_D_and_C_approach.c
-    │   ├── 🐍 q3_max_and_min_using_D_and_C_approach_graph.py
     │   └── 🖼️  max_min_comparison_graph.png
     │
     ├── 📁 Q4/   ← Strassen's Matrix Multiplication
     │   ├── 🔵 q4_matrix_multiplication_using_D_and_C_approach.c
-    │   ├── 🐍 q4_matrix_multiplication_using_D_and_C_approach_graph.py
     │   └── 🖼️  strassen_matrix_multiplication_graph.png
     │
     ├── 📁 Q5/   ← Pattern Square Matrices
     │   ├── 🔵 q5_multiply_special_pattern_square_matrices_using_D_and_C_approach.c
-    │   ├── 🐍 q5_multiply_special_pattern_square_matrices_using_D_and_C_approach_graph.py
     │   └── 🖼️  Matrix_Complexity_Analysis.png
     │
     └── 📁 Q6/   ← Loop Invariants in Sorting
         ├── 🔵 q6_use_of_loop_invariants_in_sorting.c
-        ├── 🐍 q6_use_of_loop_invariants_in_sorting_graph.py
         ├── 📄 pseudocode.txt
         └── 🖼️  Selection_Sort_Complexity_Analysis.png
 ```
