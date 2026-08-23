@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-3-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-4-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -73,6 +73,13 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q4 — Strassen's Matrix Multiplication](#q4--matrix-multiplication-using-dc-approach)
   - [Q5 — Pattern Square Matrices](#q5--multiply-special-pattern-square-matrices-using-dc-approach)
   - [Q6 — Loop Invariants in Sorting](#q6--use-of-loop-invariants-in-sorting)
+- [🚀 LAB-4 Overview](#-lab-4--applications-of-sorting)
+  - [Application of Sorting-1](#application-of-sorting-1)
+  - [Application of Sorting-2](#application-of-sorting-2)
+  - [Application of Sorting-3](#application-of-sorting-3)
+  - [Application of Sorting-4](#application-of-sorting-4)
+  - [Application of Sorting-5](#application-of-sorting-5)
+  - [Application of Sorting-6](#application-of-sorting-6)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -99,6 +106,9 @@ timeline
                 : LAB-3 Submitted  ·  11-08-2026
                 : 6 Questions
                 : Search Algorithms · Divide and Conquer · Loop Invariants
+                : LAB-4 Submitted  ·  18-08-2026
+                : 6 Questions
+                : Applications of Sorting · Sweep-Line · Interval Merging
 ```
 
 ### Lab Index Table
@@ -110,6 +120,7 @@ timeline
 | [**LAB-1**](WEEK-1) | Asymptotic Ordering, Randomized Simulations & Divide-and-Conquer | 6 | 29-07-2026 | ✅ Done |
 | [**LAB-2**](WEEK-2) | Dictionary Operations, Merge Sort Variants & k-Way Merging | 3 | 05-08-2026 | ✅ Done |
 | [**LAB-3**](WEEK-3) | Search Algorithms, Divide and Conquer & Loop Invariants | 6 | 11-08-2026 | ✅ Done |
+| [**LAB-4**](WEEK-4) | Applications of Sorting — Sweep-Line, k-Sum & Interval Merging | 6 | 18-08-2026 | ✅ Done |
 
 </div>
 
@@ -118,6 +129,7 @@ timeline
 - [x] **LAB-1** — Asymptotic Ordering, Simulations & Divide-and-Conquer *(6 / 6 questions)*
 - [x] **LAB-2** — Dictionary Operations, Merge Sort Variants & k-Way Merging *(3 / 3 questions)*
 - [x] **LAB-3** — Search Algorithms, Divide and Conquer & Loop Invariants *(6 / 6 questions)*
+- [x] **LAB-4** — Applications of Sorting — Sweep-Line, k-Sum & Interval Merging *(6 / 6 questions)*
 
 ---
 
@@ -188,6 +200,40 @@ timeline
         ├── 🔵 q6_use_of_loop_invariants_in_sorting.c
         ├── 📄 pseudocode.txt
         └── 🖼️  Selection_Sort_Complexity_Analysis.png
+│
+└── 📁 WEEK-4/
+    ├── 📑 2026_Week4_DAA_Lab_04.pdf
+    │
+    ├── 📁 Q1/   ← Application of Sorting-1
+    │   ├── 🔵 q1_application_of_sorting_1.c
+    │   └── 🖼️  q1_application_of_sorting_1_analysis.png
+    │            q1_application_of_sorting_1_graph.png
+    │
+    ├── 📁 Q2/   ← Application of Sorting-2
+    │   ├── 🔵 q2_application_of_sorting_2.c
+    │   └── 🖼️  q2_application_of_sorting_2_analysis.png
+    │            q2_application_of_sorting_2_graph.png
+    │
+    ├── 📁 Q3/   ← Application of Sorting-3
+    │   ├── 🔵 q3_application_of_sorting_3.c
+    │   └── 🖼️  q3_application_of_sorting_3_analysis.png
+    │            q3_application_of_sorting_3_graph.png
+    │
+    ├── 📁 Q4/   ← Application of Sorting-4
+    │   ├── 🔵 q4_application_of_sorting_4.c
+    │   └── 🖼️  q4_application_of_sorting_4_analysis.png
+    │            q4_application_of_sorting_4_graph.png
+    │
+    ├── 📁 Q5/   ← Application of Sorting-5
+    │   ├── 🔵 q5_application_of_sorting_5.c
+    │   └── 🖼️  q5_application_of_sorting_5_analysis1.png
+    │            q5_application_of_sorting_5_analysis2.png
+    │            q5_application_of_sorting_5_graph.png
+    │
+    └── 📁 Q6/   ← Application of Sorting-6
+        ├── 🔵 q6_application_of_sorting_6.c
+        └── 🖼️  q6_application_of_sorting_6_analysis.png
+                 q6_application_of_sorting_6_graph.png
 ```
 
 ---
@@ -473,11 +519,9 @@ mindmap
 | Unsorted Array | `O(n)` | `O(1)` | `O(1)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
 | **Sorted Array** | **`O(log n)`** | `O(n)` | `O(n)` | **`O(1)`** | **`O(1)`** | **`O(1)`** | **`O(1)`** | `O(n)` |
 | Singly Unsorted | `O(n)` | `O(1)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
-| Singly Sorted | `O(n)` | `O(n)` | `O(n)` | `O(1)`[^1] | **`O(1)`** | `O(n)` | **`O(1)`** | `O(n)` |
+| Singly Sorted | `O(n)` | `O(n)` | `O(n)` | `O(1)` | **`O(1)`** | `O(n)` | **`O(1)`** | `O(n)` |
 | Doubly Unsorted | `O(n)` | `O(1)` | **`O(1)`** | `O(n)` | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
 | **Doubly Sorted** | `O(n)` | `O(n)` | **`O(1)`** | **`O(1)`** | **`O(1)`** | **`O(1)`** | **`O(1)`** | `O(n)` |
-
-[^1]: Singly Sorted **Max** is `O(1)` only when a **tail pointer** is maintained alongside the head pointer; without it the cost degrades to `O(n)`.
 
 #### Key Algorithmic Insights
 
@@ -1031,6 +1075,294 @@ $$
 
 ---
 
+## 🚀 LAB-4 — Applications of Sorting
+
+**Date:** 18-08-2026 &nbsp;|&nbsp; **Total Questions:** 6
+
+### LAB-4 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-4))
+    Q1 · Sort by Colour
+      Bucket Sort O n
+    Q2 · Pair Sum
+      Sort + Binary Search
+    Q3 · k-Sum
+      Sort + Combinations
+    Q4 · Max Attendance
+      Sweep Line O n log n
+    Q5 · Merge Intervals
+      Sort by Start O n log n
+    Q6 · Max Coverage Point
+      Sweep Line Tie-Break
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Application of Sorting-1](#application-of-sorting-1) | Bucket / Counting Sort (Linked List) | `O(n)` | `O(1)` |
+| **Q2** | [Application of Sorting-2](#application-of-sorting-2) | Sort + Binary Search | `O(n log n)` | `O(1)` |
+| **Q3** | [Application of Sorting-3](#application-of-sorting-3) | Sort + Combinations + Binary Search | `O(n^(k-1) log n)` | `O(k)` |
+| **Q4** | [Application of Sorting-4](#application-of-sorting-4) | Sweep Line (Event Sort) | `O(n log n)` | `O(n)` |
+| **Q5** | [Application of Sorting-5](#application-of-sorting-5) | Sort by Start + Linear Merge | `O(n log n)` | `O(n)` |
+| **Q6** | [Application of Sorting-6](#application-of-sorting-6) | Sweep Line + Merge Sort (tie-break) | `O(n log n)` | `O(n)` |
+
+</div>
+
+---
+
+### Application of Sorting-1
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given `n` `(number, colour)` pairs already sorted by number, re-sort them by colour — all Reds before all Blues before all Yellows — while keeping numbers sorted *within* each colour, in `O(n)` time and `O(1)` extra space.
+
+**Input representation:** a **singly linked list** of nodes rather than an array. This is the choice that makes `O(1)` extra space achievable: nodes are re-spliced by rewiring pointers, so no second array or copy is ever needed.
+
+**Algorithm — three-bucket splice:**
+
+1. Maintain a `Bucket { head, tail }` for each of the 3 colours (6 pointers total, independent of `n`).
+2. Walk the list once; detach each node and append it — via its bucket's `tail` pointer — to the end of its colour's bucket in `O(1)`.
+3. Concatenate the three non-empty buckets in order Red → Blue → Yellow.
+
+Because nodes are only ever appended to the tail of their bucket, the relative order of numbers within a colour is preserved automatically — the sort is **stable** by construction, with no comparisons needed at all.
+
+| Property | Detail |
+|---|---|
+| Technique | Bucket sort / 3-way stable partition on a linked list |
+| Time | `O(n)` — one pass to bucket, one pass to concatenate |
+| Space | `O(1)` — 3 buckets × (head, tail) regardless of `n` |
+| Validator | `is_valid_result()` checks colours are grouped `R ≤ B ≤ Y` **and** numbers are non-decreasing within each colour |
+
+> [!NOTE]
+> This complexity is optimal: any algorithm must examine every node at least once (`Ω(n)` lower bound), and the linked-list representation lets that single pass double as the entire sort.
+
+<p align="center">
+  <img src="WEEK-4/Q1/q1_application_of_sorting_1_analysis.png" width="780" alt="Application of Sorting-1 — bucket/counting sort walkthrough"/>
+  <br/><sub><b>Bucket-and-splice walkthrough:</b> input pairs → per-colour counting pass → concatenated output → stability proof (index lines never cross within a colour)</sub>
+</p>
+
+</details>
+
+---
+
+### Application of Sorting-2
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given two sets `S₁` and `S₂` (each of size `n`) and a target `x`, determine whether some `a ∈ S₁` and `b ∈ S₂` satisfy `a + b = x`, in `O(n log n)`.
+
+**Algorithm:**
+
+1. Sort `S₁` in place with `qsort` — `O(n log n)`.
+2. For each `b` in `S₂` (unsorted, scanned once), binary-search `S₁` for the complement `x − b` — `O(log n)` per lookup, `O(n log n)` total.
+
+$$
+\text{Total} = O(n \log n) + O(n \log n) = O(n \log n)
+$$
+
+| Property | Detail |
+|---|---|
+| Overflow guard | `x − s2[j]` is computed in `long long` before comparison, since it can overflow `int` (e.g. `x = INT_MAX`, `s2[j] = INT_MIN`) |
+| Side effect | `S₁` is left sorted after the call — documented and printed explicitly in the output as "S1 (after in-place sort, as a side effect)" |
+| Space | `O(1)` extra — sorting is in place, no auxiliary array |
+
+> [!TIP]
+> `S₂` is deliberately **not** sorted — only one of the two sets needs to be, since the algorithm only ever binary-searches into `S₁`. Sorting both would waste an `O(n log n)` pass for no asymptotic benefit.
+
+<p align="center">
+  <img src="WEEK-4/Q2/q2_application_of_sorting_2_analysis.png" width="780" alt="Application of Sorting-2 — pair sum via sort + binary search"/>
+  <br/><sub><b>Sort + binary-search walkthrough:</b> S₁ sorted once, each element of S₂ probes for its complement</sub>
+</p>
+
+</details>
+
+---
+
+### Application of Sorting-3
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a set `S` of `n` integers and a target `T`, determine whether some `k` of them sum to `T`, in `O(n^(k-1) log n)` (`k` treated as a fixed constant).
+
+**Algorithm — fix `k−1`, binary-search the last:**
+
+1. Sort `S` — `O(n log n)`.
+2. Recursively generate every combination of `(k−1)` **strictly increasing** indices — `O(n^(k-1))`.
+3. For each combination, binary-search (restricted to indices *after* the largest chosen index) for the value completing the sum to `T` — `O(log n)` each. Restricting the search window to later indices guarantees distinctness for free, with no separate collision check.
+
+$$
+\text{Total} = O(n^{k-1}) \times O(\log n) = O(n^{k-1} \log n)
+$$
+
+| `k` | Reduces to | Cost |
+|:---:|---|:---:|
+| `k = 1` | Direct binary search for `T` itself | `O(log n)` |
+| `k = 2` | Classic two-sum via single-index scan + binary search | `O(n log n)` |
+| `k ≥ 3` | General recursive combination + binary search | `O(n^(k-1) log n)` |
+
+| Property | Detail |
+|---|---|
+| Time | `O(n^(k-1) log n)` | 
+| Space | `O(k)` extra (recursion stack / chosen-index array) — `O(1)` with respect to `n` |
+| Correctness fix | `target` is range-checked against `INT_MIN`/`INT_MAX` **before** any cast to `int`, both in the `k=1` fast path and the general combination path — an unchecked cast on an out-of-range `long long` is implementation-defined truncation and can produce false positives |
+
+> [!WARNING]
+> The `O(n^(k-1) log n)` bound only holds when `k` is fixed; for `k` growing with `n` this degenerates toward brute-force enumeration of all `k`-subsets.
+
+<p align="center">
+  <img src="WEEK-4/Q3/q3_application_of_sorting_3_analysis.png" width="780" alt="Application of Sorting-3 — k-sum via combinations + binary search"/>
+  <br/><sub><b>k-Sum walkthrough:</b> sorted array, fixed (k−1)-index combinations, binary search completing each candidate sum</sub>
+</p>
+
+</details>
+
+---
+
+### Application of Sorting-4
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given entry time `aᵢ` and exit time `bᵢ` (`bᵢ > aᵢ`) for `n` people, with all `2n` entry/exit times distinct, find the time at which the most people were simultaneously present — in `O(n log n)`.
+
+**Key idea — sweep line:** attendance only *changes* at an arrival or a departure, never in between. So instead of scanning a continuum of time, only the `2n` discrete event moments need examining.
+
+**Algorithm:**
+
+1. Build `2n` events: `(aᵢ, +1)` for each arrival, `(bᵢ, −1)` for each departure.
+2. Sort all events by time ascending — `O(n log n)` (times guaranteed distinct, so no tie-break is needed).
+3. Sweep once, maintaining a running `count`: on arrival, `count++` and check against the best seen so far; on departure, `count--` (a departure can never itself create a new maximum, so no check is needed there) — `O(n)`.
+
+$$
+\text{Total} = O(n \log n) + O(n) = O(n \log n)
+$$
+
+```mermaid
+flowchart LR
+    A["Build 2n events\n(aᵢ,+1) & (bᵢ,−1)"] --> B["Sort events by time\nO(n log n)"]
+    B --> C["Sweep once\ncount += delta"]
+    C --> D["Track max count\non arrivals only"]
+```
+
+| Property | Detail |
+|---|---|
+| Time | `O(n log n)` — sort dominates; sweep is `O(n)` |
+| Space | `O(n)` — the `2n` events (a necessary restructuring of the input); `qsort` sorts in place beyond that |
+| Input representation | Each person becomes **two independent** `(time, delta)` events rather than one interval — this is what turns "max overlap" into "max running sum of a ±1 sequence" |
+
+> [!NOTE]
+> Because entry/exit times are guaranteed distinct, a plain numeric comparator suffices — there's no coordinate at which an arrival and a departure could tie (contrast with Q6 below, where this guarantee does *not* hold).
+
+<p align="center">
+  <img src="WEEK-4/Q4/q4_application_of_sorting_4_analysis.png" width="780" alt="Application of Sorting-4 — max simultaneous attendance sweep line"/>
+  <br/><sub><b>Party problem walkthrough:</b> raw entry/exit intervals → sorted ±1 events → resulting occupancy curve with its peak marked</sub>
+</p>
+
+</details>
+
+---
+
+### Application of Sorting-5
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given `n` intervals `(xᵢ, yᵢ)`, merge all overlapping ones into a minimal set of disjoint intervals, in `O(n log n)` worst case.
+
+**Example:** `I = {(1,3), (2,6), (8,10), (7,18)} → {(1,6), (7,18)}`
+
+**Algorithm:**
+
+1. Sort intervals by start value `xᵢ` ascending — `O(n log n)`.
+2. Initialize the "current" merged interval as the first one.
+3. Scan the rest in order: if `xᵢ ≤ curY` it overlaps (or touches) the current interval, so extend `curY = max(curY, yᵢ)`; otherwise the current interval is finalized and a new one begins — `O(n)`.
+4. Push the final current interval.
+
+$$
+\text{Total} = O(n \log n) + O(n) = O(n \log n)
+$$
+
+| Property | Detail |
+|---|---|
+| Boundary convention | **Closed** intervals `[xᵢ, yᵢ]` — touching intervals like `(1,3)` and `(3,5)` merge into `(1,5)` since they share the point 3 |
+| Degenerate case | Point intervals (`xᵢ == yᵢ`) need no special-casing — the same merge condition handles them correctly |
+| Space | `O(n)` for input/output (the output can itself contain up to `n` intervals); the merge is done **in place** on the sorted array via a write-pointer that never outruns the read-pointer, so only `O(1)` extra space is used beyond the input |
+| Optimality | `Ω(n log n)` is a proven lower bound — any comparison-based interval-merge algorithm could be used to sort `n` numbers via the merge output, so no asymptotic improvement over this algorithm is possible |
+
+> [!TIP]
+> Unlike Q4 and Q6, each interval here is kept as a single `(start, end)` pair rather than split into two events — the problem only needs the union of overlapping ranges, not a running count of *how many* intervals overlap, so sorting by start and scanning is sufficient on its own.
+
+<p align="center">
+  <img src="WEEK-4/Q5/q5_application_of_sorting_5_analysis1.png" width="780" alt="Application of Sorting-5 — interval merge, part 1"/>
+  <br/>
+  <img src="WEEK-4/Q5/q5_application_of_sorting_5_analysis2.png" width="780" alt="Application of Sorting-5 — interval merge, part 2"/>
+  <br/><sub><b>Interval-merge walkthrough:</b> unsorted intervals → sorted by start → single linear pass merging overlaps into the final disjoint set</sub>
+</p>
+
+</details>
+
+---
+
+### Application of Sorting-6
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given `n` closed intervals `[lᵢ, rᵢ]`, find a point `p` covered by the largest number of intervals, in `O(n log n)`.
+
+**Example:** `S = {(10,40), (20,60), (50,90), (15,70)}` → `p = 50` (or `p = 20`) lies in 3 intervals; no point lies in all 4. The point of maximum coverage need not be unique.
+
+**Relation to Q4:** same sweep-line idea — convert each interval into a `START` (+1) and `END` (−1) event, sort, and sweep with a running count. **The crucial difference:** here endpoints are **not** guaranteed distinct — intervals are closed, so `(1,5)` and `(5,10)` both legitimately contain the point `5`.
+
+**Why the tie-break matters:** if a `START` and an `END` land on the same coordinate and the `END` were processed first, the count would momentarily drop *before* the `START`'s contribution is added — silently hiding the true maximum at that exact point. So the sort here uses a **secondary key**: at equal coordinates, all `START` events must be processed before any `END` events.
+
+**Algorithm:**
+
+1. Build `2n` events: `(lᵢ, START)` and `(rᵢ, END)`.
+2. Sort by `(coordinate, type)` — coordinate primary, `START` before `END` on ties — `O(n log n)`, implemented here with an explicit **merge sort** to guarantee worst-case (not just average-case) `O(n log n)`.
+3. Sweep, tracking `count`: `START → count++`, check against best; `END → count--` (never itself creates a new maximum, so no check is needed) — `O(n)`.
+
+$$
+\text{Total} = O(n \log n) + O(n) = O(n \log n)
+$$
+
+| Property | Detail |
+|---|---|
+| Sort algorithm | Explicit **merge sort** (not `qsort`) — guarantees `Θ(n log n)` worst case for every input, matching the problem's required bound |
+| Tie-break rule | `START (0)` sorts before `END (1)` at equal coordinates — required for correctness, not just robustness |
+| Space | `O(n)` — the `2n` events plus a same-sized `O(n)` temporary buffer used only during the merge sort (freed immediately after) |
+| Output | The maximum coverage count and the **first** coordinate that achieves it — any point achieving the max is an equally valid answer |
+
+> [!IMPORTANT]
+> Q4 and Q6 look almost identical but differ in one detail that changes the required tie-breaking: Q4's `2n` times are guaranteed distinct (numeric sort suffices), while Q6's closed-interval endpoints can coincide (a secondary sort key on event type becomes mandatory for correctness).
+
+<p align="center">
+  <img src="WEEK-4/Q6/q6_application_of_sorting_6_analysis.png" width="780" alt="Application of Sorting-6 — max coverage point sweep line"/>
+  <br/><sub><b>Max-coverage walkthrough:</b> overlapping intervals on the line → coverage-count curve from the tie-broken sweep, peak marked as p</sub>
+</p>
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -1060,10 +1392,11 @@ graph LR
 |:---:|:---:|---|
 | 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete |
 | 🟩 Light green | `O(log n)` | Sorted Array — Search (binary search); Q5 — Partition Point |
-| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin |
-| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering |
+| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1 |
+| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6 |
 | 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge |
 | 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi |
+| ⚫ Grey | `O(n^(k-1) log n)` | LAB-4 Q3 — k-Sum (super-polynomial for fixed `k ≥ 3`, but still polynomial in `n`) |
 
 </div>
 
@@ -1150,8 +1483,42 @@ gcc -O2 -std=c99 -o q6_use_of_loop_invariants_in_sorting q6_use_of_loop_invarian
 ./q6_use_of_loop_invariants_in_sorting
 ```
 
+### WEEK-4
+
+```bash
+# Application of Sorting-1
+cd WEEK-4/Q1
+gcc -O2 -std=c99 -o q1_application_of_sorting_1 q1_application_of_sorting_1.c
+./q1_application_of_sorting_1
+
+# Application of Sorting-2
+cd ../Q2
+gcc -O2 -std=c99 -o q2_application_of_sorting_2 q2_application_of_sorting_2.c
+./q2_application_of_sorting_2
+
+# Application of Sorting-3
+cd ../Q3
+gcc -O2 -std=c99 -o q3_application_of_sorting_3 q3_application_of_sorting_3.c
+./q3_application_of_sorting_3
+
+# Application of Sorting-4
+cd ../Q4
+gcc -O2 -std=c99 -o q4_application_of_sorting_4 q4_application_of_sorting_4.c
+./q4_application_of_sorting_4
+
+# Application of Sorting-5
+cd ../Q5
+gcc -O2 -std=c99 -o q5_application_of_sorting_5 q5_application_of_sorting_5.c
+./q5_application_of_sorting_5
+
+# Application of Sorting-6
+cd ../Q6
+gcc -O2 -std=c99 -o q6_application_of_sorting_6 q6_application_of_sorting_6.c
+./q6_application_of_sorting_6
+```
+
 > [!NOTE]
-> Run each WEEK-2 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -1160,7 +1527,7 @@ gcc -O2 -std=c99 -o q6_use_of_loop_invariants_in_sorting q6_use_of_loop_invarian
 | <kbd>-Wall</kbd> | Enable all standard warnings |
 | <kbd>-std=c99</kbd> | Enforce C99 standard strictly |
 | <kbd>-O2</kbd> | Level-2 optimisation — used for all timing benchmarks |
-| <kbd>-lm</kbd> | Link the math library (`math.h` — needed by Q1/Q2 LAB-1 and Q2 LAB-2) |
+| <kbd>-lm</kbd> | Link the math library (`math.h` — needed by Q1/Q2 LAB-1, Q2 LAB-2, and Q1/Q2 LAB-3) |
 
 ### Input Reference
 
@@ -1174,6 +1541,12 @@ gcc -O2 -std=c99 -o q6_use_of_loop_invariants_in_sorting q6_use_of_loop_invarian
 | LAB-1 | Q6 | Element count, then that many integers |
 | LAB-2 | Q1–Q3 | **None** — all parameters hardcoded in each benchmark driver |
 | LAB-3 | Q1–Q6 | Expected formats vary (refer to source code for details) |
+| LAB-4 | Q1 | `n`, then `n` pairs as `<number> <R\|B\|Y>`, already sorted by number |
+| LAB-4 | Q2 | `n`, then `n` elements of `S1`, then `n` elements of `S2`, then target `x` |
+| LAB-4 | Q3 | `n`, then `n` distinct integers of `S`, then `k`, then target `T` |
+| LAB-4 | Q4 | `n`, then `n` entry times `aᵢ`, then `n` exit times `bᵢ` |
+| LAB-4 | Q5 | `n`, then `n` intervals as `"x y"` pairs (`x ≤ y`) |
+| LAB-4 | Q6 | `n`, then `n` intervals as `"l r"` pairs (`l ≤ r`); `n = 0` is accepted |
 
 ---
 
@@ -1213,6 +1586,18 @@ gcc -O2 -std=c99 -o q6_use_of_loop_invariants_in_sorting q6_use_of_loop_invarian
 | Q4 — Strassen's Matrix | `O(n^2.81)` | `O(n^2.81)` | `O(n^2)` |
 | Q5 — Pattern Matrix | `O(n^2)` | `O(n^2)` | `O(n^2)` |
 | Q6 — Selection Sort | `Θ(n^2)` | `Θ(n^2)` | `O(1)` |
+
+### LAB-4
+
+| Question | Time | Space |
+|:---:|:---:|:---:|
+| Application of Sorting-1 | `O(n)` | `O(1)` |
+| Application of Sorting-2 | `O(n log n)` | `O(1)` |
+| Application of Sorting-3 | `O(n^(k-1) log n)` | `O(k)` |
+| Application of Sorting-4 | `O(n log n)` | `O(n)` |
+| Application of Sorting-5 | `O(n log n)` | `O(n)`* |
+| Application of Sorting-6 | `O(n log n)` | `O(n)` |
+
 
 </div>
 
@@ -1254,6 +1639,20 @@ gcc -O2 -std=c99 -o q6_use_of_loop_invariants_in_sorting q6_use_of_loop_invarian
 - **Q1, Q3, Q4, Q5, Q6** all generate data and use python plotting scripts (e.g., `q1_binary_vs_ternary_search_graph.py`) to generate the corresponding `.png` graphs representing their empirical analysis. You will need `python` with `matplotlib` to reproduce the graphs from the csv outputs.
 - **Q4 & Q5** allocate contiguous memory blocks or 2D array blocks via `malloc` and must carefully `free` memory after completion, especially when matrices reach larger bounds where stack memory would overflow.
 - **Q6** features an additional `pseudocode.txt` file demonstrating the structural loop invariants validation logic prior to implementation.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-4 Notes</strong></summary>
+
+<br/>
+
+- Every WEEK-4 program pairs an `_analysis.png` (a schematic walkthrough of the algorithm on a small example) with a `_graph.png` (empirical time growth vs input size); **Q5** additionally has two `_analysis` images covering both the sort and merge phases separately.
+- **Q1** uses a singly linked list, not an array, as its input representation — this is the deliberate design choice that makes `O(1)` extra space achievable for an `O(n)` stable 3-way sort.
+- **Q3**'s complexity is stated for **fixed `k`**; the driver validates `1 ≤ k ≤ n` before running and range-checks the target sum against `INT_MIN`/`INT_MAX` before any narrowing cast, to avoid implementation-defined truncation bugs.
+- **Q4** and **Q6** both use the sweep-line (event) technique, but only **Q6** needs a secondary tie-breaking sort key (`START` before `END` on equal coordinates) — Q4's entry/exit times are guaranteed distinct by the problem statement, while Q6's closed-interval endpoints can legitimately coincide.
+- **Q6** implements its own explicit merge sort for the event list (rather than `qsort`) specifically to guarantee the required `O(n log n)` bound holds in the **worst case**, not just on average.
+- **Q2, Q3, Q4, Q5, Q6** allocate their working arrays with `malloc` and free them before exit; **Q1**'s nodes are freed via `free_list()` after validation.
 
 </details>
 
