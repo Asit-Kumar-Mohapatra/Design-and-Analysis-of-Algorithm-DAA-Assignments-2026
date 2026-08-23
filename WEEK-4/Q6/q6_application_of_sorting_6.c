@@ -115,25 +115,7 @@ static int event_less(Event a, Event b) {
     return a.type < b.type;
 }
 
-/*
- * WHY MERGE SORT INSTEAD OF qsort:
- *   The C standard does not specify WHICH algorithm qsort() must use,
- *   or bound its worst-case complexity -- only that it sorts correctly.
- *   Most C libraries implement it as an introsort/quicksort variant,
- *   which is O(n log n) on average but can degrade to O(n^2) on
- *   adversarial or pathological input orderings. Since the question
- *   explicitly asks for O(n log n) WORST-CASE, relying on qsort leaves
- *   that guarantee resting on library-implementation behavior rather
- *   than the algorithm itself.
- *
- *   Merge sort's O(n log n) bound holds for EVERY input, with no
- *   adversarial case -- it depends only on n, not on the data. The
- *   trade-off is a temporary O(n) auxiliary buffer during the sort
- *   (merge sort is not in-place), which does not change the overall
- *   space complexity class: the program already needs O(n) for the
- *   event list itself, and this adds another same-sized O(n) buffer,
- *   not a new asymptotic order of space.
- */
+
 static void merge_events(Event *arr, Event *temp, int left, int mid, int right) {
     int i = left, j = mid + 1, k = left;
     while (i <= mid && j <= right) {
@@ -155,12 +137,7 @@ static void merge_sort_recursive(Event *arr, Event *temp, int left, int right) {
     merge_events(arr, temp, left, mid, right);
 }
 
-/*
- * merge_sort_events: sorts `arr[0..n-1]` by event_less(), guaranteed
- * O(n log n) WORST CASE (recursion depth O(log n), O(n) work per
- * level -> O(n log n) total, independent of input arrangement).
- * Space: O(n) auxiliary (the `temp` buffer), freed before returning.
- */
+
 static void merge_sort_events(Event *arr, int n) {
     if (n <= 1) return;
     Event *temp = (Event *)malloc((size_t)n * sizeof(Event));
@@ -169,22 +146,6 @@ static void merge_sort_events(Event *arr, int n) {
     free(temp);
 }
 
-/*
-
- * find_max_coverage_point:
- *   Given `l[0..n-1]` and `r[0..n-1]` (left/right endpoints, closed
- *   intervals, l[i] <= r[i]), finds the maximum number of intervals
- *   that simultaneously contain some point, and one point that
- *   achieves it.
- *
- *   Writes the maximum count into *out_max_count and the point into
- *   *out_point. For n == 0, writes 0 / 0 (no intervals to cover).
- *
- *   Time  : O(n log n) WORST CASE, guaranteed (merge sort -- see above).
- *   Space : O(n) for the event list + O(n) temporary merge-sort buffer
- *           (freed once sorting completes) -- still O(n) overall, not
- *           a higher complexity class.
- */
 void find_max_coverage_point(const long long *l, const long long *r, int n,
                               int *out_max_count, long long *out_point) {
     if (n == 0) { *out_max_count = 0; *out_point = 0; return; }
