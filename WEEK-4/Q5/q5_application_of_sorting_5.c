@@ -99,39 +99,6 @@ static int cmp_interval(const void *a, const void *b) {
     return (xa > xb) - (xa < xb);
 }
 
-/*
- * merge_intervals:
- *   Given `n` intervals in `arr` (unsorted), sorts and merges all
- *   overlapping / touching intervals IN PLACE, overwriting the front
- *   of `arr` itself with the merged result. Returns the number of
- *   merged intervals (<= n); only arr[0 .. return_value-1] are valid
- *   after the call.
- *
- *   WHY THIS IS SAFE:
- *     We maintain a `write` index (the last finalized merged interval)
- *     and a `read` index `i` scanning forward. `write` is incremented
- *     at most once per iteration of `i`, and starts equal to `i`'s
- *     starting point, so the invariant `write <= i` holds at all
- *     times. That means whenever we write to arr[write], either
- *     write == i (overwriting the very slot we just read -- harmless)
- *     or write < i (overwriting an already-consumed earlier slot --
- *     also harmless, since a finalized merged interval is never read
- *     again). Hence no unread input data is ever clobbered.
- *
- *   NOTE ON TIE ORDER: when two intervals share the same start value
- *   x_i, qsort does not guarantee which one comes first (qsort is not
- *   required to be stable). This does not affect correctness here: the
- *   merge step always takes curY = max(curY, y_i) across every interval
- *   touching the current merged run, so the final merged end value is
- *   the same regardless of which same-start interval was visited first.
- *   A secondary sort key is therefore unnecessary for correctness -- it
- *   would only add determinism to an ordering that never affects the
- *   output.
- *
- *   Time  : O(n log n)  -- dominated by qsort.
- *   Space : O(1) additional -- no second array is allocated; qsort
- *           itself sorts arr in place.
- */
 int merge_intervals(Interval *arr, int n) {
     if (n == 0) return 0;
 
@@ -189,10 +156,6 @@ int main(void) {
 
     Interval *arr = read_intervals(n);
 
-    /* Validate x_i <= y_i. Point intervals (x_i == y_i) are accepted as
-     * valid degenerate closed intervals -- the problem statement never
-     * requires strict inequality, and merge_intervals already handles
-     * them correctly with no special-casing (see note above). */
     for (int i = 0; i < n; i++) {
         if (arr[i].x > arr[i].y) {
             fprintf(stderr, "Invalid data: start must not exceed end for interval %d\n", i + 1);
