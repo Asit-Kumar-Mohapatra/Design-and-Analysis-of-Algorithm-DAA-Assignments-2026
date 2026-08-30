@@ -127,8 +127,8 @@ timeline
 |:---:|:---|:---:|:---:|:---:|
 | [**LAB-1**](WEEK-1) | Asymptotic Ordering, Randomized Simulations & Divide-and-Conquer | 6 | 29-07-2026 | ✅ Done |
 | [**LAB-2**](WEEK-2) | Dictionary Operations, Merge Sort Variants & k-Way Merging | 3 | 05-08-2026 | ✅ Done |
-| [**LAB-3**](WEEK-3) | Search Algorithms, Divide and Conquer & Loop Invariants | 6 | 11-08-2026 | ✅ Done |
-| [**LAB-4**](WEEK-4) | Applications of Sorting — Sweep-Line, k-Sum & Interval Merging | 6 | 18-08-2026 | ✅ Done |
+| [**LAB-3**](WEEK-3) | Search Algorithms, Divide and Conquer & Loop Invariants | 6 | 12-08-2026 | ✅ Done |
+| [**LAB-4**](WEEK-4) | Applications of Sorting — Sweep-Line, k-Sum & Interval Merging | 6 | 19-08-2026 | ✅ Done |
 | [**LAB-5**](WEEK-5) | Order Statistics & Optimized Sorting Algorithms | 4 | 26-08-2026 | ✅ Done |
 
 </div>
@@ -836,7 +836,7 @@ vary_n,64,6400,67.336100,22.175167   ← both scale linearly in n
 
 ## 🚀 LAB-3 — Divide-and-Conquer & Search Algorithms
 
-**Date:** 11-08-2026 &nbsp;|&nbsp; **Total Questions:** 6
+**Date:** 12-08-2026 &nbsp;|&nbsp; **Total Questions:** 6
 
 ### LAB-3 — Overview Map
 
@@ -1112,7 +1112,7 @@ $$
 
 ## 🚀 LAB-4 — Applications of Sorting
 
-**Date:** 18-08-2026 &nbsp;|&nbsp; **Total Questions:** 6
+**Date:** 19-08-2026 &nbsp;|&nbsp; **Total Questions:** 6
 
 ### LAB-4 — Overview Map
 
