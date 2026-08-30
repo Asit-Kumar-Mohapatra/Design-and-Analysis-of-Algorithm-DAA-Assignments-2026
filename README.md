@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-4-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-5-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -80,6 +80,11 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Application of Sorting-4](#application-of-sorting-4)
   - [Application of Sorting-5](#application-of-sorting-5)
   - [Application of Sorting-6](#application-of-sorting-6)
+- [🚀 LAB-5 Overview](#-lab-5--order-statistics--optimized-sorting-algorithms)
+  - [Q1 — Finding the Median](#q1--finding-the-median)
+  - [Q2 — Finding the K-th Smallest Element](#q2--finding-the-k-th-smallest-element)
+  - [Q3 — Quick Sort](#q3--quick-sort)
+  - [Q4 — Heap Sort](#q4--heap-sort)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -103,12 +108,15 @@ timeline
     August 2026 : LAB-2 Submitted  ·  05-08-2026
                 : 3 Questions
                 : Dictionary Operations · Merge Sort Variants · k-Way Merging
-                : LAB-3 Submitted  ·  11-08-2026
+                : LAB-3 Submitted  ·  12-08-2026
                 : 6 Questions
                 : Search Algorithms · Divide and Conquer · Loop Invariants
-                : LAB-4 Submitted  ·  18-08-2026
+                : LAB-4 Submitted  ·  19-08-2026
                 : 6 Questions
                 : Applications of Sorting · Sweep-Line · Interval Merging
+                : LAB-5 Submitted  ·  26-08-2026
+                : 4 Questions
+                : Order Statistics · Median of Medians · Quick Sort · Heap Sort
 ```
 
 ### Lab Index Table
@@ -121,6 +129,7 @@ timeline
 | [**LAB-2**](WEEK-2) | Dictionary Operations, Merge Sort Variants & k-Way Merging | 3 | 05-08-2026 | ✅ Done |
 | [**LAB-3**](WEEK-3) | Search Algorithms, Divide and Conquer & Loop Invariants | 6 | 11-08-2026 | ✅ Done |
 | [**LAB-4**](WEEK-4) | Applications of Sorting — Sweep-Line, k-Sum & Interval Merging | 6 | 18-08-2026 | ✅ Done |
+| [**LAB-5**](WEEK-5) | Order Statistics & Optimized Sorting Algorithms | 4 | 26-08-2026 | ✅ Done |
 
 </div>
 
@@ -130,6 +139,7 @@ timeline
 - [x] **LAB-2** — Dictionary Operations, Merge Sort Variants & k-Way Merging *(3 / 3 questions)*
 - [x] **LAB-3** — Search Algorithms, Divide and Conquer & Loop Invariants *(6 / 6 questions)*
 - [x] **LAB-4** — Applications of Sorting — Sweep-Line, k-Sum & Interval Merging *(6 / 6 questions)*
+- [x] **LAB-5** — Order Statistics & Optimized Sorting Algorithms *(4 / 4 questions)*
 
 ---
 
@@ -234,6 +244,31 @@ timeline
         ├── 🔵 q6_application_of_sorting_6.c
         └── 🖼️  q6_application_of_sorting_6_analysis.png
                  q6_application_of_sorting_6_graph.png
+│
+└── 📁 WEEK-5/
+    ├── 🖼️  LAB-5 QUESTIONS.jpeg
+    │
+    ├── 📁 Q1/   ← Finding the Median
+    │   ├── 📄 README.md
+    │   ├── 🔵 q1_finding_median.c
+    │   └── 🖼️  median_complexity_graph.png
+    │
+    ├── 📁 Q2/   ← Finding the K-th Smallest Element
+    │   ├── 📄 README.md
+    │   ├── 🔵 q2_finding_kth_smallest_element.c
+    │   └── 🖼️  kth_smallest_graph_v2.png
+    │
+    ├── 📁 Q3/   ← Quick Sort
+    │   ├── 📄 README.md
+    │   ├── 🔵 q3_quick_sort.c
+    │   ├── 📊 random_data.csv / sorted_data.csv
+    │   └── 🖼️  complexity_analysis.png
+    │
+    └── 📁 Q4/   ← Heap Sort
+        ├── 📄 README.md
+        ├── 🔵 q4_heap_sort.c
+        ├── 📊 input.csv / sorted_output.csv
+        └── 🖼️  heap_sort_complexity.png
 ```
 
 ---
@@ -1363,6 +1398,200 @@ $$
 
 ---
 
+## 🚀 LAB-5 — Order Statistics & Optimized Sorting Algorithms
+
+**Date:** 26-08-2026 &nbsp;|&nbsp; **Total Questions:** 4
+
+### LAB-5 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-5))
+    Q1 · Finding the Median
+      Median of Medians
+        Groups of 5
+        Guaranteed O n
+      IntroSelect
+        Random pivot fast path
+        Deterministic fallback
+    Q2 · K-th Smallest Element
+      Same IntroSelect engine
+      Generalised to any rank K
+      Single selection call
+    Q3 · Quick Sort
+      Median-of-Three Pivot
+      Insertion Sort Cutoff
+      Hoare Partition
+      Explicit Stack O log n
+    Q4 · Heap Sort
+      Iterative Heapify
+      Build Heap O n
+      Extraction O n log n
+      In-place O 1 space
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Finding the Median](#q1--finding-the-median) | Median of Medians · IntroSelect | `O(n)` worst case | `O(log n)` |
+| **Q2** | [Finding the K-th Smallest Element](#q2--finding-the-k-th-smallest-element) | Median of Medians · IntroSelect | `O(n)` worst case | `O(log n)` |
+| **Q3** | [Quick Sort](#q3--quick-sort) | Median-of-Three · Hoare Partition | `O(n log n)` | `O(log n)` |
+| **Q4** | [Heap Sort](#q4--heap-sort) | Iterative Binary Max-Heap | `O(n log n)` | `O(1)` |
+
+</div>
+
+---
+
+### Q1 — Finding the Median
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Find the median of an unsorted array with a **guaranteed worst-case** `O(n)` time bound — not just `O(n)` on average.
+
+**Why average-case Quickselect isn't enough:** a randomly-pivoted Quickselect runs in `O(n)` on average, but a stream of unlucky pivot choices can still degrade it to `O(n²)`. This implementation removes that risk entirely.
+
+**Algorithm — deterministic Median of Medians as a fallback pivot source:**
+
+1. `insertionSortSmall` — sorts a fixed group of ≤ 5 elements in `O(1)`.
+2. `medianOfMedians` — splits the range into groups of 5, takes each group's median in `O(1)` via insertion sort, then **recurses** on the `n/5` medians to find the median of medians.
+3. `introSelect` — an **IntroSelect** hybrid: spends a bounded "budget" of steps trying fast randomized pivots first, then permanently switches to `medianOfMedians` pivots once the budget runs out, so a bad sequence of random pivots can never blow up the runtime.
+4. `partition3way` — a single left-to-right pass grouping elements into `[< pivot | == pivot | > pivot]`, which also correctly handles arrays containing duplicate values.
+5. `findMedianOptimized` — for odd `n`, one `introSelect` call returns the median directly. For even `n`, it makes **one** `introSelect` call for the lower-middle rank, then finds the very next element with a single extra linear scan — avoiding a second full `O(n)` selection call.
+
+**Recurrence for `medianOfMedians`:**
+
+$$
+T(n) = T(n/5) + O(n) \implies T(n) = O(n)
+$$
+
+**Why the pivot guarantee holds:** the median-of-medians pivot is provably greater than roughly 30% of the array and less than roughly 30% of it, so every fallback partition discards a constant fraction of elements — this is what bounds `introSelect` to `T(n) = T(0.7n) + O(n) = O(n)` even in the worst case.
+
+| Property | Detail |
+|---|---|
+| Time (average) | `O(n)` — random pivots usually partition close to evenly |
+| Time (worst case) | `O(n)` — **guaranteed**, unlike plain randomized Quickselect's `O(n²)` |
+| Space | `O(log n)` — recursion depth of `medianOfMedians` (log base 5 of `n`) |
+| Optimality | `Ω(n)` lower bound — any correct algorithm must inspect every element at least once |
+| Overflow guard | For even `n`, the two middle values are each divided by `2.0` **before** being summed, avoiding `int` overflow near `INT_MAX`/`INT_MIN` |
+
+> [!NOTE]
+> The same `introSelect` engine is reused unchanged in Q2 below — the median is simply the special case of "the k-th smallest element" where `k = n/2`.
+
+</details>
+
+---
+
+### Q2 — Finding the K-th Smallest Element
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Generalise Q1 to find the **K-th smallest** element (`1 ≤ K ≤ n`, user-specified) in `O(n)` guaranteed worst-case time.
+
+**Algorithm:** identical `insertionSortSmall` → `medianOfMedians` → `partition3way` → `introSelect` pipeline as Q1, except `findKthSmallest` converts the user's 1-indexed `K` into a 0-indexed target rank (`K − 1`) and makes a **single** `introSelect` call for that rank — there's no even/odd special case here, since a general k-th-smallest query only ever needs one selection call regardless of where `K` falls.
+
+$$
+\text{Time (worst case)} = O(n) \qquad \text{Space} = O(\log n)
+$$
+
+| Property | Detail |
+|---|---|
+| Input | `N`, the `N` array elements, then `K` (validated as `1 ≤ K ≤ N`) |
+| Pivot guarantee | Same as Q1 — the median-of-medians fallback discards ≥ ~30% of the array every time it's used, **for any target rank `K`**, not just the median |
+| Time (average / worst) | `O(n)` / `O(n)` — guaranteed, since plain randomized Quickselect alone is `O(n²)` worst case |
+| Space | `O(log n)` — dominated by the `medianOfMedians` recursion depth |
+| Optimality | `Ω(n)` lower bound holds for every value of `K`, not just the median, so the algorithm is asymptotically optimal across the board |
+
+> [!TIP]
+> Sorting the whole array first and indexing `arr[K-1]` would also work, but costs `O(n log n)`. Selection-based approaches like this one avoid paying for a full sort just to extract one order statistic.
+
+</details>
+
+---
+
+### Q3 — Quick Sort
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Sort `n` randomly generated elements (read from / written to CSV files) with a highly optimized Quick Sort that avoids the classic pitfalls of a naive implementation, achieving a robust **`O(n log n)`** in practice.
+
+**Optimizations stacked together:**
+
+| # | Optimization | What it fixes |
+|:---:|---|---|
+| 1 | **Median-of-Three pivot** (`median_of_three`) | Sampling first/mid/last and using their median as pivot avoids the classic `O(n²)` trigger on already-sorted, reverse-sorted, or "organ-pipe" input |
+| 2 | **Insertion Sort cutoff** (`INSERTION_THRESHOLD = 10`) | Quick Sort's per-call overhead dominates on tiny sub-arrays; switching to insertion sort below the threshold is faster there |
+| 3 | **Tail-call elimination + smaller-half recursion** | An explicit stack replaces recursive calls, and the algorithm always pushes the *larger* half while looping on the *smaller* half — this strictly bounds stack depth to `O(log n)` instead of a possible `O(n)` |
+| 4 | **Hoare partition scheme** (`hoare_partition`) | Does roughly 3× fewer swaps on average than the standard Lomuto scheme |
+| 5 | **`xorshift32` PRNG** | Replaces libc `rand()` with a faster, better-distributed generator for producing large volumes of test data |
+| 6 | **Buffered CSV I/O** (`write_csv`, 1 MB buffer) | Avoids one `fprintf`/`fscanf` call per element by batching writes through a large manual buffer, keeping I/O at `O(n)` with a low constant |
+
+**Recurrence (balanced case, thanks to median-of-three + smaller-half recursion):**
+
+$$
+T(n) = 2\,T\!\left(\frac{n}{2}\right) + O(n) \implies T(n) = O(n \log n)
+$$
+
+| Property | Detail |
+|---|---|
+| Time (average / worst) | `O(n log n)` / `O(n log n)` — median-of-three pivoting plus always recursing on the smaller half prevents the classic `O(n²)` worst case |
+| Space | `O(log n)` — explicit stack (`stack_low[64]`, `stack_high[64]`), never `O(n)` recursion |
+| Stress-test input modes | `random` (default), `sorted`, `reverse`, `duplicates` — command-line selectable, to empirically confirm the median-of-three fix holds even on adversarial inputs |
+| CLI usage | `./q3_quick_sort <N> [random\|sorted\|reverse\|duplicates]` — prompts interactively if `N` is omitted |
+| Timing | High-resolution per-platform timer: `QueryPerformanceCounter` on Windows, `clock_gettime(CLOCK_PROCESS_CPUTIME_ID)` on POSIX |
+| Verification | After sorting, a linear pass confirms `arr[i-1] ≤ arr[i]` for all `i` and prints `PASSED`/`FAILED` |
+
+> [!WARNING]
+> Even with median-of-three pivoting, Quick Sort's `O(n log n)` here is an empirically robust *practical* guarantee, not a formally airtight worst-case bound the way Heap Sort's is — adversarial inputs specifically crafted against median-of-three (rather than just sorted/reverse/duplicate data) could, in principle, still degrade performance.
+
+</details>
+
+---
+
+### Q4 — Heap Sort
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Sort `n` randomly generated elements (read from / written to CSV files) using Heap Sort, with a **guaranteed** `O(n log n)` worst case and `O(1)` extra space.
+
+**Algorithm — two phases over a binary max-heap stored implicitly in the array:**
+
+1. **Build Heap** (`heapSort`, phase 1): starting from the last internal node (`n/2 − 1`) down to the root, call `heapify` on each — this is a tight `O(n)` overall (proven via the sum-of-heights argument), *not* `O(n log n)`.
+2. **Extraction** (`heapSort`, phase 2): repeatedly swap the root (current maximum) with the last element of the shrinking heap, then re-`heapify` the root — done `n − 1` times, each costing `O(log n)`, so this phase is `O(n log n)` and **dominates** the total runtime.
+
+**Key optimization — iterative `heapify`:** the traditional recursive sift-down incurs function-call overhead and `O(log n)` stack usage. Replacing it with an iterative `while` loop removes both, which matters most at large `n`.
+
+$$
+\text{Build Heap: } O(n) \qquad + \qquad \text{Extraction: } O(n \log n) \qquad = \qquad O(n \log n) \text{ overall}
+$$
+
+| Property | Detail |
+|---|---|
+| Time (best / average / worst) | `Θ(n log n)` in all three cases — Heap Sort has no adversarial-input weak spot the way Quick Sort does |
+| Space | `O(1)` extra — entirely in-place, heap is stored implicitly in the array itself |
+| Program workflow | Prompts for `N` → generates `N` random ints (`0`–`99999`) into `input.csv` → reads them back into memory → sorts → writes `sorted_output.csv` → prints a before/after sample |
+| Empirical validation | `analyzeComplexity()` runs instrumented `heapSortCounted`/`heapifyCounted` variants over `N ∈ {1000 … 64000}`, tracking the ratio `comparisons / (N·log₂N)` — a ratio that stays roughly constant as `N` grows is the empirical signature of true `O(n log n)` growth |
+| Input validation | The main input loop rejects non-numeric or non-positive `N`, re-prompting and flushing bad `stdin` input rather than looping forever on garbage |
+
+> [!TIP]
+> Unlike Quick Sort (Q3), Heap Sort's `O(n log n)` bound is airtight for every input distribution — there is no sorted/reverse/duplicate case that can push it toward `O(n²)`. The trade-off is that Heap Sort's constant factor is typically higher in practice, and unlike Quick Sort or Merge Sort it isn't stable.
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -1392,8 +1621,8 @@ graph LR
 |:---:|:---:|---|
 | 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete |
 | 🟩 Light green | `O(log n)` | Sorted Array — Search (binary search); Q5 — Partition Point |
-| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1 |
-| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6 |
+| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case) |
+| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort |
 | 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge |
 | 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi |
 | ⚫ Grey | `O(n^(k-1) log n)` | LAB-4 Q3 — k-Sum (super-polynomial for fixed `k ≥ 3`, but still polynomial in `n`) |
@@ -1517,8 +1746,32 @@ gcc -O2 -std=c99 -o q6_application_of_sorting_6 q6_application_of_sorting_6.c
 ./q6_application_of_sorting_6
 ```
 
+### WEEK-5
+
+```bash
+# Q1 — Finding the Median
+cd WEEK-5/Q1
+gcc -O2 -std=c99 -o q1_finding_median q1_finding_median.c
+./q1_finding_median
+
+# Q2 — Finding the K-th Smallest Element
+cd ../Q2
+gcc -O2 -std=c99 -o q2_finding_kth_smallest_element q2_finding_kth_smallest_element.c
+./q2_finding_kth_smallest_element
+
+# Q3 — Quick Sort
+cd ../Q3
+gcc -O3 -march=native -std=c99 -o q3_quick_sort q3_quick_sort.c
+./q3_quick_sort <N> [random|sorted|reverse|duplicates]
+
+# Q4 — Heap Sort
+cd ../Q4
+gcc -O2 -std=c99 -o q4_heap_sort q4_heap_sort.c -lm
+./q4_heap_sort
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -1527,7 +1780,8 @@ gcc -O2 -std=c99 -o q6_application_of_sorting_6 q6_application_of_sorting_6.c
 | <kbd>-Wall</kbd> | Enable all standard warnings |
 | <kbd>-std=c99</kbd> | Enforce C99 standard strictly |
 | <kbd>-O2</kbd> | Level-2 optimisation — used for all timing benchmarks |
-| <kbd>-lm</kbd> | Link the math library (`math.h` — needed by Q1/Q2 LAB-1, Q2 LAB-2, and Q1/Q2 LAB-3) |
+| <kbd>-lm</kbd> | Link the math library (`math.h` — needed by Q1/Q2 LAB-1, Q2 LAB-2, Q1/Q2 LAB-3, and Q4 LAB-5) |
+| <kbd>-march=native</kbd> | Enables CPU-specific instruction sets — used for the highly optimized Q3 LAB-5 Quick Sort benchmark |
 
 ### Input Reference
 
@@ -1547,6 +1801,10 @@ gcc -O2 -std=c99 -o q6_application_of_sorting_6 q6_application_of_sorting_6.c
 | LAB-4 | Q4 | `n`, then `n` entry times `aᵢ`, then `n` exit times `bᵢ` |
 | LAB-4 | Q5 | `n`, then `n` intervals as `"x y"` pairs (`x ≤ y`) |
 | LAB-4 | Q6 | `n`, then `n` intervals as `"l r"` pairs (`l ≤ r`); `n = 0` is accepted |
+| LAB-5 | Q1 | `n`, then `n` integers (array elements) |
+| LAB-5 | Q2 | `n`, then `n` integers, then `k` (`1 ≤ k ≤ n`) |
+| LAB-5 | Q3 | Optional CLI args: `<N> [random\|sorted\|reverse\|duplicates]`; prompts for `N` interactively if omitted |
+| LAB-5 | Q4 | `n` — the program generates the `n` random elements itself |
 
 ---
 
@@ -1598,6 +1856,16 @@ gcc -O2 -std=c99 -o q6_application_of_sorting_6 q6_application_of_sorting_6.c
 | Application of Sorting-5 | `O(n log n)` | `O(n)`* |
 | Application of Sorting-6 | `O(n log n)` | `O(n)` |
 
+### LAB-5
+
+| Question | Best Case | Average Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|:---:|
+| Q1 — Finding the Median | `O(n)` | `O(n)` | **`O(n)`** | `O(log n)` |
+| Q2 — K-th Smallest Element | `O(n)` | `O(n)` | **`O(n)`** | `O(log n)` |
+| Q3 — Quick Sort | `O(n log n)` | `O(n log n)` | `O(n log n)`* | `O(log n)` |
+| Q4 — Heap Sort | `Θ(n log n)` | `Θ(n log n)` | `Θ(n log n)` | `O(1)` |
+
+<sub>*Achieved in practice via median-of-three pivoting + smaller-half recursion; not a formally airtight worst-case guarantee the way Heap Sort's is.</sub>
 
 </div>
 
@@ -1653,6 +1921,21 @@ gcc -O2 -std=c99 -o q6_application_of_sorting_6 q6_application_of_sorting_6.c
 - **Q4** and **Q6** both use the sweep-line (event) technique, but only **Q6** needs a secondary tie-breaking sort key (`START` before `END` on equal coordinates) — Q4's entry/exit times are guaranteed distinct by the problem statement, while Q6's closed-interval endpoints can legitimately coincide.
 - **Q6** implements its own explicit merge sort for the event list (rather than `qsort`) specifically to guarantee the required `O(n log n)` bound holds in the **worst case**, not just on average.
 - **Q2, Q3, Q4, Q5, Q6** allocate their working arrays with `malloc` and free them before exit; **Q1**'s nodes are freed via `free_list()` after validation.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-5 Notes</strong></summary>
+
+<br/>
+
+- **Q1 and Q2** share the exact same `insertionSortSmall` → `medianOfMedians` → `partition3way` → `introSelect` core — Q2 is the direct generalisation of Q1 from "find rank `n/2`" to "find any user-supplied rank `k`".
+- **Q1 and Q2**'s `introSelect` is an IntroSelect hybrid: it spends a bounded budget on fast randomized pivots first, then permanently falls back to the deterministic `medianOfMedians` pivot once that budget is exhausted — this is what upgrades plain Quickselect's average-case `O(n)` into a worst-case `O(n)` guarantee.
+- **Q3** stress-tests its own median-of-three optimization against `random`, `sorted`, `reverse`, and `duplicates` input distributions via a command-line argument, specifically to verify the classic `O(n²)` naive-Quicksort trigger (already-sorted / reverse-sorted input) no longer applies.
+- **Q3** uses a platform-adaptive high-resolution timer, matching the approach used in WEEK-2 Q3: `QueryPerformanceCounter` on Windows, `clock_gettime(CLOCK_PROCESS_CPUTIME_ID)` on POSIX.
+- **Q4**'s `analyzeComplexity()` uses instrumented, comparison-counting copies of `heapify`/`heapSort` (`heapifyCounted`/`heapSortCounted`) so the real sort used on the user's input stays at zero instrumentation overhead.
+- **Q3 and Q4** both generate their own random test data and round-trip it through CSV files (`random_data.csv`/`sorted_data.csv` for Q3, `input.csv`/`sorted_output.csv` for Q4) rather than taking pre-supplied arrays, since the goal is large-scale empirical timing rather than correctness on a specific fixed input.
+- All four WEEK-5 programs allocate their working arrays with `malloc` and free them before exit.
 
 </details>
 
