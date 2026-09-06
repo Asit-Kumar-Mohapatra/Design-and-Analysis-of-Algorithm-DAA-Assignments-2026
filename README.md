@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-5-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-6-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -117,6 +117,9 @@ timeline
                 : LAB-5 Submitted  ·  26-08-2026
                 : 4 Questions
                 : Order Statistics · Median of Medians · Quick Sort · Heap Sort
+    September 2026 : LAB-6 Submitted  ·  02-09-2026
+                   : 4 Questions
+                   : 1D/2D Array Ops · FFT Convolution · Reversal Sort
 ```
 
 ### Lab Index Table
@@ -130,6 +133,7 @@ timeline
 | [**LAB-3**](WEEK-3) | Search Algorithms, Divide and Conquer & Loop Invariants | 6 | 12-08-2026 | ✅ Done |
 | [**LAB-4**](WEEK-4) | Applications of Sorting — Sweep-Line, k-Sum & Interval Merging | 6 | 19-08-2026 | ✅ Done |
 | [**LAB-5**](WEEK-5) | Order Statistics & Optimized Sorting Algorithms | 4 | 26-08-2026 | ✅ Done |
+| [**LAB-6**](WEEK-6) | Array & Matrix Operations, FFT Convolution & Reversal Sort | 4 | 02-09-2026 | ✅ Done |
 
 </div>
 
@@ -140,6 +144,7 @@ timeline
 - [x] **LAB-3** — Search Algorithms, Divide and Conquer & Loop Invariants *(6 / 6 questions)*
 - [x] **LAB-4** — Applications of Sorting — Sweep-Line, k-Sum & Interval Merging *(6 / 6 questions)*
 - [x] **LAB-5** — Order Statistics & Optimized Sorting Algorithms *(4 / 4 questions)*
+- [x] **LAB-6** — Array & Matrix Operations, FFT Convolution & Reversal Sort *(4 / 4 questions)*
 
 ---
 
@@ -269,6 +274,29 @@ timeline
         ├── 🔵 q4_heap_sort.c
         ├── 📊 input.csv / sorted_output.csv
         └── 🖼️  heap_sort_complexity.png
+│
+└── 📁 WEEK-6/
+    ├── 📑 2026_Week6_DAA_Lab_06.pdf
+    │
+    ├── 📁 Q1/   ← 1D Array Operations
+    │   ├── 📄 README.md
+    │   ├── 🔵 q1_1D_array_operations_and_their_complexities.c
+    │   └── 🖼️  complexity_analysis.png
+    │
+    ├── 📁 Q2/   ← 2D Square Matrix Operations
+    │   ├── 📄 README.md
+    │   ├── 🔵 q2_2D_square_matrix_operations_and_their_complexities.c
+    │   └── 🖼️  matrix_complexity_analysis.png
+    │
+    ├── 📁 Q3/   ← Convolution Operation
+    │   ├── 📄 README.md
+    │   ├── 🔵 q3_convolution_operation_on_vectors_of_size_n.c
+    │   └── 🖼️  convolution_complexity_analysis.png
+    │
+    └── 📁 Q4/   ← Sorting via Reversal Procedure
+        ├── 📄 README.md
+        ├── 🔵 q4_sorting_via_reversal_procedure.c
+        └── 🖼️  reversal_sort_complexity.png
 ```
 
 ---
@@ -1592,6 +1620,165 @@ $$
 
 ---
 
+## 🚀 LAB-6 — Array & Matrix Operations, FFT Convolution & Reversal Sort
+
+**Date:** 02-09-2026 &nbsp;|&nbsp; **Total Questions:** 4
+
+### LAB-6 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-6))
+    Q1 · 1D Array Ops
+      Maximum Element
+      First & Second Largest
+      Mean & Median
+      Mode & Remove Dups
+      Reverse & Partition
+    Q2 · 2D Matrix Ops
+      Add / Subtract
+      Multiplication
+      Zero / Symmetric
+      Determinant LU
+      Transpose / Eigen
+    Q3 · Convolution
+      FFT Cooley-Tukey
+      O n log n Time
+      Polynomial Multiply
+    Q4 · Reversal Sort
+      Algo A: O n Reversals
+      Algo B: O n log² n Cost
+      Merge Sort + Rotate
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [1D Array Operations](#q1--1d-array-operations-and-their-complexities) | Multiple (Scan, Sort, Select) | `O(n)` / `O(n log n)` | `O(1)` / `O(log n)` |
+| **Q2** | [2D Square Matrix Operations](#q2--2d-square-matrix-operations-and-their-complexities) | Multiple (LU, Jacobi, Power) | `O(n²)` / `O(n³)` | `O(1)` / `O(n²)` |
+| **Q3** | [Convolution Operation](#q3--convolution-operation-on-vectors-of-size-n) | FFT (Divide & Conquer) | `O(n log n)` | `O(n)` |
+| **Q4** | [Sorting via Reversal Procedure](#q4--sorting-via-the-reversal-procedure) | Selection / Merge Sort | `O(n)` / `O(n log² n)` | `O(1)` / `O(log n)` |
+
+</div>
+
+---
+
+### Q1 — 1D Array Operations and Their Complexities
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Implement nine fundamental operations on a 1D integer array and analyze their worst-case optimal complexities.
+
+**Operations Covered:**
+
+| Operation | Worst-Case Time | Algorithm Used |
+|---|:---:|---|
+| **Maximum Element** | `Θ(n)` | Linear scan, running max |
+| **First & Second Largest** | `Θ(n)` | Single pass, two trackers |
+| **Mean** | `Θ(n)` | Single accumulation pass |
+| **Median** | `Θ(n)` | Deterministic Median-of-Medians (BFPRT) |
+| **Standard Deviation** | `Θ(n)` | Two sequential linear passes |
+| **Mode** | `Θ(n log n)` | Sort + linear run-length scan |
+| **Remove Duplicates** | `Θ(n log n)` | Sort + in-place compaction |
+| **Reverse Array** | `Θ(n)` | Two-pointer in-place swap |
+| **Partition Around Pivot** | `Θ(n)` | Single sweep with slot pointer |
+
+> [!TIP]
+> The Median operation uses the deterministic Median-of-Medians algorithm, which guarantees a worst-case `O(n)` time bound, unlike randomized Quickselect which can degrade to `O(n²)`.
+
+</details>
+
+---
+
+### Q2 — 2D Square Matrix Operations and Their Complexities
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Implement seven fundamental operations on `n × n` square matrices of `double` values and analyze their worst-case optimal complexities. The matrix is stored as a flattened 1D array for optimal cache locality.
+
+**Operations Covered:**
+
+| Operation | Time (Worst Case) | Core Technique |
+|---|:---:|---|
+| **Addition / Subtraction** | `Θ(n²)` | Single linear pass |
+| **Multiplication** | `O(n³)` | Optimized `i-k-j` loop order for cache locality |
+| **Is Zero Matrix?** | `O(n²)` | Linear scan with early exit |
+| **Is Symmetric Matrix?** | `O(n²)` | Double loop with early exit |
+| **Determinant** | `O(n³)` | Gaussian Elimination with Partial Pivoting (LU) |
+| **Transpose In-Place** | `Θ(n²)` | Element swapping over upper triangle |
+| **Eigenvalues / Eigenvectors** | `O(k·n³)` / `O(k·n²)` | Jacobi Algorithm / Power Iteration |
+
+> [!NOTE]
+> The matrix multiplication uses the `i-k-j` loop order instead of `i-j-k`. This ensures the inner loop accesses elements sequentially (stride-1), dramatically improving cache performance.
+
+</details>
+
+---
+
+### Q3 — Convolution Operation on Vectors of Size n
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Compute the convolution of two integer vectors (equivalent to polynomial multiplication) using an `O(n log n)` Divide and Conquer algorithm based on the Fast Fourier Transform (FFT).
+
+**Algorithm — Cooley-Tukey FFT:**
+
+1. Zero-pad the input vectors to the next power of 2 length `N`.
+2. Compute the FFT of both vectors to evaluate them at the roots of unity — `O(N log N)`.
+3. Pointwise multiply the results — `O(N)`.
+4. Compute the Inverse FFT of the result to interpolate back to coefficients — `O(N log N)`.
+
+$$
+\text{Total Time} = O(n \log n) \qquad \text{Space} = O(n)
+$$
+
+> [!WARNING]
+> The naive double-loop approach costs `O(n²)`. For input vectors of length 10,000, the FFT approach performs roughly 130,000 operations compared to 100 million for the naive approach — over a 750× speedup.
+
+</details>
+
+---
+
+### Q4 — Sorting via the Reversal Procedure
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Sort a permutation of `{1, ..., n}` using only the `reverse(p, i, j)` operation, minimizing either the number of reversals or the total cost (sum of reversal lengths).
+
+**Two Approaches:**
+
+| Algorithm | Optimizes | Bound | Strategy |
+|---|---|---|---|
+| **Algorithm A** | Number of reversals | `O(n)` | Selection Sort by Reversal. Places elements one at a time using at most one reversal per element. Total cost can be `O(n²)`. |
+| **Algorithm B** | Total cost (sum of lengths) | `O(n \log^2 n)` | Merge Sort + Rotation-Reversal. Uses the 3-reversal rotation trick to perform in-place merging. |
+
+**The 3-Reversal Rotation Trick:**
+To rotate blocks `A` and `B` into `B A`:
+1. Reverse `A`
+2. Reverse `B`
+3. Reverse the whole combined block.
+`reverse( rev(A) ∥ rev(B) ) = B A`
+
+> [!IMPORTANT]
+> Algorithm A minimizes the number of `reverse()` calls to strictly $\le n-1$, but an adversary can force the total length of those reversals to be quadratic. Algorithm B guarantees a sub-quadratic total work cost of $O(n \log^2 n)$.
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -1770,8 +1957,35 @@ gcc -O2 -std=c99 -o q4_heap_sort q4_heap_sort.c -lm
 ./q4_heap_sort
 ```
 
+### WEEK-6
+
+```bash
+# Q1 — 1D Array Operations
+cd WEEK-6/Q1
+gcc -O2 -Wall -std=c11 q1_1D_array_operations_and_their_complexities.c -o q1 -lm
+./q1
+
+# Q2 — 2D Square Matrix Operations
+cd ../Q2
+gcc -O2 -Wall -std=c11 q2_2D_square_matrix_operations_and_their_complexities.c -lm -o q2
+./q2
+# Or run with: ./q2 demo  or  ./q2 test [N]
+
+# Q3 — Convolution Operation
+cd ../Q3
+gcc -O2 -Wall -std=c11 q3_convolution_operation_on_vectors_of_size_n.c -lm -o q3
+./q3
+# Or run with: ./q3 demo  or  ./q3 test [N]
+
+# Q4 — Sorting via Reversal Procedure
+cd ../Q4
+gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
+./reversal_sort
+# Or run with: ./reversal_sort -test
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4/WEEK-5 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -1805,6 +2019,10 @@ gcc -O2 -std=c99 -o q4_heap_sort q4_heap_sort.c -lm
 | LAB-5 | Q2 | `n`, then `n` integers, then `k` (`1 ≤ k ≤ n`) |
 | LAB-5 | Q3 | Optional CLI args: `<N> [random\|sorted\|reverse\|duplicates]`; prompts for `N` interactively if omitted |
 | LAB-5 | Q4 | `n` — the program generates the `n` random elements itself |
+| LAB-6 | Q1 | `n`, then `n` space-separated integers |
+| LAB-6 | Q2 | Interactive mode prompts for `n` and `n × n` elements; Demo/Test modes require no input / optional `N` |
+| LAB-6 | Q3 | Interactive mode prompts for vectors A and B; Demo/Test modes require no input / optional `N` |
+| LAB-6 | Q4 | Interactive mode prompts for permutation; `-test` mode requires no input |
 
 ---
 
@@ -1865,7 +2083,15 @@ gcc -O2 -std=c99 -o q4_heap_sort q4_heap_sort.c -lm
 | Q3 — Quick Sort | `O(n log n)` | `O(n log n)` | `O(n log n)`* | `O(log n)` |
 | Q4 — Heap Sort | `Θ(n log n)` | `Θ(n log n)` | `Θ(n log n)` | `O(1)` |
 
-<sub>*Achieved in practice via median-of-three pivoting + smaller-half recursion; not a formally airtight worst-case guarantee the way Heap Sort's is.</sub>
+
+### LAB-6
+
+| Question | Worst Case Time | Space |
+|:---:|:---:|:---:|
+| Q1 — 1D Array Operations | `O(n)` to `O(n log n)` | `O(1)` / `O(log n)` |
+| Q2 — 2D Matrix Operations | `O(n²)` to `O(n³)` | `O(1)` / `O(n²)` |
+| Q3 — Convolution Operation (FFT) | **`O(n log n)`** | `O(n)` |
+| Q4 — Reversal Sort | `O(n)` revs / `O(n log² n)` cost | `O(1)` / `O(log n)` |
 
 </div>
 
@@ -1936,6 +2162,18 @@ gcc -O2 -std=c99 -o q4_heap_sort q4_heap_sort.c -lm
 - **Q4**'s `analyzeComplexity()` uses instrumented, comparison-counting copies of `heapify`/`heapSort` (`heapifyCounted`/`heapSortCounted`) so the real sort used on the user's input stays at zero instrumentation overhead.
 - **Q3 and Q4** both generate their own random test data and round-trip it through CSV files (`random_data.csv`/`sorted_data.csv` for Q3, `input.csv`/`sorted_output.csv` for Q4) rather than taking pre-supplied arrays, since the goal is large-scale empirical timing rather than correctness on a specific fixed input.
 - All four WEEK-5 programs allocate their working arrays with `malloc` and free them before exit.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-6 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-6 programs** all compile with `-O2 -Wall` optimizations and mostly use C11 standard (`-std=c11`).
+- **Q2, Q3, and Q4** provide interactive, demo, and automated validation (test) modes to thoroughly verify outputs without manual data entry.
+- **Q3**'s iterative FFT provides mathematically identical results to recursive FFT but avoids function-call overhead for a better constant factor.
+- All programs dynamically allocate their structures and carefully `free` them to prevent memory leaks when processing large inputs, especially crucial for `O(n³)` matrix and `O(n log n)` FFT algorithms.
 
 </details>
 
