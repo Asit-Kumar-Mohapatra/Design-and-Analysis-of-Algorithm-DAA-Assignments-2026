@@ -1,29 +1,3 @@
-/* =====================================================================
- * 1-D ARRAY OPERATIONS AND THEIR WORST-CASE-OPTIMAL COMPLEXITIES
- * =====================================================================
- * Input representation
- * ---------------------
- * The array is a plain C `int arr[]` allocated dynamically to size n
- * (n supplied by the user at runtime) and stored in contiguous memory.
- * This is the correct choice because:
- *   - Every sub-problem (max, mean, median, mode, dedup, reverse,
- *     partition) needs random-access indexing (arr[i]) and/or in-place
- *     swapping -> a contiguous array gives O(1) access and O(1) swap,
- *     which a linked list cannot give for the selection/partition
- *     algorithms below.
- *   - "Unsorted integers" with no stated bound on value range rules out
- *     pure counting-sort/bucket tricks as the *worst-case* solution
- *     (they would only be O(n) if the value range is O(n); we do not
- *     assume that), so comparison-based / hashing-based optimal
- *     algorithms are used instead and are noted where relevant.
- *
- * Each routine below is preceded by a comment block that states:
- *   THEORETICAL LOWER BOUND, ALGORITHM USED, and WHY IT IS OPTIMAL.
- *
- * Compile:  gcc -O2 -Wall -std=c11 array_ops.c -o array_ops -lm
- * Run    :  ./array_ops
- *           (then type n, followed by n integers, at the prompts)
- * ===================================================================== */
 
 #include <stdio.h>
 #include <stdlib.h>
