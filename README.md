@@ -85,6 +85,11 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q2 — Finding the K-th Smallest Element](#q2--finding-the-k-th-smallest-element)
   - [Q3 — Quick Sort](#q3--quick-sort)
   - [Q4 — Heap Sort](#q4--heap-sort)
+- [🚀 LAB-6 Overview](#-lab-6--array--matrix-operations-fft-convolution--reversal-sort)
+  - [Q1 — 1D Array Operations and Their Complexities](#q1--1d-array-operations-and-their-complexities)
+  - [Q2 — 2D Square Matrix Operations and Their Complexities](#q2--2d-square-matrix-operations-and-their-complexities)
+  - [Q3 — Convolution Operation on Vectors of Size n](#q3--convolution-operation-on-vectors-of-size-n)
+  - [Q4 — Sorting via the Reversal Procedure](#q4--sorting-via-the-reversal-procedure)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -2083,6 +2088,7 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 | Q3 — Quick Sort | `O(n log n)` | `O(n log n)` | `O(n log n)`* | `O(log n)` |
 | Q4 — Heap Sort | `Θ(n log n)` | `Θ(n log n)` | `Θ(n log n)` | `O(1)` |
 
+<sub>*Achieved in practice via median-of-three pivoting + smaller-half recursion; not a formally airtight worst-case guarantee the way Heap Sort's is.</sub>
 
 ### LAB-6
 
