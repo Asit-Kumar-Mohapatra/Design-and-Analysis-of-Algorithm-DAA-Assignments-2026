@@ -1,5 +1,5 @@
 <div align="center">
-  
+
 <br/>
 
 # 🧮 Design and Analysis of Algorithms
@@ -2087,8 +2087,6 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 | Q2 — K-th Smallest Element | `O(n)` | `O(n)` | **`O(n)`** | `O(log n)` |
 | Q3 — Quick Sort | `O(n log n)` | `O(n log n)` | `O(n log n)`* | `O(log n)` |
 | Q4 — Heap Sort | `Θ(n log n)` | `Θ(n log n)` | `Θ(n log n)` | `O(1)` |
-
-<sub>*Achieved in practice via median-of-three pivoting + smaller-half recursion; not a formally airtight worst-case guarantee the way Heap Sort's is.</sub>
 
 ### LAB-6
 
