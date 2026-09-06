@@ -1,31 +1,3 @@
-/* =====================================================================
- * matrix_ops.c
- *
- * 2D SQUARE MATRIX OPERATIONS AND THEIR WORST-CASE COMPLEXITIES
- * ---------------------------------------------------------------------
- * Input representation chosen: a matrix is stored as a single flattened
- * 1-D array of `double` of length n*n, with element (i,j) accessed as
- * A[i*n + j]. This is the fastest and most memory-efficient layout in C:
- *   - one malloc() instead of n mallocs for a double**,
- *   - contiguous memory -> excellent cache locality (row-major scans),
- *   - no pointer-chasing overhead.
- *
- * Every routine below is already asymptotically optimal for the
- * *general* (dense, no special structure assumed) case; where a
- * mathematically faster algorithm exists (Strassen, randomized
- * determinant, etc.) it is noted in the comments together with why it
- * is not used as the default (large constant factors / numerical
- * instability / not needed for this problem size).
- *
- * Compile:      gcc -O2 -Wall -std=c11 matrix_ops.c -lm -o matrix_ops
- * Run (input):  ./matrix_ops              (prompts you for n and the
- *                                           matrix, then runs every
- *                                           operation on YOUR matrix
- *                                           and prints a worked
- *                                           explanation for each one)
- * Run demo:     ./matrix_ops demo         (fixed built-in example)
- * Run tests:    ./matrix_ops test [num_tests]   (default 30000)
- * ===================================================================== */
 
 #include <stdio.h>
 #include <stdlib.h>
