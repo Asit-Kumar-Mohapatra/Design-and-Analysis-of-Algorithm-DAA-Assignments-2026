@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-6-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-7-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -90,6 +90,14 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q2 — 2D Square Matrix Operations and Their Complexities](#q2--2d-square-matrix-operations-and-their-complexities)
   - [Q3 — Convolution Operation on Vectors of Size n](#q3--convolution-operation-on-vectors-of-size-n)
   - [Q4 — Sorting via the Reversal Procedure](#q4--sorting-via-the-reversal-procedure)
+- [🚀 LAB-7 Overview](#-lab-7--dynamic-programming--mathematical-puzzle-solvers)
+  - [Q1 — Invert the Coin Triangle](#q1--invert-the-coin-triangle)
+  - [Q2 — Super Egg Testing Experiment](#q2--super-egg-testing-experiment)
+  - [Q3 — Reve's Puzzle (4-Peg Tower of Hanoi)](#q3--reves-puzzle-4-peg-tower-of-hanoi)
+  - [Q4 — Security Switches](#q4--security-switches)
+  - [Q5 — Hitting a Moving Target](#q5--hitting-a-moving-target)
+  - [Q6 — The Best Time to be Alive](#q6--the-best-time-to-be-alive)
+  - [Q7 — Matrix Chain Multiplication](#q7--matrix-chain-multiplication)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -125,6 +133,9 @@ timeline
     September 2026 : LAB-6 Submitted  ·  02-09-2026
                    : 4 Questions
                    : 1D/2D Array Ops · FFT Convolution · Reversal Sort
+                   : LAB-7 Submitted  ·  09-09-2026
+                   : 7 Questions
+                   : Dynamic Programming · Puzzle Solvers · Sweep-Line · MCM
 ```
 
 ### Lab Index Table
@@ -139,6 +150,7 @@ timeline
 | [**LAB-4**](WEEK-4) | Applications of Sorting — Sweep-Line, k-Sum & Interval Merging | 6 | 19-08-2026 | ✅ Done |
 | [**LAB-5**](WEEK-5) | Order Statistics & Optimized Sorting Algorithms | 4 | 26-08-2026 | ✅ Done |
 | [**LAB-6**](WEEK-6) | Array & Matrix Operations, FFT Convolution & Reversal Sort | 4 | 02-09-2026 | ✅ Done |
+| [**LAB-7**](WEEK-7) | Dynamic Programming & Mathematical Puzzle Solvers | 7 | 09-09-2026 | ✅ Done |
 
 </div>
 
@@ -150,6 +162,7 @@ timeline
 - [x] **LAB-4** — Applications of Sorting — Sweep-Line, k-Sum & Interval Merging *(6 / 6 questions)*
 - [x] **LAB-5** — Order Statistics & Optimized Sorting Algorithms *(4 / 4 questions)*
 - [x] **LAB-6** — Array & Matrix Operations, FFT Convolution & Reversal Sort *(4 / 4 questions)*
+- [x] **LAB-7** — Dynamic Programming & Mathematical Puzzle Solvers *(7 / 7 questions)*
 
 ---
 
@@ -302,6 +315,44 @@ timeline
         ├── 📄 README.md
         ├── 🔵 q4_sorting_via_reversal_procedure.c
         └── 🖼️  reversal_sort_complexity.png
+│
+└── 📁 WEEK-7/
+    ├── 📑 2026_Week7_DAA_Lab_07.pdf
+    │
+    ├── 📁 Q1/   ← Invert the Coin Triangle
+    │   ├── 📄 README.md
+    │   ├── 🔵 q1_invert_the_coin_triangle.c
+    │   └── 🖼️  coin_triangle_complexity_analysis.png
+    │
+    ├── 📁 Q2/   ← Super Egg Testing Experiment
+    │   ├── 📄 README.md
+    │   ├── 🔵 q2_super_egg_testing_experiment.c
+    │   └── 🖼️  egg_drop_complexity_analysis.png
+    │
+    ├── 📁 Q3/   ← Reve's Puzzle (4-Peg Tower of Hanoi)
+    │   ├── 📄 README.md
+    │   ├── 🔵 q3_reves_puzzle.c
+    │   └── 🖼️  reves_puzzle_analysis.png
+    │
+    ├── 📁 Q4/   ← Security Switches (Chinese Rings)
+    │   ├── 📄 README.md
+    │   ├── 🔵 q4_security_switches.c
+    │   └── 🖼️  security_switches_complexity_analysis.png
+    │
+    ├── 📁 Q5/   ← Hitting a Moving Target
+    │   ├── 📄 README.md
+    │   ├── 🔵 q5_hitting_a_moving_target.c
+    │   └── 🖼️  time_complexity_analysis.png
+    │
+    ├── 📁 Q6/   ← Best Time to be Alive
+    │   ├── 📄 README.md
+    │   ├── 🔵 q6_best_time_to_be_alive.c
+    │   └── 🖼️  complexity_analysis.png
+    │
+    └── 📁 Q7/   ← Matrix Chain Multiplication
+        ├── 📄 README.md
+        ├── 🔵 q7_matrix_chain_multiplication.c
+        └── 🖼️  mcm_complexity_analysis.png
 ```
 
 ---
@@ -1784,6 +1835,309 @@ To rotate blocks `A` and `B` into `B A`:
 
 ---
 
+## 🚀 LAB-7 — Dynamic Programming & Mathematical Puzzle Solvers
+
+**Date:** 09-09-2026 &nbsp;|&nbsp; **Total Questions:** 7
+
+### LAB-7 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-7))
+    Q1 · Invert Coin Triangle
+      O 1 Closed-Form
+      OEIS A007997 Validated
+    Q2 · Super Egg Drop
+      Optimized DP
+      O E × log F
+    Q3 · Reve's Puzzle
+      Frame-Stewart Algorithm
+      O 2^sqrt 2n Moves
+    Q4 · Security Switches
+      Chinese Rings
+      O 1 Bit-Shift Formula
+    Q5 · Moving Target
+      Parity Sweep O n
+      DP Verification Engine
+    Q6 · Best Time Alive
+      Sweep-Line O n log n
+      Event Transformation
+    Q7 · Matrix Chain Mult
+      Interval DP O n^3
+      Optimal Parenthesization
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Invert the Coin Triangle](#q1--invert-the-coin-triangle) | O(1) Closed-Form Math | `O(1)` | `O(1)` |
+| **Q2** | [Super Egg Testing Experiment](#q2--super-egg-testing-experiment) | Optimized Dynamic Programming | `O(E × log F)` | `O(E)` |
+| **Q3** | [Reve's Puzzle (4-Peg Tower of Hanoi)](#q3--reves-puzzle-4-peg-tower-of-hanoi) | Frame-Stewart Algorithm + DP | `O(n)` build · `Θ(2^√(2n))` gen | `O(n)` |
+| **Q4** | [Security Switches](#q4--security-switches) | Chinese Rings · Closed-Form | `O(1)` | `O(1)` |
+| **Q5** | [Hitting a Moving Target](#q5--hitting-a-moving-target) | Parity-Based Deterministic Sweep | `O(n)` | `O(n)` |
+| **Q6** | [The Best Time to be Alive](#q6--the-best-time-to-be-alive) | Sweep-Line · Event Transformation | `O(n log n)` | `O(n)` |
+| **Q7** | [Matrix Chain Multiplication](#q7--matrix-chain-multiplication) | Interval Dynamic Programming | `O(n³)` | `O(n²)` |
+
+</div>
+
+---
+
+### Q1 — Invert the Coin Triangle
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an equilateral triangle of side `n` built from `T(n) = n(n+1)/2` closely packed coins, find the **minimum number of moves** (single-coin slides to empty lattice positions) required to turn it completely upside down.
+
+**Core insight — maximize overlap:** The optimal strategy keeps as many coins as possible in their current positions by finding the maximum overlap between the original upright triangle and the target inverted triangle. Every coin in the overlap region is already in its final position.
+
+$$
+\text{minimum\_moves}(n) = \text{Total Coins} - \text{Maximum Overlap}
+$$
+
+By sliding the inverted triangle down by $k = \lfloor(n-1)/3\rfloor$ rows, the overlap is maximized. The problem reduces to a compact closed-form:
+
+$$
+\text{minimum\_moves}(n) = \left\lfloor \frac{n(n+1)}{6} \right\rfloor
+$$
+
+| Property | Detail |
+|---|---|
+| Algorithm | O(1) closed-form — single arithmetic expression |
+| Validation | Cross-checked against an O(n) row-by-row simulation loop and precomputed OEIS A007997 ground-truth values |
+| Graph | `coin_triangle_complexity_analysis.png` — execution time flat to zero even for `n` up to `10¹²` |
+
+| Metric | Complexity |
+|---|:---:|
+| **Time** | `O(1)` — single arithmetic evaluation regardless of `n` |
+| **Space** | `O(1)` — only a few primitive variables |
+
+> [!TIP]
+> The profound insight is that you never need to simulate individual coin movements. The closed-form `⌊n(n+1)/6⌋` emerges directly from the algebraic simplification of the overlap sum — transforming an apparently combinatorial puzzle into pure arithmetic.
+
+</details>
+
+---
+
+### Q2 — Super Egg Testing Experiment
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given `E` identical eggs and a building with `F` floors, find the **minimum number of drops** that *guarantees* (in the worst case) identifying the highest floor from which an egg can be dropped without breaking.
+
+**Key optimization — invert the question:** Instead of asking `dp(e, f)` = min drops for `e` eggs and `f` floors (naïve `O(E × F²)`), the optimized approach asks:
+
+> **"With `e` eggs and `d` drops, what is the maximum number of floors I can fully resolve?"**
+
+Let this be `maxFloors(e, d)`. If we drop an egg:
+- **It Breaks:** `e−1` eggs, `d−1` drops → explore floors **below**
+- **It Survives:** `e` eggs, `d−1` drops → explore floors **above**
+
+$$
+\text{maxFloors}(e,\, d) = \text{maxFloors}(e-1,\, d-1) + \text{maxFloors}(e,\, d-1) + 1
+$$
+
+The algorithm increments `d = 1, 2, 3, …` until `maxFloors(E, d) ≥ F`. The current `d` is the guaranteed minimum.
+
+| Property | Detail |
+|---|---|
+| Time | `O(E × log F)` — `d*` grows logarithmically with `F` |
+| Space | `O(E)` — single 1D array updated in-place right-to-left |
+| Validation | Rigorous suite cross-checks against naïve `O(E × F²)` DP for small test cases |
+| Graph | `egg_drop_complexity_analysis.png` — logarithmic scaling of drops vs. floors confirmed empirically |
+
+> [!NOTE]
+> The naïve DP approach costs `O(E × F²)` and is far too slow for large buildings (e.g., `F = 100,000`). The optimized `maxFloors` inversion reduces this to `O(E × log F)`, handling hundreds of thousands of floors in milliseconds.
+
+</details>
+
+---
+
+### Q3 — Reve's Puzzle (4-Peg Tower of Hanoi)
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Move `n` disks from a starting peg to a destination peg using **4 pegs** (instead of the classic 3), following the rule that a larger disk may never sit on a smaller one. Find and generate the **minimum number of moves** (famously 33 for `n = 8`).
+
+**Algorithm — Frame-Stewart:**
+
+1. Pick an **optimal split point** `k` (`1 ≤ k < n`).
+2. Move the top `k` disks to a spare peg using all 4 pegs → `M(k)` moves.
+3. Move the remaining `(n−k)` disks to the destination using only 3 pegs → `2^(n−k) − 1` moves.
+4. Move the `k` disks from the spare peg to the destination using all 4 pegs → `M(k)` moves.
+
+$$
+M(n) = \min_{1 \le k < n} \{\, 2M(k) + 2^{(n-k)} - 1 \}
+$$
+
+| Metric | 3-Peg Hanoi | Reve's (4-Peg) |
+|---|:---:|:---:|
+| **Moves** | `2ⁿ − 1` | `M(n)` ← Frame-Stewart |
+| **Growth** | `O(2ⁿ)` | `O(2^√(2n))` ← sub-exponential |
+
+| Property | Detail |
+|---|---|
+| DP table build | `O(n)` — only checks a bounded window of ≤ 63 previous `k` candidates per step |
+| Move generation | `Θ(2^√(2n))` — proportional to the actual number of moves |
+| Space | `O(n)` — `dp[]` and `bestK[]` lookup tables |
+| Validation | Peg simulation engine verifies legality of every generated move live |
+| Graph | `reves_puzzle_analysis.png` — sub-exponential curve bends noticeably slower than strict `2ⁿ` |
+
+> [!IMPORTANT]
+> Unlike the standard 3-peg Hanoi which scales purely as `O(2ⁿ)`, Reve's Puzzle scales at `O(2^√(2n))`. The extra 4th peg provides a profound mathematical advantage, reducing the problem's complexity class entirely.
+
+</details>
+
+---
+
+### Q4 — Security Switches
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given `n` interlocked switches (all initially ON), find the **minimum number of toggle moves** to turn all switches OFF under the Chinese Rings constraint: switch `i` (where `i < n`) may be toggled only if switch `i+1` is ON and every switch to the right of `i+1` is completely OFF.
+
+**Derivation — Chinese Rings / Baguenaudier:** The state transitions form a reflected binary Gray code path. Freeing switch `n−1` requires solving the `(n−2)` sub-puzzle twice:
+
+$$
+M(n) = M(n-1) + 2M(n-2) + 1 \qquad M(1)=1,\; M(2)=2
+$$
+
+Solving the characteristic equation $x^2 - x - 2 = 0$ yields roots `2` and `−1`, giving the closed form:
+
+$$
+M(n) = \left\lfloor \frac{2^{n+1}}{3} \right\rfloor
+$$
+
+| Property | Detail |
+|---|---|
+| Time | `O(1)` — single bit-shift and division |
+| Space | `O(1)` — no arrays, recursion, or dynamic memory |
+| Precision | Uses `uint64_t` for `n ≤ 62`; GCC/Clang `unsigned __int128` extension for exact results up to `n = 126` |
+| Graph | `security_switches_complexity_analysis.png` — while the number of physical moves grows as `O(2ⁿ)`, the computation time to *calculate* that number stays flat at `O(1)` |
+
+> [!TIP]
+> The power of algebraic recurrence solving: while the puzzle's state space is exponentially large, we never traverse it. The closed-form integer formula `⌊2^(n+1)/3⌋` computes the answer in a single bit-shift operation.
+
+</details>
+
+---
+
+### Q5 — Hitting a Moving Target
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given `n` hiding spots in a line, a target that moves ±1 spot between shots (adversarially), design a **fixed deterministic sequence** of shots that is guaranteed to hit the target regardless of its starting position or movement strategy.
+
+**Key insight — parity:** The target's position flips parity (odd/even) on every move. If the starting parity is known, the target's parity at every future turn is also known.
+
+**Algorithm — converging sweep:**
+
+1. **Sweep Right** `2, 3, 4, …, n−1`: catches any target that started on an even spot — the difference between target position and shot position never increases, and the bounded path forces the target to turn back, guaranteeing a hit.
+2. **Sweep Left** `n−1, n−2, …, 2`: mirror image, catches any target that started on an odd spot.
+
+Concatenated sequence: `2, 3, 4, …, n−1, n−1, n−2, …, 3, 2` — total shots: `2n − 4` for `n ≥ 3`.
+
+| Property | Detail |
+|---|---|
+| Time | `O(n)` — sequence length is linearly proportional to `n` |
+| Space | `O(n)` — contiguous sequence array |
+| Verification | Exhaustive DP engine validates the `O(n)` strategy in `O(n²)` by analyzing every possible starting spot and adversarial evasion path |
+| Graph | `time_complexity_analysis.png` — sequence length scales as `2n − 4` confirmed visually |
+
+> [!NOTE]
+> Even though the number of possible evasion paths branches exponentially over time, the deterministic parity-based sweep collapses that entire possibility space within just `2n − 4` fixed shots.
+
+</details>
+
+---
+
+### Q6 — The Best Time to be Alive
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given birth and death years for `n` scientists (sorted alphabetically, not chronologically), find the **year in which the maximum number of scientists were simultaneously alive**. Tie-breaking rule: if a scientist dies in the same year another is born, the death happens *before* the birth — they are not simultaneously alive during that year.
+
+**Algorithm — Sweep-Line (Interval Overlap Counting):**
+
+1. **Event Transformation:** Convert each lifespan `(birth, death)` into two events:
+   - `(birth_year, +1)` — one more scientist alive
+   - `(death_year, −1)` — one fewer scientist alive
+2. **Chronological Sorting:** Sort all `2n` events by year. The tie-breaking rule is naturally satisfied: since deaths are `−1` and births are `+1`, ascending sort by `(year, value)` places deaths before births on equal years automatically.
+3. **Linear Sweep:** Walk the sorted events left-to-right maintaining a running `alive` counter. Track the maximum and the year it first occurred.
+
+$$
+\text{Total} = O(n \log n) + O(n) = O(n \log n)
+$$
+
+| Property | Detail |
+|---|---|
+| Time | `O(n log n)` — sorting dominates; sweep is `O(n)` |
+| Space | `O(n)` — memory for `2n` discrete event structures |
+| Validation | Brute-force `O(n²)` reference checks overlap year-by-year; confirms identical results while sweep-line maintains `O(n log n)` scaling |
+| Graph | `complexity_analysis.png` — time scaled by `n log n` flattens to a horizontal line, proving the algorithm operates at the strict theoretical lower bound |
+
+> [!IMPORTANT]
+> Finding the maximum overlap of unordered intervals fundamentally requires sorting. The `O(n log n)` bound is therefore asymptotically optimal — no comparison-based algorithm can do better.
+
+</details>
+
+---
+
+### Q7 — Matrix Chain Multiplication
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a chain of `n` matrices $A_1 \times A_2 \times \dots \times A_n$ with dimensions given by array `p` (where $A_i$ is `p[i−1] × p[i]`), find the **optimal parenthesization** that minimizes the total number of scalar multiplications. Matrix multiplication is associative, so the result is the same — only the cost varies.
+
+**Why naïve is infeasible:** The number of distinct parenthesizations follows the Catalan numbers, scaling exponentially as `O(4ⁿ / n^1.5)` — completely intractable for large `n`.
+
+**Algorithm — Interval Dynamic Programming:**
+
+Leverage **optimal substructure**: any parenthesization of $A_i \dots A_j$ must have a final multiplication splitting the chain at some point `k`. The cost to merge both resulting sub-products is `p[i−1] × p[k] × p[j]`.
+
+$$
+m[i][j] = \min_{i \le k < j} \{\, m[i][k] + m[k+1][j] + p[i-1] \times p[k] \times p[j] \,\}
+$$
+
+The algorithm iterates over increasing chain lengths `L = 2` up to `n`, ensuring all smaller sub-chain costs are computed before they are needed. An auxiliary table `s[i][j]` records the optimal split point `k`, enabling full parenthesization string reconstruction.
+
+| Property | Detail |
+|---|---|
+| Subproblems | `O(n²)` states `(i, j)` |
+| Per-state cost | `O(n)` split-point candidates |
+| **Time** | `O(n³)` total |
+| **Space** | `O(n²)` — cost table `m` + split-point table `s` |
+| Validation | Verified against brute-force recursive generator for small `n` and cross-referenced with CLRS textbook examples |
+| Graph | `mcm_complexity_analysis.png` — elapsed time / `n³` stays flat, confirming cubic growth; highlights the spectacular improvement over exponential Catalan-number naïve enumeration |
+
+> [!WARNING]
+> While `O(n³)` limits the manageable `n` compared to linear algorithms, it transforms an exponentially unsolvable combinatorics problem into a highly tractable one. For a chain of 1000 matrices, MCM computes the optimal order in milliseconds rather than the age of the universe.
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -1813,11 +2167,13 @@ graph LR
 |:---:|:---:|---|
 | 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete |
 | 🟩 Light green | `O(log n)` | Sorted Array — Search (binary search); Q5 — Partition Point |
-| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case) |
-| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort |
+| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target |
+| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort; LAB-7 Q6 — Best Time to be Alive |
 | 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge |
-| 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi |
+| 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi; LAB-7 Q4 Security Switches — state space (not computation) |
 | ⚫ Grey | `O(n^(k-1) log n)` | LAB-4 Q3 — k-Sum (super-polynomial for fixed `k ≥ 3`, but still polynomial in `n`) |
+| 🔷 Teal | `O(n³)` | LAB-7 Q7 — Matrix Chain Multiplication (Interval DP) |
+| 🌀 Indigo | `O(2^√(2n))` | LAB-7 Q3 — Reve's Puzzle (Frame-Stewart, sub-exponential move generation) |
 
 </div>
 
@@ -1989,8 +2345,47 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 # Or run with: ./reversal_sort -test
 ```
 
+### WEEK-7
+
+```bash
+# Q1 — Invert the Coin Triangle
+cd WEEK-7/Q1
+gcc -O2 -Wall -std=c99 -o q1 q1_invert_the_coin_triangle.c -lm
+./q1
+
+# Q2 — Super Egg Testing Experiment
+cd ../Q2
+gcc -O2 -Wall -std=c99 -o q2 q2_super_egg_testing_experiment.c -lm
+./q2
+
+# Q3 — Reve's Puzzle (4-Peg Tower of Hanoi)
+cd ../Q3
+gcc -O2 -Wall -std=c99 -o q3 q3_reves_puzzle.c -lm
+./q3
+
+# Q4 — Security Switches (Chinese Rings)
+cd ../Q4
+gcc -O2 -Wall -std=c99 -o q4 q4_security_switches.c
+./q4
+
+# Q5 — Hitting a Moving Target
+cd ../Q5
+gcc -O2 -Wall -std=c99 -o q5 q5_hitting_a_moving_target.c -lm
+./q5
+
+# Q6 — The Best Time to be Alive
+cd ../Q6
+gcc -O2 -Wall -std=c99 -o q6 q6_best_time_to_be_alive.c -lm
+./q6
+
+# Q7 — Matrix Chain Multiplication
+cd ../Q7
+gcc -O2 -Wall -std=c99 -o q7 q7_matrix_chain_multiplication.c -lm
+./q7
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -2028,6 +2423,13 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 | LAB-6 | Q2 | Interactive mode prompts for `n` and `n × n` elements; Demo/Test modes require no input / optional `N` |
 | LAB-6 | Q3 | Interactive mode prompts for vectors A and B; Demo/Test modes require no input / optional `N` |
 | LAB-6 | Q4 | Interactive mode prompts for permutation; `-test` mode requires no input |
+| LAB-7 | Q1 | `n` — the triangle side length; no interactive input required |
+| LAB-7 | Q2 | `E` (number of eggs) and `F` (number of floors); also supports explanation mode |
+| LAB-7 | Q3 | `n` — number of disks; program generates moves and validates peg legality |
+| LAB-7 | Q4 | `n` — number of switches (up to 126 using `__int128`); no interactive input required |
+| LAB-7 | Q5 | `n` — number of hiding spots; program outputs deterministic shot sequence and runs DP verification |
+| LAB-7 | Q6 | `n`, then `n` pairs of `(birth_year death_year)`; alphabetical input order accepted |
+| LAB-7 | Q7 | `n`, then `n+1` integer dimensions for the matrix chain `p[0..n]` |
 
 ---
 
@@ -2088,6 +2490,8 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 | Q3 — Quick Sort | `O(n log n)` | `O(n log n)` | `O(n log n)`* | `O(log n)` |
 | Q4 — Heap Sort | `Θ(n log n)` | `Θ(n log n)` | `Θ(n log n)` | `O(1)` |
 
+<sub>*Achieved in practice via median-of-three pivoting + smaller-half recursion; not a formally airtight worst-case guarantee the way Heap Sort's is.</sub>
+
 ### LAB-6
 
 | Question | Worst Case Time | Space |
@@ -2096,6 +2500,19 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 | Q2 — 2D Matrix Operations | `O(n²)` to `O(n³)` | `O(1)` / `O(n²)` |
 | Q3 — Convolution Operation (FFT) | **`O(n log n)`** | `O(n)` |
 | Q4 — Reversal Sort | `O(n)` revs / `O(n log² n)` cost | `O(1)` / `O(log n)` |
+
+### LAB-7
+
+| Question | Best Case | Average Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|:---:|
+| Q1 — Invert the Coin Triangle | `O(1)` | `O(1)` | `O(1)` | `O(1)` |
+| Q2 — Super Egg Testing | `O(E)` | `O(E × log F)` | `O(E × log F)` | `O(E)` |
+| Q3 — Reve's Puzzle (DP build) | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
+| Q3 — Reve's Puzzle (move gen) | `Θ(2^√(2n))` | `Θ(2^√(2n))` | `Θ(2^√(2n))` | `Θ(2^√(2n))` |
+| Q4 — Security Switches | `O(1)` | `O(1)` | `O(1)` | `O(1)` |
+| Q5 — Hitting a Moving Target | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
+| Q6 — Best Time to be Alive | `O(n log n)` | `O(n log n)` | `O(n log n)` | `O(n)` |
+| Q7 — Matrix Chain Mult (MCM) | `O(n³)` | `O(n³)` | `O(n³)` | `O(n²)` |
 
 </div>
 
@@ -2181,6 +2598,23 @@ gcc -O2 -Wall -o reversal_sort q4_sorting_via_reversal_procedure.c -lm
 
 </details>
 
+<details>
+<summary><strong>⚙️ LAB-7 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-7 programs** all compile with `-O2 -Wall -std=c99` and link the math library (`-lm`) where required.
+- **Q1 and Q4** are pure `O(1)` closed-form solvers — they contain no loops, recursion, or dynamic memory. Their power lies entirely in mathematical derivation of recurrence relations.
+- **Q1** includes an extensive validation suite comparing the `O(1)` formula against an `O(n)` row-by-row simulation and OEIS A007997 ground-truth values to guarantee absolute correctness.
+- **Q2** maintains a single 1D array of size `E+1`, updated in-place from right to left, keeping space at `O(E)` regardless of how large `F` grows.
+- **Q3** leverages the mathematical property that the optimal Frame-Stewart split point `k` always satisfies `(n−k) = O(√(2n))`, allowing the DP to check only a bounded window of ≤ 63 previous values instead of iterating from 1.
+- **Q4** uses `uint64_t` for `n ≤ 62` and the GCC/Clang compiler extension `unsigned __int128` to compute exact results up to `n = 126` in constant time.
+- **Q5** includes an exhaustive `O(n²)` dynamic programming verification engine that analyzes every possible starting spot and adversarial evasion path, mathematically proving that the `O(n)` deterministic sweep sequence cannot be evaded.
+- **Q6** features a brute-force `O(n²)` reference implementation that checks overlap year-by-year to validate the sweep-line results, confirming that the `O(n log n)` algorithm is both correct and optimally tight.
+- **Q7** reconstructs the optimal parenthesization string recursively using the auxiliary split-point table `s[i][j]` and cross-references its answer against CLRS textbook examples and a brute-force recursive generator for small `n`.
+
+</details>
+
 ---
 
 <div align="center">
@@ -2206,6 +2640,9 @@ Made with ❤️ for the DAA course at IIIT Bhubaneswar &nbsp;·&nbsp; 2026
 All programs written in standard C (C99) and compiled with GCC
 </sub>
 
+<br/>
+
+</div>
 <br/>
 
 </div>
