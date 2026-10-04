@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-7-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-8-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -2200,6 +2200,31 @@ The algorithm iterates over increasing chain lengths `L = 2` up to `n`, ensuring
 
 **Date:** 30-09-2026 &nbsp;|&nbsp; **Total Questions:** 9
 
+### LAB-8 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-8))
+    Q1 · Minimum Coin Change
+      1D DP
+    Q2 · Coin Change Ways
+      Combinatorics
+    Q3 · LCS
+      2D DP O m × n
+    Q4 · LIS
+      Binary Search O n log n
+    Q5 · MSIS
+      1D DP O n^2
+    Q6 · Edit Distance
+      Traceback
+    Q7 · Rod Cutting
+      Unbounded Knapsack
+    Q8 · Optimal BST
+      Interval DP O n^3
+    Q9 · Collatz Conjecture
+      Memoization
+```
+
 <div align="center">
 
 | # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
@@ -2884,6 +2909,18 @@ gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
 
 </details>
 
+<details>
+<summary><strong>⚙️ LAB-8 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-8 programs** all compile with `-O2 -Wall -std=c99` and link the math library (`-lm`) where required.
+- **Q4 and Q5** use dynamic programming to solve increasing subsequence problems; Q4 is optimized to `O(n log n)` while Q5 is bounded by `O(n²)`.
+- **Q3, Q6, Q7, and Q8** explore 2D and Interval DP concepts. For instance, Q8 runs in `O(n³)` time and effectively reduces the search space for constructing optimal binary search trees.
+- **Q9** uses simulation and dynamic programming memoization to explore the Collatz sequence.
+
+</details>
+
 ---
 
 <div align="center">
@@ -2909,9 +2946,6 @@ Made with ❤️ for the DAA course at IIIT Bhubaneswar &nbsp;·&nbsp; 2026
 All programs written in standard C (C99) and compiled with GCC
 </sub>
 
-<br/>
-
-</div>
 <br/>
 
 </div>
