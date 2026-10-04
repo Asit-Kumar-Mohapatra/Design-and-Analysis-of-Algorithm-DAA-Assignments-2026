@@ -98,6 +98,16 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q5 — Hitting a Moving Target](#q5--hitting-a-moving-target)
   - [Q6 — The Best Time to be Alive](#q6--the-best-time-to-be-alive)
   - [Q7 — Matrix Chain Multiplication](#q7--matrix-chain-multiplication)
+- [🚀 LAB-8 Overview](#-lab-8--dynamic-programming--advanced-applications)
+  - [Q1 — Minimum Coin Change](#q1--minimum-coin-change)
+  - [Q2 — Coin Change (Total Ways)](#q2--coin-change-total-ways)
+  - [Q3 — Longest Common Subsequence](#q3--longest-common-subsequence)
+  - [Q4 — Longest Increasing Subsequence](#q4--longest-increasing-subsequence)
+  - [Q5 — Maximum Sum Increasing Subsequence](#q5--maximum-sum-increasing-subsequence)
+  - [Q6 — Edit Distance with Traceback](#q6--edit-distance-with-traceback)
+  - [Q7 — Rod Cutting with Reconstruction](#q7--rod-cutting-with-reconstruction)
+  - [Q8 — Optimal Binary Search Trees](#q8--optimal-binary-search-trees)
+  - [Q9 — Collatz Conjecture](#q9--collatz-conjecture)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -136,6 +146,9 @@ timeline
                    : LAB-7 Submitted  ·  09-09-2026
                    : 7 Questions
                    : Dynamic Programming · Puzzle Solvers · Sweep-Line · MCM
+                   : LAB-8 Submitted  ·  30-09-2026
+                   : 9 Questions
+                   : Dynamic Programming · Subsequences · Edit Distance · OBST
 ```
 
 ### Lab Index Table
@@ -151,6 +164,7 @@ timeline
 | [**LAB-5**](WEEK-5) | Order Statistics & Optimized Sorting Algorithms | 4 | 26-08-2026 | ✅ Done |
 | [**LAB-6**](WEEK-6) | Array & Matrix Operations, FFT Convolution & Reversal Sort | 4 | 02-09-2026 | ✅ Done |
 | [**LAB-7**](WEEK-7) | Dynamic Programming & Mathematical Puzzle Solvers | 7 | 09-09-2026 | ✅ Done |
+| [**LAB-8**](WEEK-8) | Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST | 9 | 30-09-2026 | ✅ Done |
 
 </div>
 
@@ -163,6 +177,7 @@ timeline
 - [x] **LAB-5** — Order Statistics & Optimized Sorting Algorithms *(4 / 4 questions)*
 - [x] **LAB-6** — Array & Matrix Operations, FFT Convolution & Reversal Sort *(4 / 4 questions)*
 - [x] **LAB-7** — Dynamic Programming & Mathematical Puzzle Solvers *(7 / 7 questions)*
+- [x] **LAB-8** — Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST *(9 / 9 questions)*
 
 ---
 
@@ -353,6 +368,49 @@ timeline
         ├── 📄 README.md
         ├── 🔵 q7_matrix_chain_multiplication.c
         └── 🖼️  mcm_complexity_analysis.png
+│
+└── 📁 WEEK-8/
+    ├── 📑 2026_Week8_DAA_Lab_08.pdf
+    │
+    ├── 📁 Q1/   ← Minimum Coin Change
+    │   ├── 🔵 q1_minimum_coin_change.c
+    │   └── 🖼️  coin_change_analysis.png
+    │
+    ├── 📁 Q2/   ← Coin Change Total Number of Ways
+    │   ├── 🔵 q2_coin_change_total_number_of_ways.c
+    │   └── 🖼️  coin_ways_best.png
+    │
+    ├── 📁 Q3/   ← Longest Common Subsequence
+    │   ├── 🔵 q3_longest_common_subsequence.c
+    │   └── 🖼️  lcs_graphs.png
+    │
+    ├── 📁 Q4/   ← Longest Increasing Subsequence
+    │   ├── 🔵 q4_longest_increasing_subsequence.c
+    │   └── 🖼️  fig1_lis_trace.png
+    │            fig2_lis_complexity.png
+    │
+    ├── 📁 Q5/   ← Maximum Sum Increasing Subsequence
+    │   ├── 🔵 q5_maximum_sum_increasing_subsequence.c
+    │   └── 🖼️  msis_graphs.png
+    │
+    ├── 📁 Q6/   ← Edit Distance with Traceback Information
+    │   ├── 🔵 q6_edit_distance_with_traceback_information.c
+    │   └── 🖼️  fig1_edit_distance_algorithm.png
+    │            fig2_edit_distance_complexity.png
+    │
+    ├── 📁 Q7/   ← Rod Cutting with Reconstruction
+    │   ├── 🔵 q7_rod_cutting_with_reconstruction.c
+    │   └── 🖼️  rod_graphs.png
+    │
+    ├── 📁 Q8/   ← Optimal Binary Search Trees
+    │   ├── 🔵 q8_optimal_binary_search_trees.c
+    │   └── 🖼️  fig1_obst_algorithm.png
+    │            fig2_obst_complexity.png
+    │
+    └── 📁 Q9/   ← Collatz Conjecture
+        ├── 🔵 q9_collatz_conjecture.c
+        └── 🖼️  fig1_collatz_problem.png
+                 fig2_collatz_interval_analysis.png
 ```
 
 ---
@@ -2138,6 +2196,145 @@ The algorithm iterates over increasing chain lengths `L = 2` up to `n`, ensuring
 
 ---
 
+## 🚀 LAB-8 — Dynamic Programming — Advanced Applications
+
+**Date:** 30-09-2026 &nbsp;|&nbsp; **Total Questions:** 9
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Minimum Coin Change](#q1--minimum-coin-change) | 1D Dynamic Programming | `O(amount * n)` | `O(amount)` |
+| **Q2** | [Coin Change (Total Ways)](#q2--coin-change-total-ways) | 1D DP (Combinatorics) | `O(amount * n)` | `O(amount)` |
+| **Q3** | [Longest Common Subsequence](#q3--longest-common-subsequence) | 2D DP String Matching | `O(m * n)` | `O(m * n)` |
+| **Q4** | [Longest Increasing Subsequence](#q4--longest-increasing-subsequence) | 1D DP / Binary Search | `O(n log n)` | `O(n)` |
+| **Q5** | [Maximum Sum Increasing Subsequence](#q5--maximum-sum-increasing-subsequence) | 1D DP variant of LIS | `O(n²)` | `O(n)` |
+| **Q6** | [Edit Distance with Traceback](#q6--edit-distance-with-traceback) | 2D DP (Levenshtein) | `O(m * n)` | `O(m * n)` |
+| **Q7** | [Rod Cutting with Reconstruction](#q7--rod-cutting-with-reconstruction) | 1D DP (Unbounded Knapsack) | `O(n²)` | `O(n)` |
+| **Q8** | [Optimal Binary Search Trees](#q8--optimal-binary-search-trees) | Interval DP | `O(n³)` | `O(n²)` |
+| **Q9** | [Collatz Conjecture](#q9--collatz-conjecture) | Simulation & DP Memoization | `O(n)` | `O(n)` |
+
+</div>
+
+---
+
+### Q1 — Minimum Coin Change
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Find the minimum number of coins required to make a given amount using a given set of coin denominations.
+
+</details>
+
+---
+
+### Q2 — Coin Change (Total Ways)
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Find the total number of ways to make a given amount using a given set of coins, implemented using 1D Dynamic Programming.
+
+</details>
+
+---
+
+### Q3 — Longest Common Subsequence
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Implementation of LCS to find the longest subsequence common to two sequences, utilizing a 2D DP table.
+
+</details>
+
+---
+
+### Q4 — Longest Increasing Subsequence
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Finding the length of the longest strictly increasing subsequence in an array using Dynamic Programming.
+
+</details>
+
+---
+
+### Q5 — Maximum Sum Increasing Subsequence
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** A variant of LIS where the goal is to find the strictly increasing subsequence with the maximum possible sum.
+
+</details>
+
+---
+
+### Q6 — Edit Distance with Traceback
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Levenshtein distance algorithm to find the minimum number of edits (insertions, deletions, substitutions) required to transform one string into another, with full traceback information.
+
+</details>
+
+---
+
+### Q7 — Rod Cutting with Reconstruction
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Dynamic programming solution to the rod cutting problem to maximize profit, including reconstruction of the optimal cuts.
+
+</details>
+
+---
+
+### Q8 — Optimal Binary Search Trees
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Interval DP algorithm to construct a binary search tree that minimizes the expected search cost given access frequencies.
+
+</details>
+
+---
+
+### Q9 — Collatz Conjecture
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Simulation and interval analysis of the Collatz sequence to verify the conjecture for given ranges.
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -2384,8 +2581,57 @@ gcc -O2 -Wall -std=c99 -o q7 q7_matrix_chain_multiplication.c -lm
 ./q7
 ```
 
+### WEEK-8
+
+```bash
+# Q1 — Minimum Coin Change
+cd WEEK-8/Q1
+gcc -O2 -Wall -std=c99 -o q1 q1_minimum_coin_change.c -lm
+./q1
+
+# Q2 — Coin Change Total Number of Ways
+cd ../Q2
+gcc -O2 -Wall -std=c99 -o q2 q2_coin_change_total_number_of_ways.c -lm
+./q2
+
+# Q3 — Longest Common Subsequence
+cd ../Q3
+gcc -O2 -Wall -std=c99 -o q3 q3_longest_common_subsequence.c -lm
+./q3
+
+# Q4 — Longest Increasing Subsequence
+cd ../Q4
+gcc -O2 -Wall -std=c99 -o q4 q4_longest_increasing_subsequence.c -lm
+./q4
+
+# Q5 — Maximum Sum Increasing Subsequence
+cd ../Q5
+gcc -O2 -Wall -std=c99 -o q5 q5_maximum_sum_increasing_subsequence.c -lm
+./q5
+
+# Q6 — Edit Distance with Traceback Information
+cd ../Q6
+gcc -O2 -Wall -std=c99 -o q6 q6_edit_distance_with_traceback_information.c -lm
+./q6
+
+# Q7 — Rod Cutting with Reconstruction
+cd ../Q7
+gcc -O2 -Wall -std=c99 -o q7 q7_rod_cutting_with_reconstruction.c -lm
+./q7
+
+# Q8 — Optimal Binary Search Trees
+cd ../Q8
+gcc -O2 -Wall -std=c99 -o q8 q8_optimal_binary_search_trees.c -lm
+./q8
+
+# Q9 — Collatz Conjecture
+cd ../Q9
+gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
+./q9
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -2430,6 +2676,15 @@ gcc -O2 -Wall -std=c99 -o q7 q7_matrix_chain_multiplication.c -lm
 | LAB-7 | Q5 | `n` — number of hiding spots; program outputs deterministic shot sequence and runs DP verification |
 | LAB-7 | Q6 | `n`, then `n` pairs of `(birth_year death_year)`; alphabetical input order accepted |
 | LAB-7 | Q7 | `n`, then `n+1` integer dimensions for the matrix chain `p[0..n]` |
+| LAB-8 | Q1 | `T` (test cases), `n` (number of coins), `n` coin values, then target `V` |
+| LAB-8 | Q2 | `n` (number of coins), `n` coin values, then target `V` |
+| LAB-8 | Q3 | Prompts interactively for two sequences `X` and `Y` |
+| LAB-8 | Q4 | `T` (test cases), `n` (array size), then `n` elements |
+| LAB-8 | Q5 | `n` (array size), then `n` elements; `--test` mode requires no input |
+| LAB-8 | Q6 | Prompts interactively for two strings `A` and `B` |
+| LAB-8 | Q7 | `n` (rod length), then `n` prices; `--test` mode requires no input |
+| LAB-8 | Q8 | `n` (number of keys), `n` search probs, `n+1` dummy probs; `--test` mode requires no input |
+| LAB-8 | Q9 | CLI args `<n>` (single) or `<start> <end>` (interval); or interactive prompt |
 
 ---
 
@@ -2513,6 +2768,20 @@ gcc -O2 -Wall -std=c99 -o q7 q7_matrix_chain_multiplication.c -lm
 | Q5 — Hitting a Moving Target | `O(n)` | `O(n)` | `O(n)` | `O(n)` |
 | Q6 — Best Time to be Alive | `O(n log n)` | `O(n log n)` | `O(n log n)` | `O(n)` |
 | Q7 — Matrix Chain Mult (MCM) | `O(n³)` | `O(n³)` | `O(n³)` | `O(n²)` |
+
+### LAB-8
+
+| Question | Best Case | Average Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|:---:|
+| Q1 — Minimum Coin Change | `O(amount)` | `O(amount × n)` | `O(amount × n)` | `O(amount)` |
+| Q2 — Coin Change Total Ways | `O(amount)` | `O(amount × n)` | `O(amount × n)` | `O(amount)` |
+| Q3 — Longest Common Subsequence | `O(m × n)` | `O(m × n)` | `O(m × n)` | `O(m × n)` |
+| Q4 — Longest Increasing Subseq | `O(n log n)` | `O(n log n)` | `O(n log n)` | `O(n)` |
+| Q5 — Max Sum Increasing Subseq | `O(n²)` | `O(n²)` | `O(n²)` | `O(n)` |
+| Q6 — Edit Distance w/ Traceback | `O(m × n)` | `O(m × n)` | `O(m × n)` | `O(m × n)` |
+| Q7 — Rod Cutting w/ Recon | `O(n²)` | `O(n²)` | `O(n²)` | `O(n)` |
+| Q8 — Optimal Binary Search Trees| `O(n³)` | `O(n³)` | `O(n³)` | `O(n²)` |
+| Q9 — Collatz Conjecture | `O(1)` | `O(n)` | `O(n)` | `O(1)` |
 
 </div>
 
