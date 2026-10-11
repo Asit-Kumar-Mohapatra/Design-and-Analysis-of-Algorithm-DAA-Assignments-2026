@@ -433,52 +433,42 @@ timeline
     │
     ├── 📁 Q1/   ← Fractional Knapsack with Deterioration Rate
     │   ├── 🔵 q1_fractional_knapsack_with_deterioration_rate.c
-    │   ├── 🐍 q1_fractional_knapsack_with_deterioration_rate_graphs.py
     │   └── 🖼️  Fig1.1.png / Fig1.2.png / Fig1.3.png
     │
     ├── 📁 Q2/   ← Huffman Coding (Canonical Codebook)
     │   ├── 🔵 q2_huffman_coding.c
-    │   ├── 🐍 q2_huffman_coding_graph.py
     │   └── 🖼️  Fig2.1.png / Fig2.2.png / Fig2.3.png / Fig2.4.png
     │
     ├── 📁 Q3/   ← Minimum Initial Fuel (Reverse Greedy)
     │   ├── 🔵 q3_minimum_initial_fuel.c
-    │   ├── 🐍 q3_minimum_initial_fuel_graph.py
     │   └── 🖼️  Fig3.1.png / Fig3.2.png / Fig3.3.png / Fig3.4.png
     │
     ├── 📁 Q4/   ← Minimum Cost to Connect Sticks
     │   ├── 🔵 q4_minimum_cost_to_connect_sticks.c
-    │   ├── 🐍 q4_minimum_cost_to_connect_sticks_graph.py
     │   └── 🖼️  Fig4.1.png
     │
     ├── 📁 Q5/   ← Candy Distribution Problem (Bi-directional Slope Greedy)
     │   ├── 🔵 q5_candy-distribution_problem.c
-    │   ├── 🐍 q5_candy-distribution_problem_graph.py
     │   └── 🖼️  Fig5.1.png / Fig5.2.png
     │
     ├── 📁 Q6/   ← Reorganise String with K-Distance Apart
     │   ├── 🔵 q6_reorganise_string_with_k_distance_apart.c
-    │   ├── 🐍 q6_reorganise_string_with_k_distance_apart_graph.py
     │   └── 🖼️  Fig6.1.png / Fig6.2.png
     │
     ├── 📁 Q7/   ← Minimise Deviation in Array (Two-Way Greedy + Max-Heap)
     │   ├── 🔵 q7_minimise_deviation_in_array.c
-    │   ├── 🐍 q7_minimise_deviation_in_array_graph.py
     │   └── 🖼️  Fig7.1.png / Fig7.2.png
     │
     ├── 📁 Q8/   ← Minimum Number of Meeting Rooms
     │   ├── 🔵 q8_minimum_number_of_meeting_rooms.c
-    │   ├── 🐍 q8_minimum_number_of_meeting_rooms_graphs.py
     │   └── 🖼️  Fig8.1.png / Fig8.2.png
     │
     ├── 📁 Q9/   ← Hu-Tucker Greedy Simulation (Optimal Alphabetic Binary Tree)
     │   ├── 🔵 q9_Hu_Tucker_greedy_simulation.c
-    │   ├── 🐍 q9_Hu_Tucker_greedy_simulation_graph.py
     │   └── 🖼️  Fig9.1.png / Fig9.2.png
     │
     └── 📁 Q10/  ← Greedy Superstring Conjecture (Shortest Common Superstring)
         ├── 🔵 q10_greedy_superstring_conjecture.c
-        ├── 🐍 q10_greedy_superstring_conjecture_graph.py
         └── 🖼️  Fig10.1.png / Fig10.2.png / Fig10.3.png / Fig10.4.png
 ```
 
@@ -2516,7 +2506,6 @@ Whenever $\lambda_i > \lambda_j$, scheduling item $i$ before item $j$ yields a s
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate.c`](WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate.c) |
-| **Python Analysis** | [`WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate_graphs.py`](WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate_graphs.py) |
 | **Visualizations** | `Fig1.1.png` (Density Crossing Lines), `Fig1.2.png` (Optimal Schedule & KKT Optimality Check), `Fig1.3.png` (All $n!$ Permutations Proof) |
 | **Time Complexity** | `O(n log n)` expected (sorting + treap operations) |
 | **Space Complexity** | `O(n)` auxiliary memory |
@@ -2549,7 +2538,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q2/q2_huffman_coding.c`](WEEK-9/Q2/q2_huffman_coding.c) |
-| **Python Analysis** | [`WEEK-9/Q2/q2_huffman_coding_graph.py`](WEEK-9/Q2/q2_huffman_coding_graph.py) |
 | **Visualizations** | `Fig2.1.png` (Tree Structure & Prefix-Free Codes), `Fig2.2.png` (Optimality: Entropy $H \le L < H+1$), `Fig2.3.png` (Longest Code Scaling), `Fig2.4.png` (Stage-by-Stage Runtime) |
 | **Time Complexity** | `O(n)` with Radix Sort + Two-Queue (`O(n log n)` comparison-based) |
 | **Space Complexity** | `O(n)` words for parent array and queue buffers |
@@ -2582,7 +2570,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q3/q3_minimum_initial_fuel.c`](WEEK-9/Q3/q3_minimum_initial_fuel.c) |
-| **Python Analysis** | [`WEEK-9/Q3/q3_minimum_initial_fuel_graph.py`](WEEK-9/Q3/q3_minimum_initial_fuel_graph.py) |
 | **Visualizations** | `Fig3.1.png` (Vehicle Route & Reach Expansion), `Fig3.2.png` (Exchange Argument Proof), `Fig3.3.png` (Greedy vs $O(n^2)$ DP), `Fig3.4.png` (Runtime Scaling) |
 | **Time Complexity** | `O(n log n)` worst case (sorting stations + heap push/pop) |
 | **Space Complexity** | `O(n)` for heap storage |
@@ -2611,7 +2598,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q4/q4_minimum_cost_to_connect_sticks.c`](WEEK-9/Q4/q4_minimum_cost_to_connect_sticks.c) |
-| **Python Analysis** | [`WEEK-9/Q4/q4_minimum_cost_to_connect_sticks_graph.py`](WEEK-9/Q4/q4_minimum_cost_to_connect_sticks_graph.py) |
 | **Visualizations** | `Fig4.1.png` (Merge Tree, Cost Strategy Comparison, Log-Log Benchmark & Nanosecond Scaling) |
 | **Time Complexity** | `O(n)` linear time with Radix Sort + Two Queues (`O(n log n)` comparison-based) |
 | **Space Complexity** | `O(n)` extra memory (reusing the radix buffer as FIFO queue) |
@@ -2644,7 +2630,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q5/q5_candy-distribution_problem.c`](WEEK-9/Q5/q5_candy-distribution_problem.c) |
-| **Python Analysis** | [`WEEK-9/Q5/q5_candy-distribution_problem_graph.py`](WEEK-9/Q5/q5_candy-distribution_problem_graph.py) |
 | **Visualizations** | `Fig5.1.png` (Slope Anatomy, Peak Adjustments & Plateaus), `Fig5.2.png` (Validation vs 2-Pass DP & Linear Complexity) |
 | **Time Complexity** | `O(n)` single-pass stream |
 | **Space Complexity** | `O(1)` auxiliary space (only a handful of scalar accumulators) |
@@ -2670,7 +2655,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart.c`](WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart.c) |
-| **Python Analysis** | [`WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart_graph.py`](WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart_graph.py) |
 | **Visualizations** | `Fig6.1.png` (Slot-Filling Anatomy & Cooldown Windows), `Fig6.2.png` (Feasibility Heatmap & Linear Runtime) |
 | **Time Complexity** | `O(n log Σ) = O(n)` since alphabet size $\Sigma = 256$ is constant |
 | **Space Complexity** | `O(Σ)` auxiliary space + `O(n)` for output buffer |
@@ -2700,7 +2684,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q7/q7_minimise_deviation_in_array.c`](WEEK-9/Q7/q7_minimise_deviation_in_array.c) |
-| **Python Analysis** | [`WEEK-9/Q7/q7_minimise_deviation_in_array_graph.py`](WEEK-9/Q7/q7_minimise_deviation_in_array_graph.py) |
 | **Visualizations** | `Fig7.1.png` (Operational Value Chains & Halving Trajectory), `Fig7.2.png` (Validation vs BFS Reachability & Heap Complexity) |
 | **Time Complexity** | `O(n log n log M)` where $M = \max(A)$ (each element halved at most $\log_2 M$ times) |
 | **Space Complexity** | `O(1)` auxiliary space (max-heap constructed in-place inside input array) |
@@ -2729,7 +2712,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q8/q8_minimum_number_of_meeting_rooms.c`](WEEK-9/Q8/q8_minimum_number_of_meeting_rooms.c) |
-| **Python Analysis** | [`WEEK-9/Q8/q8_minimum_number_of_meeting_rooms_graphs.py`](WEEK-9/Q8/q8_minimum_number_of_meeting_rooms_graphs.py) |
 | **Visualizations** | `Fig8.1.png` (Timeline, Room Allocation Schedule & Sweep Curve), `Fig8.2.png` (Radix Sort vs Qsort Benchmark) |
 | **Time Complexity** | `O(n)` linear time (`O(n log n)` under comparison sort model) |
 | **Space Complexity** | `O(n)` for key arrays and scratch space |
@@ -2759,7 +2741,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation.c`](WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation.c) |
-| **Python Analysis** | [`WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation_graph.py`](WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation_graph.py) |
 | **Visualizations** | `Fig9.1.png` (3-Phase Tree Structure: Combination, Depths, Recombination), `Fig9.2.png` (Hu-Tucker vs Huffman Cost & $O(n \log n)$ Complexity) |
 | **Time Complexity** | `O(n log n)` expected time |
 | **Space Complexity** | `O(n)` auxiliary memory for treap nodes |
@@ -2795,7 +2776,6 @@ $$
 | Property | Detail |
 |---|---|
 | **C Source** | [`WEEK-9/Q10/q10_greedy_superstring_conjecture.c`](WEEK-9/Q10/q10_greedy_superstring_conjecture.c) |
-| **Python Analysis** | [`WEEK-9/Q10/q10_greedy_superstring_conjecture_graph.py`](WEEK-9/Q10/q10_greedy_superstring_conjecture_graph.py) |
 | **Visualizations** | `Fig10.1.png` (Tie-Trap Demonstration), `Fig10.2.png` (Empirical Ratio vs OPT), `Fig10.3.png` (arXiv Counterexample Structure), `Fig10.4.png` (Greedy vs Held-Karp Scaling) |
 | **Time Complexity** | Greedy: `O(n M + n²)` &nbsp;|&nbsp; Exact DP: `O(2^n · n²)` |
 | **Space Complexity** | Greedy: `O(n²)` &nbsp;|&nbsp; Exact DP: `O(2^n · n)` |
@@ -3106,61 +3086,51 @@ gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
 cd WEEK-9/Q1
 gcc -O2 -std=c99 -Wall -Wextra -o q1 q1_fractional_knapsack_with_deterioration_rate.c -lm
 ./q1                      # or: ./q1 test 10000
-python q1_fractional_knapsack_with_deterioration_rate_graphs.py
 
 # Q2 — Huffman Coding (Canonical Codebook)
 cd ../Q2
 gcc -O2 -std=c11 -Wall -Wextra -o q2 q2_huffman_coding.c
 ./q2                      # or: ./q2 -v  /  ./q2 --stress 1000
-python q2_huffman_coding_graph.py
 
 # Q3 — Minimum Initial Fuel (Reverse Greedy)
 cd ../Q3
 gcc -O2 -std=c99 -Wall -Wextra -o q3 q3_minimum_initial_fuel.c
 ./q3                      # or: ./q3 --test 10000  /  ./q3 --bench
-python q3_minimum_initial_fuel_graph.py
 
 # Q4 — Minimum Cost to Connect Sticks
 cd ../Q4
 gcc -O2 -std=c99 -Wall -Wextra -o q4 q4_minimum_cost_to_connect_sticks.c
 ./q4                      # or: ./q4 --test
-python q4_minimum_cost_to_connect_sticks_graph.py
 
 # Q5 — Candy Distribution Problem (Bi-directional Slope Greedy)
 cd ../Q5
 gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_candy-distribution_problem.c
 ./q5
-python q5_candy-distribution_problem_graph.py
 
 # Q6 — Reorganise String with K-Distance Apart
 cd ../Q6
 gcc -O2 -std=c99 -Wall -Wextra -o q6 q6_reorganise_string_with_k_distance_apart.c
 ./q6                      # or: ./q6 -v  /  ./q6 -t
-python q6_reorganise_string_with_k_distance_apart_graph.py
 
 # Q7 — Minimise Deviation in Array (Two-Way Greedy + Max-Heap)
 cd ../Q7
 gcc -O2 -std=c11 -Wall -Wextra -o q7 q7_minimise_deviation_in_array.c
 ./q7                      # or: ./q7 -v  /  ./q7 --stress 1000
-python q7_minimise_deviation_in_array_graph.py
 
 # Q8 — Minimum Number of Meeting Rooms
 cd ../Q8
 gcc -O2 -std=c99 -Wall -Wextra -o q8 q8_minimum_number_of_meeting_rooms.c
 ./q8                      # or: ./q8 -a  /  ./q8 test 10000  /  ./q8 bench 50000
-python q8_minimum_number_of_meeting_rooms_graphs.py
 
 # Q9 — Hu-Tucker Greedy Simulation (Optimal Alphabetic Binary Tree)
 cd ../Q9
 gcc -O2 -std=c11 -Wall -Wextra -o q9 q9_Hu_Tucker_greedy_simulation.c
 ./q9                      # or: ./q9 -v  /  ./q9 --stress 1000
-python q9_Hu_Tucker_greedy_simulation_graph.py
 
 # Q10 — Greedy Superstring Conjecture (Shortest Common Superstring)
 cd ../Q10
 gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
 ./q10                     # or: ./q10 --test 1000  /  ./q10 --paper 5 3 100  /  ./q10 --bench
-python q10_greedy_superstring_conjecture_graph.py
 ```
 
 > [!NOTE]
