@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-8-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-9-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -108,6 +108,17 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q7 — Rod Cutting with Reconstruction](#q7--rod-cutting-with-reconstruction)
   - [Q8 — Optimal Binary Search Trees](#q8--optimal-binary-search-trees)
   - [Q9 — Collatz Conjecture](#q9--collatz-conjecture)
+- [🚀 LAB-9 Overview](#-lab-9--greedy-algorithms--advanced-applications)
+  - [Q1 — Fractional Knapsack with Deterioration Rate](#q1--fractional-knapsack-with-deterioration-rate)
+  - [Q2 — Huffman Coding](#q2--huffman-coding)
+  - [Q3 — Minimum Initial Fuel](#q3--minimum-initial-fuel)
+  - [Q4 — Minimum Cost to Connect Sticks](#q4--minimum-cost-to-connect-sticks)
+  - [Q5 — Candy Distribution Problem](#q5--candy-distribution-problem)
+  - [Q6 — Reorganise String with K-Distance Apart](#q6--reorganise-string-with-k-distance-apart)
+  - [Q7 — Minimise Deviation in Array](#q7--minimise-deviation-in-array)
+  - [Q8 — Minimum Number of Meeting Rooms](#q8--minimum-number-of-meeting-rooms)
+  - [Q9 — Hu-Tucker Greedy Simulation](#q9--hu-tucker-greedy-simulation)
+  - [Q10 — Greedy Superstring Conjecture](#q10--greedy-superstring-conjecture)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -149,6 +160,9 @@ timeline
                    : LAB-8 Submitted  ·  30-09-2026
                    : 9 Questions
                    : Dynamic Programming · Subsequences · Edit Distance · OBST
+    October 2026   : LAB-9 Submitted  ·  07-10-2026
+                   : 10 Questions
+                   : Greedy Paradigm · Knapsack Decay · Huffman · SCS Conjecture
 ```
 
 ### Lab Index Table
@@ -165,6 +179,7 @@ timeline
 | [**LAB-6**](WEEK-6) | Array & Matrix Operations, FFT Convolution & Reversal Sort | 4 | 02-09-2026 | ✅ Done |
 | [**LAB-7**](WEEK-7) | Dynamic Programming & Mathematical Puzzle Solvers | 7 | 09-09-2026 | ✅ Done |
 | [**LAB-8**](WEEK-8) | Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST | 9 | 30-09-2026 | ✅ Done |
+| [**LAB-9**](WEEK-9) | Greedy Algorithms — Knapsack Decay, Huffman, Refuel, Hu-Tucker & SCS Conjecture | 10 | 07-10-2026 | ✅ Done |
 
 </div>
 
@@ -178,6 +193,7 @@ timeline
 - [x] **LAB-6** — Array & Matrix Operations, FFT Convolution & Reversal Sort *(4 / 4 questions)*
 - [x] **LAB-7** — Dynamic Programming & Mathematical Puzzle Solvers *(7 / 7 questions)*
 - [x] **LAB-8** — Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST *(9 / 9 questions)*
+- [x] **LAB-9** — Greedy Algorithms — Knapsack Decay, Huffman, Refuel, Hu-Tucker & SCS Conjecture *(10 / 10 questions)*
 
 ---
 
@@ -369,7 +385,7 @@ timeline
         ├── 🔵 q7_matrix_chain_multiplication.c
         └── 🖼️  mcm_complexity_analysis.png
 │
-└── 📁 WEEK-8/
+├── 📁 WEEK-8/
     ├── 📑 2026_Week8_DAA_Lab_08.pdf
     │
     ├── 📁 Q1/   ← Minimum Coin Change
@@ -411,6 +427,59 @@ timeline
         ├── 🔵 q9_collatz_conjecture.c
         └── 🖼️  fig1_collatz_problem.png
                  fig2_collatz_interval_analysis.png
+│
+└── 📁 WEEK-9/
+    ├── 📑 2026_Week9_DAA_Lab_09.pdf
+    │
+    ├── 📁 Q1/   ← Fractional Knapsack with Deterioration Rate
+    │   ├── 🔵 q1_fractional_knapsack_with_deterioration_rate.c
+    │   ├── 🐍 q1_fractional_knapsack_with_deterioration_rate_graphs.py
+    │   └── 🖼️  Fig1.1.png / Fig1.2.png / Fig1.3.png
+    │
+    ├── 📁 Q2/   ← Huffman Coding (Canonical Codebook)
+    │   ├── 🔵 q2_huffman_coding.c
+    │   ├── 🐍 q2_huffman_coding_graph.py
+    │   └── 🖼️  Fig2.1.png / Fig2.2.png / Fig2.3.png / Fig2.4.png
+    │
+    ├── 📁 Q3/   ← Minimum Initial Fuel (Reverse Greedy)
+    │   ├── 🔵 q3_minimum_initial_fuel.c
+    │   ├── 🐍 q3_minimum_initial_fuel_graph.py
+    │   └── 🖼️  Fig3.1.png / Fig3.2.png / Fig3.3.png / Fig3.4.png
+    │
+    ├── 📁 Q4/   ← Minimum Cost to Connect Sticks
+    │   ├── 🔵 q4_minimum_cost_to_connect_sticks.c
+    │   ├── 🐍 q4_minimum_cost_to_connect_sticks_graph.py
+    │   └── 🖼️  Fig4.1.png
+    │
+    ├── 📁 Q5/   ← Candy Distribution Problem (Bi-directional Slope Greedy)
+    │   ├── 🔵 q5_candy-distribution_problem.c
+    │   ├── 🐍 q5_candy-distribution_problem_graph.py
+    │   └── 🖼️  Fig5.1.png / Fig5.2.png
+    │
+    ├── 📁 Q6/   ← Reorganise String with K-Distance Apart
+    │   ├── 🔵 q6_reorganise_string_with_k_distance_apart.c
+    │   ├── 🐍 q6_reorganise_string_with_k_distance_apart_graph.py
+    │   └── 🖼️  Fig6.1.png / Fig6.2.png
+    │
+    ├── 📁 Q7/   ← Minimise Deviation in Array (Two-Way Greedy + Max-Heap)
+    │   ├── 🔵 q7_minimise_deviation_in_array.c
+    │   ├── 🐍 q7_minimise_deviation_in_array_graph.py
+    │   └── 🖼️  Fig7.1.png / Fig7.2.png
+    │
+    ├── 📁 Q8/   ← Minimum Number of Meeting Rooms
+    │   ├── 🔵 q8_minimum_number_of_meeting_rooms.c
+    │   ├── 🐍 q8_minimum_number_of_meeting_rooms_graphs.py
+    │   └── 🖼️  Fig8.1.png / Fig8.2.png
+    │
+    ├── 📁 Q9/   ← Hu-Tucker Greedy Simulation (Optimal Alphabetic Binary Tree)
+    │   ├── 🔵 q9_Hu_Tucker_greedy_simulation.c
+    │   ├── 🐍 q9_Hu_Tucker_greedy_simulation_graph.py
+    │   └── 🖼️  Fig9.1.png / Fig9.2.png
+    │
+    └── 📁 Q10/  ← Greedy Superstring Conjecture (Shortest Common Superstring)
+        ├── 🔵 q10_greedy_superstring_conjecture.c
+        ├── 🐍 q10_greedy_superstring_conjecture_graph.py
+        └── 🖼️  Fig10.1.png / Fig10.2.png / Fig10.3.png / Fig10.4.png
 ```
 
 ---
@@ -2360,6 +2429,381 @@ mindmap
 
 ---
 
+## 🚀 LAB-9 — Greedy Algorithms — Advanced Applications
+
+**Date:** 07-10-2026 &nbsp;|&nbsp; **Total Questions:** 10
+
+### LAB-9 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-9))
+    Q1 · Knapsack Decay
+      Exchange Argument
+      Lazy Treap DP O n log n
+    Q2 · Huffman Coding
+      Two-Queue Merge
+      Canonical Codebook O n
+    Q3 · Minimum Initial Fuel
+      Reverse Lazy Greedy
+      Max-Heap O n log n
+    Q4 · Connect Sticks
+      Radix + Two-Queue
+      Linear Time O n
+    Q5 · Candy Distribution
+      Bi-directional Slope
+      Single Pass O 1 Space
+    Q6 · Reorganise String
+      Cooldown Buffer
+      Max-Heap O n
+    Q7 · Minimise Deviation
+      Two-Way to One-Way
+      In-Place Heap O 1 Extra
+    Q8 · Meeting Rooms
+      Key Encoding Sweep
+      LSD Radix Sort O n
+    Q9 · Hu-Tucker Tree
+      Garsia-Wachs Treap
+      Alphabetic Leaf Order
+    Q10 · SCS Conjecture
+      KMP Overlap Graph
+      Recent arXiv Disproof
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Fractional Knapsack with Deterioration Rate](#q1--fractional-knapsack-with-deterioration-rate) | Exchange Argument · Lazy Treap DP | `O(n log n)` | `O(n)` |
+| **Q2** | [Huffman Coding](#q2--huffman-coding) | Two-Queue Merge · Canonical Codebook | `O(n log n)` / `O(n)`* | `O(n)` |
+| **Q3** | [Minimum Initial Fuel](#q3--minimum-initial-fuel) | Reverse / Lazy Greedy · Max-Heap | `O(n log n)` | `O(n)` |
+| **Q4** | [Minimum Cost to Connect Sticks](#q4--minimum-cost-to-connect-sticks) | LSD Radix Sort · Two-Queue Merge | `O(n)` | `O(n)` |
+| **Q5** | [Candy Distribution Problem](#q5--candy-distribution-problem) | Bi-directional Slope Greedy · Single Pass | `O(n)` | `O(1)` |
+| **Q6** | [Reorganise String with K-Distance Apart](#q6--reorganise-string-with-k-distance-apart) | Max-Heap · Cooldown Output History | `O(n log Σ) = O(n)` | `O(Σ) + O(n)` |
+| **Q7** | [Minimise Deviation in Array](#q7--minimise-deviation-in-array) | Two-Way Greedy · In-Place Max-Heap | `O(n log n log M)` | `O(1)` |
+| **Q8** | [Minimum Number of Meeting Rooms](#q8--minimum-number-of-meeting-rooms) | Key-Encoded Sweep-Line · LSD Radix Sort | `O(n)` | `O(n)` |
+| **Q9** | [Hu-Tucker Greedy Simulation](#q9--hu-tucker-greedy-simulation) | Garsia-Wachs Treap · 3-Phase Alphabetic Tree | `O(n log n)` | `O(n)` |
+| **Q10** | [Greedy Superstring Conjecture](#q10--greedy-superstring-conjecture) | KMP Overlap Graph · Held-Karp Exact DP | `O(n M + n²)` | `O(n²)` |
+
+</div>
+
+<sub>*Linear time O(n) achieved when frequencies are sorted via LSD Radix Sort; O(n log n) in the general comparison model.</sub>
+
+---
+
+### Q1 — Fractional Knapsack with Deterioration Rate
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given $n$ items with values $v_i$, weights $w_i$, and decay rates $\lambda_i > 0$, where the value density decays linearly with consumption time $t$ as $d_i(t) = (v_i / w_i) - \lambda_i \cdot t$ (one unit of weight consumed per unit time), schedule and fractionally pack items within capacity $W$ to maximize total value.
+
+**Exchange Argument — Why $\lambda$-Descending is Globally Optimal:**
+Consider two adjacent items $i$ and $j$ consumed in contiguous intervals $[t_0, t_0 + x_i]$ and $[t_0 + x_i, t_0 + x_i + x_j]$. The combined value contains cross-terms where item $j$'s consumption suffers from the delay $x_i$ caused by consuming item $i$ first:
+$$
+\Delta = \text{Value}(i \text{ then } j) - \text{Value}(j \text{ then } i) = x_i x_j (\lambda_j - \lambda_i)
+$$
+Whenever $\lambda_i > \lambda_j$, scheduling item $i$ before item $j$ yields a strictly higher objective, independent of baseline values $v_i$. Hence, **sorting items by decay rate $\lambda$ descending is mathematically guaranteed to be optimal for any optimal amounts**.
+
+**Algorithmic Breakdown (Lazy Treap Slope Trick):**
+1. **Sort Items:** Order items such that $\lambda_1 \ge \lambda_2 \ge \dots \ge \lambda_n$.
+2. **Concave Quadratic Pieces:** End time $c_i$ defines objective $\sum g_i(c_i)$ where $g_i(t) = (d_i - d_{i+1})t - (\lambda_i - \lambda_{i+1})t^2/2$, subject to $0 \le c_1 \le \dots \le c_n \le W$ with $c_i - c_{i-1} \le w_i$.
+3. **Lazy Treap DP:** Maintains the marginal value derivative $h_i'(c)$ (piecewise linear, non-increasing) in a randomized balanced treap with lazy propagation tags. A sliding-window maximization inserts a zero-slope piece of length $w_i$ at the peak and shifts the right part.
+4. **Backtracking:** Determines exact optimal amounts by clamping $c_{i-1} = \text{clamp}(\text{peak}_{i-1}, c_i - w_i, c_i)$.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate.c`](WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate.c) |
+| **Python Analysis** | [`WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate_graphs.py`](WEEK-9/Q1/q1_fractional_knapsack_with_deterioration_rate_graphs.py) |
+| **Visualizations** | `Fig1.1.png` (Density Crossing Lines), `Fig1.2.png` (Optimal Schedule & KKT Optimality Check), `Fig1.3.png` (All $n!$ Permutations Proof) |
+| **Time Complexity** | `O(n log n)` expected (sorting + treap operations) |
+| **Space Complexity** | `O(n)` auxiliary memory |
+
+> [!TIP]
+> Standard fractional knapsack sorts by density $v/w$. Here, density lines cross over time! The exchange argument proves that decay rate $\lambda$ takes absolute priority for sequencing, while the fractional amounts are resolved via Karush-Kuhn-Tucker (KKT) shadow price conditions.
+
+</details>
+
+---
+
+### Q2 — Huffman Coding
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given symbol frequencies $f[0..n-1]$, construct an optimal prefix-free binary code minimizing weighted bit length $\sum f_i \cdot \ell_i$, and output the canonical Huffman codebook ordered by (code length, symbol ID).
+
+**Core Algorithm & Two-Queue Optimization:**
+1. **Linear Time Sorting:** For large symbol alphabets, sort frequencies in $O(n)$ time using an 11-bit LSD Radix Sort ($n \ge 1024$), falling back to comparison sort for smaller sets.
+2. **Two-Queue Merge (Van Leeuwen's Method):** Maintain two queues: Queue 1 (sorted leaves) and Queue 2 (merged internal nodes). Since sums of two minimum elements are non-decreasing, the minimum element is always at the head of one of the two queues. Extracting two minimums costs $O(1)$, bypassing heap overhead!
+3. **Minimum Variance Tie-Breaking:** When internal and leaf weights tie, always pick the leaf. This packs deeper branches uniformly, minimizing the variance of code lengths without altering the minimum expected length.
+4. **Canonical Codebook Generation:** Compute in-place depths from the parent array in $O(n)$. Sort symbols by length, then generate unique bitstrings via:
+$$
+\text{code}_{i+1} = (\text{code}_i + 1) \ll (\ell_{i+1} - \ell_i)
+$$
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q2/q2_huffman_coding.c`](WEEK-9/Q2/q2_huffman_coding.c) |
+| **Python Analysis** | [`WEEK-9/Q2/q2_huffman_coding_graph.py`](WEEK-9/Q2/q2_huffman_coding_graph.py) |
+| **Visualizations** | `Fig2.1.png` (Tree Structure & Prefix-Free Codes), `Fig2.2.png` (Optimality: Entropy $H \le L < H+1$), `Fig2.3.png` (Longest Code Scaling), `Fig2.4.png` (Stage-by-Stage Runtime) |
+| **Time Complexity** | `O(n)` with Radix Sort + Two-Queue (`O(n log n)` comparison-based) |
+| **Space Complexity** | `O(n)` words for parent array and queue buffers |
+
+> [!NOTE]
+> Canonical Huffman codes require only the list of code lengths per symbol to reconstruct the identical prefix-free table. This is the exact algorithm underlying RFC 1951 DEFLATE, gzip, and JPEG.
+
+</details>
+
+---
+
+### Q3 — Minimum Initial Fuel
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** A vehicle with starting fuel $F$ travels toward target distance $D$. Along the route are stations at distance $d_i$ providing fuel $f_i$ (1 unit of fuel = 1 unit of distance). Find the minimum number of refuelling stops required to reach $D$.
+
+**Reverse (Lazy) Greedy Paradigm:**
+- Instead of deciding whether to stop at station $i$ when passing it, drive as far as possible!
+- Maintain the current reachable distance `reach = F`.
+- While `reach < D`:
+  - Passively collect all stations with $d_i \le \text{reach}$ into a binary max-heap.
+  - If fuel runs out (`reach < D`) and the heap is empty, target $D$ is unreachable $\implies$ return `-1`.
+  - Otherwise, greedily "look back" and refuel at the passed station with the largest fuel: pop top of max-heap, add its fuel to `reach`, and increment `stops++`.
+- **Exchange Argument:** Any alternative choice of $k$ stops provides cumulative fuel $\le$ the $k$ largest fuel stations encountered within the reachable horizon. Thus, the greedy strategy reaches maximal distance for every stop count $k$.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q3/q3_minimum_initial_fuel.c`](WEEK-9/Q3/q3_minimum_initial_fuel.c) |
+| **Python Analysis** | [`WEEK-9/Q3/q3_minimum_initial_fuel_graph.py`](WEEK-9/Q3/q3_minimum_initial_fuel_graph.py) |
+| **Visualizations** | `Fig3.1.png` (Vehicle Route & Reach Expansion), `Fig3.2.png` (Exchange Argument Proof), `Fig3.3.png` (Greedy vs $O(n^2)$ DP), `Fig3.4.png` (Runtime Scaling) |
+| **Time Complexity** | `O(n log n)` worst case (sorting stations + heap push/pop) |
+| **Space Complexity** | `O(n)` for heap storage |
+
+</details>
+
+---
+
+### Q4 — Minimum Cost to Connect Sticks
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given $n$ stick lengths $L_1, \dots, L_n$, connecting two sticks of lengths $x$ and $y$ costs $x + y$ and creates a single stick of length $x + y$. Minimize the total cost to connect all sticks into one.
+
+**Linear-Time Two-Queue Merging:**
+- Standard priority queue solutions take $O(n \log n)$ time.
+- By recognizing that the stick connecting problem is isomorphic to Huffman tree construction with zero entropy, we can achieve true **$O(n)$ linear time**:
+  1. Sort stick lengths in $O(n)$ using an 11-bit LSD Radix Sort with early exit on constant byte passes.
+  2. Maintain two FIFO queues: Queue $A$ (sorted initial sticks) and Queue $B$ (newly merged sticks).
+  3. Because sums of smallest pairs emerge in monotonic order ($s_{k+1} \ge s_k$), Queue $B$ remains sorted automatically!
+  4. Each merge inspects the heads of both queues in $O(1)$, adds their sum to total cost, and enqueues the result into Queue $B$.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q4/q4_minimum_cost_to_connect_sticks.c`](WEEK-9/Q4/q4_minimum_cost_to_connect_sticks.c) |
+| **Python Analysis** | [`WEEK-9/Q4/q4_minimum_cost_to_connect_sticks_graph.py`](WEEK-9/Q4/q4_minimum_cost_to_connect_sticks_graph.py) |
+| **Visualizations** | `Fig4.1.png` (Merge Tree, Cost Strategy Comparison, Log-Log Benchmark & Nanosecond Scaling) |
+| **Time Complexity** | `O(n)` linear time with Radix Sort + Two Queues (`O(n log n)` comparison-based) |
+| **Space Complexity** | `O(n)` extra memory (reusing the radix buffer as FIFO queue) |
+
+> [!TIP]
+> At $n = 4,000,000$, the Radix + Two-Queue approach runs ~10× faster than a standard binary min-heap and ~4× faster than `qsort` + two-queue, demonstrating a flat $O(n)$ nanoseconds-per-element profile.
+
+</details>
+
+---
+
+### Q5 — Candy Distribution Problem
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** $n$ children stand in a line, each assigned an integer rating. Every child must receive at least 1 candy. Children with a strictly higher rating than their immediate neighbor must receive strictly more candies. Find the minimum total candies required.
+
+**Bi-directional Slope Greedy in $O(1)$ Auxiliary Space:**
+- Traditional algorithms execute two passes (left-to-right, then right-to-left) storing $O(n)$ candies in memory.
+- This implementation solves the problem in a **single streamed pass with $O(1)$ auxiliary space**:
+  - The rating sequence is decomposed into rising slopes (`up`), falling slopes (`down`), and plateaus:
+    - **Rising slope of length $u$:** Child receives $u + 1$ candies; adds $1 + u$ to total.
+    - **Plateau ($cur == prev$):** Neighbor constraint relaxes; resets `up = down = peak = 0`, adds $1$ candy.
+    - **Falling slope of length $d$:** Each step extends the falling sequence $d+1, \dots, 2, 1$; adds $d$ to total.
+    - **Peak correction:** If $d > \text{peak}$, the peak child must be elevated by $+1$ to remain strictly greater than the descending chain; adds an extra $+1$.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q5/q5_candy-distribution_problem.c`](WEEK-9/Q5/q5_candy-distribution_problem.c) |
+| **Python Analysis** | [`WEEK-9/Q5/q5_candy-distribution_problem_graph.py`](WEEK-9/Q5/q5_candy-distribution_problem_graph.py) |
+| **Visualizations** | `Fig5.1.png` (Slope Anatomy, Peak Adjustments & Plateaus), `Fig5.2.png` (Validation vs 2-Pass DP & Linear Complexity) |
+| **Time Complexity** | `O(n)` single-pass stream |
+| **Space Complexity** | `O(1)` auxiliary space (only a handful of scalar accumulators) |
+
+</details>
+
+---
+
+### Q6 — Reorganise String with K-Distance Apart
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a string $S$ and an integer $K$, rearrange characters such that any two identical characters are at least $K$ positions apart ($|i - j| \ge K$). If impossible, return an empty string `""`.
+
+**Max-Heap with Cooldown Buffer:**
+1. **Feasibility Invariant:** Let $m$ be the maximum frequency and $t$ be the number of characters having frequency $m$. If $(m - 1) \cdot K + t > n$, pigeonhole principle proves it is mathematically impossible $\implies$ immediately return `""`.
+2. **Greedy Selection:** Build a max-heap of available characters prioritized by remaining frequency.
+3. **Cooldown Scheduling:** At step $i$, extract the character with highest remaining count. The character placed at index $i - K$ exits cooldown and is re-inserted into the max-heap if its count remains positive. The output buffer itself serves as the cooldown history, requiring no external queue!
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart.c`](WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart.c) |
+| **Python Analysis** | [`WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart_graph.py`](WEEK-9/Q6/q6_reorganise_string_with_k_distance_apart_graph.py) |
+| **Visualizations** | `Fig6.1.png` (Slot-Filling Anatomy & Cooldown Windows), `Fig6.2.png` (Feasibility Heatmap & Linear Runtime) |
+| **Time Complexity** | `O(n log Σ) = O(n)` since alphabet size $\Sigma = 256$ is constant |
+| **Space Complexity** | `O(Σ)` auxiliary space + `O(n)` for output buffer |
+
+</details>
+
+---
+
+### Q7 — Minimise Deviation in Array
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an array of positive integers, you may perform two operations: multiply any odd element by 2, or divide any even element by 2. The deviation is $\max(A) - \min(A)$. Minimize deviation after any number of operations.
+
+**Two-Way to One-Way Greedy Reduction:**
+- An odd number $x$ can only be doubled once to $2x$ (since $2x$ is even, and halving it merely returns to $x$).
+- An even number can only be halved down to its odd divisor.
+- **Key Insight:** Pre-multiply every odd element by 2! Now every element is at the **absolute maximum** of its allowable trajectory.
+- Once at the top, the only valid move that can decrease the maximum is halving the current array maximum:
+  - Maintain an in-place binary max-heap. Track the running minimum `mn`.
+  - While the top of the heap is even: pop `top`, replace with `top / 2`, update `mn = min(mn, top / 2)`, sift down, and update `best_deviation = min(best_deviation, top - mn)`.
+  - Stop when `top` becomes odd — it cannot be reduced further!
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q7/q7_minimise_deviation_in_array.c`](WEEK-9/Q7/q7_minimise_deviation_in_array.c) |
+| **Python Analysis** | [`WEEK-9/Q7/q7_minimise_deviation_in_array_graph.py`](WEEK-9/Q7/q7_minimise_deviation_in_array_graph.py) |
+| **Visualizations** | `Fig7.1.png` (Operational Value Chains & Halving Trajectory), `Fig7.2.png` (Validation vs BFS Reachability & Heap Complexity) |
+| **Time Complexity** | `O(n log n log M)` where $M = \max(A)$ (each element halved at most $\log_2 M$ times) |
+| **Space Complexity** | `O(1)` auxiliary space (max-heap constructed in-place inside input array) |
+
+</details>
+
+---
+
+### Q8 — Minimum Number of Meeting Rooms
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given $n$ meeting intervals $[s_i, e_i)$, determine the minimum number of conference rooms required such that no overlapping meetings share a room.
+
+**Key-Encoded Sweep-Line with Radix Sort:**
+- A meeting occupies the half-open interval $[s, e)$: a meeting ending at time 5 and one starting at 5 can safely share a room without collision.
+- **Key Encoding Trick:** Encodes boundary events into 64-bit integer keys:
+  - Start event: $\text{key} = 2s + 1$
+  - End event: $\text{key} = 2e$ (for $s < e$) or $2e + 1$ (for point meetings $s == e$)
+  - This guarantees that real meeting completions are processed strictly before new meetings starting at the exact same point.
+- **Execution:** Sort start and end keys independently using an 8-pass LSD Radix Sort in $O(n)$ time. Two pointers then sweep the sorted lists: advance ends to release rooms, advance starts to allocate rooms, tracking `max_busy`.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q8/q8_minimum_number_of_meeting_rooms.c`](WEEK-9/Q8/q8_minimum_number_of_meeting_rooms.c) |
+| **Python Analysis** | [`WEEK-9/Q8/q8_minimum_number_of_meeting_rooms_graphs.py`](WEEK-9/Q8/q8_minimum_number_of_meeting_rooms_graphs.py) |
+| **Visualizations** | `Fig8.1.png` (Timeline, Room Allocation Schedule & Sweep Curve), `Fig8.2.png` (Radix Sort vs Qsort Benchmark) |
+| **Time Complexity** | `O(n)` linear time (`O(n log n)` under comparison sort model) |
+| **Space Complexity** | `O(n)` for key arrays and scratch space |
+
+</details>
+
+---
+
+### Q9 — Hu-Tucker Greedy Simulation
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an ordered sequence of weights $w_1, \dots, w_n$, construct an optimal alphabetic binary tree that maintains the strict in-order sequence of leaf indices while minimizing $\sum w_i \cdot \text{depth}(i)$.
+
+**Hu-Tucker Algorithm (Garsia-Wachs Formulation):**
+- Unlike Huffman coding, leaves cannot be permuted; their relative left-to-right order must be preserved.
+- **Phase 1 — Combination:**
+  - In list $[\infty, w_1, \dots, w_n, \infty]$, find the leftmost local minimum pair $x[i-1] \le x[i+1]$.
+  - Merge $x[i-1], x[i]$ into $s = x[i-1] + x[i]$. Re-insert $s$ immediately to the right of the nearest element to its left that is $\ge s$.
+  - An **implicit treap** maintaining subtree sizes, maximum weights, and "violator" flags resolves each merge in $O(\log n)$ expected time.
+- **Phase 2 — Level Assignment:** Traverse parent pointers of the resulting intermediate tree $T'$ in $O(n)$ to record leaf depths.
+- **Phase 3 — Recombination:** Stack-based bottom-up scan joins adjacent leaves of equal depths to reconstruct the unique ordered binary tree matching those exact depths in $O(n)$ time.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation.c`](WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation.c) |
+| **Python Analysis** | [`WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation_graph.py`](WEEK-9/Q9/q9_Hu_Tucker_greedy_simulation_graph.py) |
+| **Visualizations** | `Fig9.1.png` (3-Phase Tree Structure: Combination, Depths, Recombination), `Fig9.2.png` (Hu-Tucker vs Huffman Cost & $O(n \log n)$ Complexity) |
+| **Time Complexity** | `O(n log n)` expected time |
+| **Space Complexity** | `O(n)` auxiliary memory for treap nodes |
+
+> [!TIP]
+> The Hu-Tucker algorithm proves the surprising theorem that an optimal alphabetic binary tree has the exact same set of leaf depths as the tree obtained by relaxing the ordering constraint into local minimum pairs!
+
+</details>
+
+---
+
+### Q10 — Greedy Superstring Conjecture
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a set of strings $S = \{s_1, \dots, s_n\}$, find the shortest common superstring (SCS) containing every $s_i$ as a substring. SCS is NP-hard. Analyze the 40-year-old conjecture: **"Does the greedy overlap heuristic guarantee a 2-approximation?"**
+
+**Greedy Heuristic, Exact DP & Scientific Disproof:**
+1. **Substring-Free Reduction:** Filter out contained substrings and duplicates using KMP searching in $O(n^2 L)$.
+2. **KMP Overlap Graph:** Precompute maximum pairwise suffix-to-prefix overlap $ov(u, v)$ for all pairs using KMP failure tables in $O(n M)$ time ($M = \sum |s_i|$).
+3. **Greedy Heuristic:** Repeatedly merge the string pair with maximum overlap, using union-find to prevent premature cycle closures in $O(n^2)$ time.
+4. **Exact Solver:** Held-Karp dynamic programming with bitmasks solves instances with $n \le 20$ in $O(2^n n^2)$ time.
+5. **September 2026 Breakthrough (arXiv:2609.01365):**
+   - A paper titled *"Disproving the Greedy Superstring Conjecture"* established that for strings of even length $k \ge 10$, the approximation ratio is at least:
+$$
+\rho \ge \frac{9k + 2}{4k + 4} \xrightarrow{k \to \infty} \frac{9}{4} = 2.25
+$$
+   - This conclusively disproves the long-standing $2.0$ approximation claim, showing that greedy can be trapped by pathological tie-breaking structures found using AI assistance.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-9/Q10/q10_greedy_superstring_conjecture.c`](WEEK-9/Q10/q10_greedy_superstring_conjecture.c) |
+| **Python Analysis** | [`WEEK-9/Q10/q10_greedy_superstring_conjecture_graph.py`](WEEK-9/Q10/q10_greedy_superstring_conjecture_graph.py) |
+| **Visualizations** | `Fig10.1.png` (Tie-Trap Demonstration), `Fig10.2.png` (Empirical Ratio vs OPT), `Fig10.3.png` (arXiv Counterexample Structure), `Fig10.4.png` (Greedy vs Held-Karp Scaling) |
+| **Time Complexity** | Greedy: `O(n M + n²)` &nbsp;|&nbsp; Exact DP: `O(2^n · n²)` |
+| **Space Complexity** | Greedy: `O(n²)` &nbsp;|&nbsp; Exact DP: `O(2^n · n)` |
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -2387,14 +2831,14 @@ graph LR
 
 | 🎨 Colour | Class | Example in this repo |
 |:---:|:---:|---|
-| 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete |
+| 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete; LAB-9 Q5 — Candy Distribution (extra space); LAB-9 Q7 — Minimise Deviation (extra space) |
 | 🟩 Light green | `O(log n)` | Sorted Array — Search (binary search); Q5 — Partition Point |
-| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target |
-| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort; LAB-7 Q6 — Best Time to be Alive |
-| 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge |
-| 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi; LAB-7 Q4 Security Switches — state space (not computation) |
+| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target; LAB-9 Q4 — Connect Sticks (Radix + Two-Queue); LAB-9 Q5 — Candy Distribution (Single-Pass); LAB-9 Q6 — Reorganise String ($O(n \log \Sigma)$); LAB-9 Q8 — Meeting Rooms (Radix + Sweep) |
+| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort; LAB-7 Q6 — Best Time to be Alive; LAB-9 Q1 — Knapsack Decay (Treap); LAB-9 Q2 — Huffman Coding; LAB-9 Q3 — Minimum Initial Fuel; LAB-9 Q9 — Hu-Tucker Alphabetic Tree |
+| 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge; LAB-9 Q10 — Greedy SCS Heuristic ($O(n M + n^2)$) |
+| 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi; LAB-7 Q4 Security Switches — state space; LAB-9 Q10 — Shortest Common Superstring (Exact Held-Karp DP $O(2^n \cdot n^2)$) |
 | ⚫ Grey | `O(n^(k-1) log n)` | LAB-4 Q3 — k-Sum (super-polynomial for fixed `k ≥ 3`, but still polynomial in `n`) |
-| 🔷 Teal | `O(n³)` | LAB-7 Q7 — Matrix Chain Multiplication (Interval DP) |
+| 🔷 Teal | `O(n³)` | LAB-7 Q7 — Matrix Chain Multiplication (Interval DP); LAB-8 Q8 — Optimal BST |
 | 🌀 Indigo | `O(2^√(2n))` | LAB-7 Q3 — Reve's Puzzle (Frame-Stewart, sub-exponential move generation) |
 
 </div>
@@ -2655,8 +3099,72 @@ gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
 ./q9
 ```
 
+### WEEK-9
+
+```bash
+# Q1 — Fractional Knapsack with Deterioration Rate
+cd WEEK-9/Q1
+gcc -O2 -std=c99 -Wall -Wextra -o q1 q1_fractional_knapsack_with_deterioration_rate.c -lm
+./q1                      # or: ./q1 test 10000
+python q1_fractional_knapsack_with_deterioration_rate_graphs.py
+
+# Q2 — Huffman Coding (Canonical Codebook)
+cd ../Q2
+gcc -O2 -std=c11 -Wall -Wextra -o q2 q2_huffman_coding.c
+./q2                      # or: ./q2 -v  /  ./q2 --stress 1000
+python q2_huffman_coding_graph.py
+
+# Q3 — Minimum Initial Fuel (Reverse Greedy)
+cd ../Q3
+gcc -O2 -std=c99 -Wall -Wextra -o q3 q3_minimum_initial_fuel.c
+./q3                      # or: ./q3 --test 10000  /  ./q3 --bench
+python q3_minimum_initial_fuel_graph.py
+
+# Q4 — Minimum Cost to Connect Sticks
+cd ../Q4
+gcc -O2 -std=c99 -Wall -Wextra -o q4 q4_minimum_cost_to_connect_sticks.c
+./q4                      # or: ./q4 --test
+python q4_minimum_cost_to_connect_sticks_graph.py
+
+# Q5 — Candy Distribution Problem (Bi-directional Slope Greedy)
+cd ../Q5
+gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_candy-distribution_problem.c
+./q5
+python q5_candy-distribution_problem_graph.py
+
+# Q6 — Reorganise String with K-Distance Apart
+cd ../Q6
+gcc -O2 -std=c99 -Wall -Wextra -o q6 q6_reorganise_string_with_k_distance_apart.c
+./q6                      # or: ./q6 -v  /  ./q6 -t
+python q6_reorganise_string_with_k_distance_apart_graph.py
+
+# Q7 — Minimise Deviation in Array (Two-Way Greedy + Max-Heap)
+cd ../Q7
+gcc -O2 -std=c11 -Wall -Wextra -o q7 q7_minimise_deviation_in_array.c
+./q7                      # or: ./q7 -v  /  ./q7 --stress 1000
+python q7_minimise_deviation_in_array_graph.py
+
+# Q8 — Minimum Number of Meeting Rooms
+cd ../Q8
+gcc -O2 -std=c99 -Wall -Wextra -o q8 q8_minimum_number_of_meeting_rooms.c
+./q8                      # or: ./q8 -a  /  ./q8 test 10000  /  ./q8 bench 50000
+python q8_minimum_number_of_meeting_rooms_graphs.py
+
+# Q9 — Hu-Tucker Greedy Simulation (Optimal Alphabetic Binary Tree)
+cd ../Q9
+gcc -O2 -std=c11 -Wall -Wextra -o q9 q9_Hu_Tucker_greedy_simulation.c
+./q9                      # or: ./q9 -v  /  ./q9 --stress 1000
+python q9_Hu_Tucker_greedy_simulation_graph.py
+
+# Q10 — Greedy Superstring Conjecture (Shortest Common Superstring)
+cd ../Q10
+gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
+./q10                     # or: ./q10 --test 1000  /  ./q10 --paper 5 3 100  /  ./q10 --bench
+python q10_greedy_superstring_conjecture_graph.py
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8/WEEK-9 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -2710,6 +3218,16 @@ gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
 | LAB-8 | Q7 | `n` (rod length), then `n` prices; `--test` mode requires no input |
 | LAB-8 | Q8 | `n` (number of keys), `n` search probs, `n+1` dummy probs; `--test` mode requires no input |
 | LAB-8 | Q9 | CLI args `<n>` (single) or `<start> <end>` (interval); or interactive prompt |
+| LAB-9 | Q1 | `n` (items), `W` (capacity), then `n` lines of `v w lambda`; `./q1 test [N]` for automated validation |
+| LAB-9 | Q2 | `n` (symbols), then `n` frequencies `f[0..n-1]`; `-v` validator, `--stress N [S]` self-test |
+| LAB-9 | Q3 | `F` (starting fuel), `D` (target), `n` (stations), then `n` lines of `d f`; `--test` and `--bench` flags |
+| LAB-9 | Q4 | `n` (sticks), then `n` stick lengths; `--test` validates against brute-force |
+| LAB-9 | Q5 | `n` (children), then `n` integer ratings via fast unbuffered reader; streams ratings with `O(1)` space |
+| LAB-9 | Q6 | String `S` (line 1), integer `K` (line 2); `-v` validator, `-t` self-test |
+| LAB-9 | Q7 | `n`, then `n` positive integers up to $4 \times 10^{18}$; `-v` validator, `--stress N [S]` self-test |
+| LAB-9 | Q8 | `n`, then `n` lines of `s e` or bracket format `[[s1,e1],[s2,e2],...]`; `-a` prints room assignment |
+| LAB-9 | Q9 | `n`, then `n` leaf weights `w[1..n]`; `-v` validator, `--stress N [S]` self-test |
+| LAB-9 | Q10 | `n`, then `n` whitespace-separated strings; `--test [N]`, `--paper [s] [t] [R]`, `--bench` |
 
 ---
 
@@ -2807,6 +3325,24 @@ gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
 | Q7 — Rod Cutting w/ Recon | `O(n²)` | `O(n²)` | `O(n²)` | `O(n)` |
 | Q8 — Optimal Binary Search Trees| `O(n³)` | `O(n³)` | `O(n³)` | `O(n²)` |
 | Q9 — Collatz Conjecture | `O(1)` | `O(n)` | `O(n)` | `O(1)` |
+
+### LAB-9
+
+| Question | Best Case | Average Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|:---:|
+| Q1 — Knapsack with Decay | `O(n log n)` | `O(n log n)` | `O(n log n)` | `O(n)` |
+| Q2 — Huffman Coding (Radix) | `O(n)` | `O(n)` | `O(n)` / `O(n log n)`* | `O(n)` |
+| Q3 — Minimum Initial Fuel | `O(1)` / `O(n)` | `O(n log n)` | `O(n log n)` | `O(n)` |
+| Q4 — Connect Sticks (Radix) | `O(n)` | `O(n)` | `O(n)` / `O(n log n)`* | `O(n)` |
+| Q5 — Candy Distribution | `O(n)` | `O(n)` | `O(n)` | `O(1)` |
+| Q6 — Reorganise String | `O(n)` | `O(n)` | `O(n)` | `O(Σ) + O(n)` |
+| Q7 — Minimise Deviation | `O(n log n)` | `O(n log n log M)` | `O(n log n log M)` | `O(1)` |
+| Q8 — Meeting Rooms (Radix) | `O(n)` | `O(n)` | `O(n)` / `O(n log n)`* | `O(n)` |
+| Q9 — Hu-Tucker Alphabetic Tree| `O(n log n)` | `O(n log n)` | `O(n log n)` | `O(n)` |
+| Q10 — Greedy Superstring | `O(n M + n²)` | `O(n M + n²)` | `O(n M + n²)` | `O(n²)` |
+| Q10 — Exact SCS (Held-Karp) | `O(2ⁿ · n²)` | `O(2ⁿ · n²)` | `O(2ⁿ · n²)` | `O(2ⁿ · n)` |
+
+<sub>*Linear time O(n) achieved when using LSD Radix Sort on bounded keys; O(n log n) under the general comparison-sorting model.</sub>
 
 </div>
 
@@ -2918,6 +3454,24 @@ gcc -O2 -Wall -std=c99 -o q9 q9_collatz_conjecture.c -lm
 - **Q4 and Q5** use dynamic programming to solve increasing subsequence problems; Q4 is optimized to `O(n log n)` while Q5 is bounded by `O(n²)`.
 - **Q3, Q6, Q7, and Q8** explore 2D and Interval DP concepts. For instance, Q8 runs in `O(n³)` time and effectively reduces the search space for constructing optimal binary search trees.
 - **Q9** uses simulation and dynamic programming memoization to explore the Collatz sequence.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-9 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-9 programs** compile cleanly with `-O2 -Wall -Wextra -std=c99` (or `-std=c11` for Q2, Q7, Q9) and link `-lm` where required.
+- **Q1 (Knapsack with Deterioration):** Uses an exchange argument proving that regardless of item baseline values, optimal processing order is strictly $\lambda$-descending. A randomized lazy treap maintains the piecewise-linear marginal value curve $h_i'(c)$ to determine optimal fractional choices in expected $O(n \log n)$ time.
+- **Q2 (Huffman Coding) & Q4 (Connect Sticks):** Both leverage **Van Leeuwen's two-queue technique** — since sums of two smallest numbers are monotonically non-decreasing, maintaining a leaf queue and an internal merge queue achieves $O(n)$ merging without binary heaps. Q2 breaks ties in favor of leaves to construct minimum-variance trees.
+- **Q3 (Minimum Initial Fuel):** Solves the refuelling problem via a **reverse (lazy) greedy** strategy: the vehicle drives as far as possible without stopping, retroactively adding fuel from the highest-yield passed station whenever the fuel tank runs dry.
+- **Q5 (Candy Distribution):** Implements a **bi-directional slope greedy in a single stream pass with $O(1)$ extra space**, geometrically updating rising slopes, falling slopes, plateaus, and retroactive peak adjustments without allocating arrays.
+- **Q6 (Reorganise String):** Employs an early feasibility check based on the generalized pigeonhole principle: $(m - 1)K + t \le n$. The output array itself doubles as the cooldown queue for characters waiting to re-enter the max-heap.
+- **Q7 (Minimise Deviation):** Transforms a two-way search space into a one-way greedy by pre-multiplying all odd numbers by 2. Halving the current maximum inside an in-place max-heap guarantees convergence in $O(n \log n \log M)$ time with $O(1)$ extra memory.
+- **Q8 (Meeting Rooms):** Formulates sweep-line events using 64-bit integer bit-encoding ($2s+1$ for starts, $2e$ for ends) to automatically prioritize meeting departures before new arrivals, accelerated by 8-pass LSD Radix Sort into $O(n)$ linear time.
+- **Q9 (Hu-Tucker Alphabetic Tree):** Implements Hu-Tucker in the Garsia-Wachs form. An implicit treap tracking subtree maximums and "violator" flags finds leftmost local minimum pairs in $O(\log n)$ per merge, followed by stack-based recombination to preserve the strict in-order sequence of leaves.
+- **Q10 (Greedy Superstring Conjecture):** Includes both the standard $O(n M + n^2)$ greedy merge heuristic and an exact $O(2^n n^2)$ Held-Karp dynamic programming solver. In addition to testing standard benchmarks, the suite embeds the historic **September 2026 counterexample family (arXiv:2609.01365)** disproving the 40-year-old 2-approximation conjecture for strings of length $k \ge 10$ with approximation ratio $\ge 2.25$.
 
 </details>
 
