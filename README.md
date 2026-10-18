@@ -10,8 +10,8 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-9-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
-[![Status](https://img.shields.io/badge/Status-In%20Progress-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-10-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Status](https://img.shields.io/badge/Status-Completed-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
 
@@ -119,6 +119,12 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q8 — Minimum Number of Meeting Rooms](#q8--minimum-number-of-meeting-rooms)
   - [Q9 — Hu-Tucker Greedy Simulation](#q9--hu-tucker-greedy-simulation)
   - [Q10 — Greedy Superstring Conjecture](#q10--greedy-superstring-conjecture)
+- [🚀 LAB-10 Overview](#-lab-10--disjoint-set-union-dsu--dynamic-graph-algorithms)
+  - [Q1 — Online Graph Bipartiteness Testing](#q1--online-graph-bipartiteness-testing)
+  - [Q2 — Dynamic Connected Components in a Grid](#q2--dynamic-connected-components-in-a-grid)
+  - [Q3 — Maximum Weight Component with Size Constraints](#q3--maximum-weight-component-with-size-constraints)
+  - [Q4 — Reverse Time-Step DSU Application](#q4--reverse-time-step-dsu-application)
+  - [Q5 — Lexicographically Smallest Connected Component Permutation](#q5--lexicographically-smallest-connected-component-permutation)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -163,6 +169,9 @@ timeline
     October 2026   : LAB-9 Submitted  ·  07-10-2026
                    : 10 Questions
                    : Greedy Paradigm · Knapsack Decay · Huffman · SCS Conjecture
+                   : LAB-10 Submitted  ·  14-10-2026
+                   : 5 Questions
+                   : Disjoint Set Union · Dynamic Connectivity · Offline Time Reversal
 ```
 
 ### Lab Index Table
@@ -180,6 +189,7 @@ timeline
 | [**LAB-7**](WEEK-7) | Dynamic Programming & Mathematical Puzzle Solvers | 7 | 09-09-2026 | ✅ Done |
 | [**LAB-8**](WEEK-8) | Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST | 9 | 30-09-2026 | ✅ Done |
 | [**LAB-9**](WEEK-9) | Greedy Algorithms — Knapsack Decay, Huffman, Refuel, Hu-Tucker & SCS Conjecture | 10 | 07-10-2026 | ✅ Done |
+| [**LAB-10**](WEEK-10) | Disjoint Set Union (DSU) & Dynamic Graph Algorithms — Bipartiteness, Grid Islands, Size Constraints, Reverse DSU & Component Permutation | 5 | 14-10-2026 | ✅ Done |
 
 </div>
 
@@ -194,6 +204,7 @@ timeline
 - [x] **LAB-7** — Dynamic Programming & Mathematical Puzzle Solvers *(7 / 7 questions)*
 - [x] **LAB-8** — Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST *(9 / 9 questions)*
 - [x] **LAB-9** — Greedy Algorithms — Knapsack Decay, Huffman, Refuel, Hu-Tucker & SCS Conjecture *(10 / 10 questions)*
+- [x] **LAB-10** — Disjoint Set Union (DSU) & Dynamic Graph Algorithms *(5 / 5 questions)*
 
 ---
 
@@ -428,7 +439,7 @@ timeline
         └── 🖼️  fig1_collatz_problem.png
                  fig2_collatz_interval_analysis.png
 │
-└── 📁 WEEK-9/
+├── 📁 WEEK-9/
     ├── 📑 2026_Week9_DAA_Lab_09.pdf
     │
     ├── 📁 Q1/   ← Fractional Knapsack with Deterioration Rate
@@ -470,6 +481,29 @@ timeline
     └── 📁 Q10/  ← Greedy Superstring Conjecture (Shortest Common Superstring)
         ├── 🔵 q10_greedy_superstring_conjecture.c
         └── 🖼️  Fig10.1.png / Fig10.2.png / Fig10.3.png / Fig10.4.png
+│
+└── 📁 WEEK-10/
+    ├── 📑 2026_Week10_DAA_Lab_10.pdf
+    │
+    ├── 📁 Q1/   ← Online Graph Bipartiteness Testing
+    │   ├── 🔵 q1_online_graph_bipartiteness_testing.c
+    │   └── 🖼️  fig1_algorithm_walkthrough.png / fig2_work_per_edge.png
+    │
+    ├── 📁 Q2/   ← Dynamic Connected Components in a Grid (Number of Islands II)
+    │   ├── 🔵 q2_dynamic_connected_components_in_a_grid.c
+    │   └── 🖼️  q2_fig1_how_it_works.png / q2_fig2_complexity.png
+    │
+    ├── 📁 Q3/   ← Maximum Weight Component with Size Constraints (size ≤ K)
+    │   ├── 🔵 q3_maximum_weight_component_with_size_constraints.c
+    │   └── 🖼️  fig1_component_evolution.png / fig2_answer_and_heap.png / fig3_complexity.png
+    │
+    ├── 📁 Q4/   ← Reverse Time-Step DSU Application (Dynamic Vertex Deletion)
+    │   ├── 🔵 q4_reverse_time_step_DSU_application.c
+    │   └── 🖼️  fig1_graph_states.png / fig2_complexity.png
+    │
+    └── 📁 Q5/   ← Lexicographically Smallest Connected Component Permutation
+        ├── 🔵 q5_lexicographically_smallest_connect_component_permutation.c
+        └── 🖼️  fig1_algorithm.png / fig2_complexity.png
 ```
 
 ---
@@ -1099,7 +1133,7 @@ $$
 $$
 
 > [!TIP]
-> While $\log_3 n < \log_2 n$, the number of comparisons per split makes ternary search do **~26% more comparisons** in the worst case. The empirical Python plot (`full_complexity_analysis.png`) confirms this constant-factor overhead.
+> While $\log_3 n < \log_2 n$, the number of comparisons per split makes ternary search do **~26% more comparisons** in the worst case. The empirical benchmark plot (`full_complexity_analysis.png`) confirms this constant-factor overhead.
 
 </details>
 
@@ -2784,6 +2818,234 @@ $$
 
 ---
 
+## 🚀 LAB-10 — Disjoint Set Union (DSU) & Dynamic Graph Algorithms
+
+**Date:** 14-10-2026 &nbsp;|&nbsp; **Total Questions:** 5
+
+### LAB-10 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-10))
+    Q1 · Online Bipartiteness
+      Parity-Augmented DSU
+      Odd-Cycle Detection O alpha V
+    Q2 · Grid Connected Components
+      Number of Islands II
+      Dense Array & Sparse Hash DSU
+    Q3 · Constrained Max Weight
+      Component Size Leq K
+      Max-Heap with Lazy Deletion
+    Q4 · Reverse Time-Step DSU
+      Offline Vertex Deletions
+      Reverse-Time Edge Insertion
+    Q5 · Component Permutation
+      Lexicographically Minimal
+      Bucket Assignment Sorting O n
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Online Graph Bipartiteness Testing](#q1--online-graph-bipartiteness-testing) | Parity-Augmented DSU · Union by Size & Path Compression | `O(V + E · α(V))` | `O(V)` (5 B/vtx) |
+| **Q2** | [Dynamic Connected Components in a Grid](#q2--dynamic-connected-components-in-a-grid) | Grid DSU · Dual Storage (Dense Array & Sparse Hash Table) | `O(K · α(R · C))` | `O(min(K, RC))` / `O(RC)` |
+| **Q3** | [Maximum Weight Component with Size Constraints](#q3--maximum-weight-component-with-size-constraints) | DSU + Max-Heap with Lazy Deletion · Non-Monotone Objective | `O((n + m)α(n) + n log n)` | `O(n + m)` |
+| **Q4** | [Reverse Time-Step DSU Application](#q4--reverse-time-step-dsu-application) | Offline Time Reversal · Edge Bucketing · Lazy Max-Heap | `O((V + E)α(V))` / `O((V + E)α(V) + V log V)` | `O(V + E)` |
+| **Q5** | [Lexicographically Smallest Connected Component Permutation](#q5--lexicographically-smallest-connected-component-permutation) | Component-Wise Bucket Assignment · Transitive Closure | `O(n + m · α(n))` | `O(n + m)` |
+
+</div>
+
+---
+
+### Q1 — Online Graph Bipartiteness Testing
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an online stream of edges arriving one by one on a graph with $V$ vertices, determine immediately upon arrival whether inserting each edge keeps the graph bipartite (2-colorable), or whether it violates bipartiteness by completing an odd-length cycle.
+
+**Algorithmic Architecture — Parity-Augmented Disjoint Set Forest:**
+1. **Zero Adjacency Overhead:** The algorithm stores neither an $O(V^2)$ adjacency matrix nor $O(V + E)$ adjacency lists. Only a disjoint-set forest with a 1-bit parity flag per vertex is maintained.
+2. **State Representation:**
+   - `parent[x] < 0`: $x$ is a component root, with `-parent[x]` storing the component size for union-by-size.
+   - `parent[x] >= 0`: parent pointer in the union-find tree.
+   - `par[x]`: relative color parity bit, defined as $\text{color}(x) \oplus \text{color}(\text{parent}[x])$.
+3. **Path Compression with Parity Accumulation:**
+   - Finding the root accumulates parity via XOR along the path from $x$ to root $r$: $p_x = \bigoplus \text{par}[v]$.
+   - Two-pass path compression redirects all ancestors directly to $r$, updating each vertex's parity relative to $r$.
+4. **Online Query & Edge Insertion:**
+   - For an arriving edge $(u, v)$, compute roots $r_u = \text{find}(u, \&p_u)$ and $r_v = \text{find}(v, \&p_v)$.
+   - **Case 1 ($r_u == r_v$):** Both endpoints already reside in the same connected component. If $p_u == p_v$, $u$ and $v$ have the same color; adding $(u, v)$ creates an **odd cycle** (violates bipartiteness). If $p_u \neq p_v$, $(u, v)$ safely connects opposite color classes (added).
+   - **Case 2 ($r_u \neq r_v$):** Endpoints belong to different components. Merge root with smaller size into root with larger size (union by size), setting the bridge parity $\text{par}[r_v] = p_u \oplus p_v \oplus 1$ to invert the smaller tree's color assignments if needed.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-10/Q1/q1_online_graph_bipartiteness_testing.c`](WEEK-10/Q1/q1_online_graph_bipartiteness_testing.c) |
+| **Visualizations** | `fig1_algorithm_walkthrough.png` (Odd-Cycle Detection & Parity Path Compression), `fig2_work_per_edge.png` (Amortized Inverse Ackermann Work per Edge) |
+| **Time Complexity** | `O(V + E · α(V))` total &nbsp;|&nbsp; `O(α(V))` amortized per edge |
+| **Space Complexity** | `O(V)` auxiliary memory &nbsp;(strictly 5 bytes per vertex: 4 bytes `int parent` + 1 byte `unsigned char par`) |
+
+> [!TIP]
+> Traditional bipartiteness testing uses BFS/DFS in $O(V + E)$ offline time. This online parity DSU answers each edge query in amortized $O(\alpha(V)) \approx O(1)$ time, flushes outputs immediately when interactive, and consumes minimal memory ($5$ bytes/vertex).
+
+</details>
+
+---
+
+### Q2 — Dynamic Connected Components in a Grid
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Process an online sequence of $K$ dynamic operations on an $R \times C$ grid initially filled entirely with water. Each operation turns cell $(r, c)$ into land. Output the updated count of 4-directionally connected land components (islands) after each operation.
+
+**Dual-Storage Architecture (Dense Array vs. Sparse Open-Addressing Hash):**
+1. **Cell Flattening:** Flatten 2D grid coordinates $(r, c)$ into a unique 1D cell identifier:
+$$
+\text{id} = r \times C + c
+$$
+2. **Dense Mode ($R \times C \le \text{Threshold}$):**
+   - Allocates contiguous arrays `par[slot]` and `land[slot]` directly indexed by `id`.
+   - Ideal for standard grid dimensions, yielding cache-friendly $O(1)$ direct indexing.
+3. **Sparse Mode (Massive / Unbounded Grids, e.g., $10^9 \times 10^9$):**
+   - Dense allocation for $10^9 \times 10^9$ requires petabytes of RAM.
+   - Sparse mode uses an open-addressing hash table with power-of-two capacity and quadratic/linear probing, keeping load factor $\le 0.5$.
+   - Memory drops from $O(R \times C)$ to $O(\min(K, R \times C))$, independent of grid dimensions!
+4. **Automatic Layout Selection:** The driver automatically detects if $R \times C$ exceeds available RAM and selects sparse mode, or can be forced via `--dense` and `--sparse`.
+5. **Island Count Maintenance:**
+   - Turning a water cell into land increments island count by 1.
+   - Inspect all 4 cardinal neighbors (North, South, East, West). For each neighbor already marked as land, query its root in DSU.
+   - If a neighbor's root differs from the current cell's root, perform union-by-size and decrement island count by 1.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-10/Q2/q2_dynamic_connected_components_in_a_grid.c`](WEEK-10/Q2/q2_dynamic_connected_components_in_a_grid.c) |
+| **Visualizations** | `q2_fig1_how_it_works.png` (4-Neighbor Dynamic Merging & Component Count), `q2_fig2_complexity.png` (Dense vs Sparse Hash Scaling Benchmarks) |
+| **Time Complexity** | `O(K · α(R · C))` after $O(1)$ (sparse) or $O(R \cdot C)$ (dense) initialization |
+| **Space Complexity** | Dense: `O(R · C)` &nbsp;|&nbsp; Sparse: `O(min(K, R · C))` |
+
+> [!NOTE]
+> Supports CLI validation switches: `--verify` runs both dense and sparse implementations against a BFS brute-force ground truth on the given input; `--selftest [tests]` validates on random stress instances.
+
+</details>
+
+---
+
+### Q3 — Maximum Weight Component with Size Constraints
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an undirected graph with arbitrary vertex weights $w_1 \dots w_n$ (which may be negative) and a maximum component size threshold $K$, edges arrive one by one. After each edge insertion, output the maximum total vertex weight over all connected components having at most $K$ vertices ("NONE" if no such component exists).
+
+**The Non-Monotone Objective Challenge:**
+- In standard dynamic connectivity, components only merge and grow.
+- Here, when two valid components of sizes $s_1 \le K$ and $s_2 \le K$ merge into a component of size $s_1 + s_2 > K$, the resulting component becomes **invalid** and drops out of consideration!
+- Consequently, the maximum valid weight can **drop** drastically upon adding an edge. A simple scalar tracker fails.
+
+**Optimal Architecture — DSU with Lazy Max-Heap:**
+1. **Union-Find State:** For every root $r$, maintain `sz[r]` (number of vertices) and `sum[r]` (sum of vertex weights).
+2. **Versioned Max-Heap:**
+   - Store candidate entries $(sum, root, size)$ in a binary max-heap.
+   - Whenever an isolated vertex or a merged component satisfies $size \le K$, push $(sum, root, size)$ onto the heap.
+3. **Lazy Deletion Invariant:**
+   - Because union-by-size strictly increases component sizes upon merging, the pair $(root, size)$ uniquely identifies a specific version of a component.
+   - A heap entry $(s, r, z)$ is identified as **stale** if $r$ is no longer a root ($par[r] \neq r$) or its size has changed ($sz[r] \neq z$).
+   - When querying the current maximum, lazily pop all stale entries from the top of the heap. The top valid entry is guaranteed to be the exact global maximum.
+   - Once a component exceeds size $K$, it never becomes valid again and is popped once it reaches the top.
+4. **Complexity Bound:** Over $m$ edge additions, at most $2n - 1$ distinct component versions are ever pushed into the heap, each inserted and popped at most once, bounding total heap maintenance to $O(n \log n)$.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-10/Q3/q3_maximum_weight_component_with_size_constraints.c`](WEEK-10/Q3/q3_maximum_weight_component_with_size_constraints.c) |
+| **Visualizations** | `fig1_component_evolution.png` (Component Merging & Size-Cap Exceedance), `fig2_answer_and_heap.png` (Heap State & Lazy Stale-Popping), `fig3_complexity.png` (Empirical $O((n+m)\alpha(n) + n \log n)$ Scaling) |
+| **Time Complexity** | `O((n + m) · α(n) + n log n)` total over all $m$ edge additions |
+| **Space Complexity** | `O(n + m)` linear space |
+
+</details>
+
+---
+
+### Q4 — Reverse Time-Step DSU Application
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a vertex-weighted undirected graph with $V$ vertices and $E$ edges, vertices are sequentially deleted in the order $P = [p_1 \dots p_V]$. After each deletion, report the maximum sum of vertex weights among all remaining connected components ($0$ when the graph is empty).
+
+**Algorithmic Paradigm — Offline Reverse-Time Inversion:**
+1. **The Deletion Bottleneck:** Maintaining connected components under dynamic edge or vertex deletions online is notoriously difficult (requiring complex link-cut trees or sub-optimal $O(\sqrt{V \log V})$ structures).
+2. **Time Inversion ($t = V \dots 1$):**
+   - Read the entire deletion sequence offline.
+   - Reversing the arrow of time converts **vertex deletions** into constructive **vertex additions**!
+   - Process time backwards: start from an empty graph at $t = V$, and re-insert vertices in order $p_V, p_{V-1}, \dots, p_1$.
+3. **Incident Edge Activation & Counting Sort Bucketing:**
+   - An edge $(a, b)$ becomes active at the precise moment when both $a$ and $b$ are present in reverse time.
+   - This occurs when the endpoint that was deleted **earlier** in forward time (= re-inserted **later** in reverse time) is added back.
+   - Assign each edge $(a, b)$ to the bucket of $\arg\min(\text{pos}[a], \text{pos}[b])$.
+   - Bucket all $E$ edges using a single-pass $O(V + E)$ counting sort, eliminating hash tables or dynamic vectors.
+4. **Tracking Maximum Component Sum:**
+   - **Case A (All Weights Non-Negative, $w_i \ge 0$):** Component weights grow monotonically in reverse time. A simple scalar variable `best = max(best, sum[root])` maintains the answer in $O(1)$ per step!
+   - **Case B (Arbitrary / Negative Weights):** Merging with negative vertices can cause component sums to decrease. A max-heap with lazy deletion maintains the maximum active component sum in $O(V \log V)$ total time.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-10/Q4/q4_reverse_time_step_DSU_application.c`](WEEK-10/Q4/q4_reverse_time_step_DSU_application.c) |
+| **Visualizations** | `fig1_graph_states.png` (Forward Vertex Deletion vs Reverse-Time Insertion), `fig2_complexity.png` (Linearithmic Reverse DSU vs $O(V(V+E))$ Brute Force) |
+| **Time Complexity** | `O((V + E) · α(V))` (when $w_i \ge 0$) &nbsp;|&nbsp; `O((V + E) · α(V) + V log V)` (general weights) |
+| **Space Complexity** | `O(V + E)` linear auxiliary memory |
+
+> [!TIP]
+> This reverse-time technique is a foundational algorithmic strategy in competitive programming and dynamic connectivity, transforming intractable decremental graph queries into incremental Union-Find operations.
+
+</details>
+
+---
+
+### Q5 — Lexicographically Smallest Connected Component Permutation
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an initial permutation $A$ of numbers $1 \dots n$ and a set of $m$ allowed swap pairs $(u, v)$ between array indices, determine the lexicographically smallest permutation that can be formed using any sequence of allowed swaps.
+
+**Transitive Closure & Component Independence:**
+1. **Equivalence Classes:** Allowed index swaps generate an equivalence relation on the positions $\{1 \dots n\}$. Indices in the same connected component can reach any arbitrary permutation among themselves via bubble-sort-like adjacent transpositions.
+2. **Lexicographical Minimality Condition:** To minimize the entire array lexicographically, the sorted multiset of values originally located within each connected component must be placed in strictly increasing order into the sorted positions belonging to that component.
+
+**Optimal Linear/Near-Linear Bucket Placement ($O(n + m\alpha(n))$ vs $O(n \log n)$):**
+- Standard solutions sort each component's positions and values using comparison sort, taking $O(n \log n)$ time.
+- Because values are a permutation of $1 \dots n$, this implementation avoids comparison sort entirely:
+  1. **DSU Grouping:** Unite all $m$ swap pairs via DSU in $O(n + m \alpha(n))$ time.
+  2. **Ascending Position Lists:** Build sorted index lists for each component in $O(n \alpha(n))$ time by iterating $i = n$ down to $1$ and inserting $i$ at the head of linked list `head[find(i)]`.
+  3. **Value Assignment:** Scan values $v = 1 \dots n$ in ascending order. Locate $v$'s initial position `posOf[v]`, determine its component root $r = \text{find}(\text{posOf}[v])$, assign $v$ to the smallest available index in that component (`head[r]`), and advance `head[r] = next[head[r]]`.
+- This constructs the lexicographically minimal permutation in strictly **$O(n + m \cdot \alpha(n))$ near-linear time**!
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-10/Q5/q5_lexicographically_smallest_connect_component_permutation.c`](WEEK-10/Q5/q5_lexicographically_smallest_connect_component_permutation.c) |
+| **Visualizations** | `fig1_algorithm.png` (Index Equivalence Classes & Bucket Value Placement), `fig2_complexity.png` (Empirical Verification of Near-Linear vs $O(n \log n)$ Scaling) |
+| **Time Complexity** | `O(n + m · α(n))` amortized near-linear time |
+| **Space Complexity** | `O(n + m)` linear auxiliary memory |
+
+> [!NOTE]
+> Running with `./q5 -e` triggers the built-in `--explain` mode, printing detailed component breakdown, empirical find-step metrics, and automated invariant verification ensuring the result is a valid, minimal permutation.
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -2811,10 +3073,10 @@ graph LR
 
 | 🎨 Colour | Class | Example in this repo |
 |:---:|:---:|---|
-| 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete; LAB-9 Q5 — Candy Distribution (extra space); LAB-9 Q7 — Minimise Deviation (extra space) |
+| 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete; LAB-9 Q5 — Candy Distribution (extra space); LAB-9 Q7 — Minimise Deviation (extra space); LAB-10 Q1/Q2/Q5 — DSU operation ($O(\alpha(n)) \approx O(1)$); LAB-10 Q4 — Reverse DSU ($w \ge 0$ max tracking) |
 | 🟩 Light green | `O(log n)` | Sorted Array — Search (binary search); Q5 — Partition Point |
-| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target; LAB-9 Q4 — Connect Sticks (Radix + Two-Queue); LAB-9 Q5 — Candy Distribution (Single-Pass); LAB-9 Q6 — Reorganise String ($O(n \log \Sigma)$); LAB-9 Q8 — Meeting Rooms (Radix + Sweep) |
-| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort; LAB-7 Q6 — Best Time to be Alive; LAB-9 Q1 — Knapsack Decay (Treap); LAB-9 Q2 — Huffman Coding; LAB-9 Q3 — Minimum Initial Fuel; LAB-9 Q9 — Hu-Tucker Alphabetic Tree |
+| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target; LAB-9 Q4 — Connect Sticks (Radix + Two-Queue); LAB-9 Q5 — Candy Distribution (Single-Pass); LAB-9 Q6 — Reorganise String ($O(n \log \Sigma)$); LAB-9 Q8 — Meeting Rooms (Radix + Sweep); LAB-10 Q1 — Bipartiteness per edge ($O(\alpha(V))$); LAB-10 Q2 — Grid Islands per query ($O(\alpha(RC))$); LAB-10 Q4 — Reverse DSU ($O((V+E)\alpha(V))$); LAB-10 Q5 — Component Permutation ($O(n + m\alpha(n))$) |
+| 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort; LAB-7 Q6 — Best Time to be Alive; LAB-9 Q1 — Knapsack Decay (Treap); LAB-9 Q2 — Huffman Coding; LAB-9 Q3 — Minimum Initial Fuel; LAB-9 Q9 — Hu-Tucker Alphabetic Tree; LAB-10 Q3 — Constrained Component Weight ($O((n+m)\alpha(n) + n \log n)$); LAB-10 Q4 — Reverse DSU with negative weights ($O((V+E)\alpha(V) + V \log V)$) |
 | 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge; LAB-9 Q10 — Greedy SCS Heuristic ($O(n M + n^2)$) |
 | 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi; LAB-7 Q4 Security Switches — state space; LAB-9 Q10 — Shortest Common Superstring (Exact Held-Karp DP $O(2^n \cdot n^2)$) |
 | ⚫ Grey | `O(n^(k-1) log n)` | LAB-4 Q3 — k-Sum (super-polynomial for fixed `k ≥ 3`, but still polynomial in `n`) |
@@ -3133,8 +3395,37 @@ gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
 ./q10                     # or: ./q10 --test 1000  /  ./q10 --paper 5 3 100  /  ./q10 --bench
 ```
 
+### WEEK-10
+
+```bash
+# Q1 — Online Graph Bipartiteness Testing
+cd WEEK-10/Q1
+gcc -O2 -std=c99 -Wall -Wextra -o q1 q1_online_graph_bipartiteness_testing.c
+./q1 < input.txt
+
+# Q2 — Dynamic Connected Components in a Grid (Number of Islands II)
+cd ../Q2
+gcc -O2 -std=c11 -Wall -Wextra -o q2 q2_dynamic_connected_components_in_a_grid.c
+./q2 < input.txt          # or: ./q2 --dense < in  /  ./q2 --sparse < in  /  ./q2 --verify < in  /  ./q2 --selftest 10000
+
+# Q3 — Maximum Weight Component with Size Constraints (size <= K)
+cd ../Q3
+gcc -O2 -std=c99 -Wall -Wextra -o q3 q3_maximum_weight_component_with_size_constraints.c
+./q3 < input.txt          # or: ./q3 --explain  /  ./q3 --test
+
+# Q4 — Reverse Time-Step DSU Application (Dynamic Vertex Deletion)
+cd ../Q4
+gcc -O2 -std=c99 -Wall -Wextra -o q4 q4_reverse_time_step_DSU_application.c
+./q4 < input.txt          # or: ./q4 --selftest 100 42
+
+# Q5 — Lexicographically Smallest Connected Component Permutation
+cd ../Q5
+gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_lexicographically_smallest_connect_component_permutation.c
+./q5 < input.txt          # or: ./q5 -e < input.txt
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8/WEEK-9 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8/WEEK-9/WEEK-10 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -3198,6 +3489,11 @@ gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
 | LAB-9 | Q8 | `n`, then `n` lines of `s e` or bracket format `[[s1,e1],[s2,e2],...]`; `-a` prints room assignment |
 | LAB-9 | Q9 | `n`, then `n` leaf weights `w[1..n]`; `-v` validator, `--stress N [S]` self-test |
 | LAB-9 | Q10 | `n`, then `n` whitespace-separated strings; `--test [N]`, `--paper [s] [t] [R]`, `--bench` |
+| LAB-10 | Q1 | `V [E]`, then `E` lines of `u v` (0-indexed); stream flushes answers in real time |
+| LAB-10 | Q2 | `R C K`, then `K` lines of `r c` (0-indexed; or `--one-indexed`); `--verify`, `--selftest` |
+| LAB-10 | Q3 | `n m K`, then `n` vertex weights `w_i`, then `m` lines `u v c`; `--explain`, `--test` |
+| LAB-10 | Q4 | `V`, then `w_1..w_V`, then `E`, then `E` lines `u v`, then `p_1..p_V`; `--selftest [tests] [seed]` |
+| LAB-10 | Q5 | `n m`, then permutation `A_1..A_n`, then `m` lines `u v`; `-e` prints analysis report |
 
 ---
 
@@ -3312,6 +3608,17 @@ gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
 | Q10 — Greedy Superstring | `O(n M + n²)` | `O(n M + n²)` | `O(n M + n²)` | `O(n²)` |
 | Q10 — Exact SCS (Held-Karp) | `O(2ⁿ · n²)` | `O(2ⁿ · n²)` | `O(2ⁿ · n²)` | `O(2ⁿ · n)` |
 
+### LAB-10
+
+| Question | Best Case | Average Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|:---:|
+| Q1 — Online Graph Bipartiteness | `O(1)` / `O(α(V))` | `O(α(V))` | `O(V + E · α(V))` | `O(V)` (5 B/vtx) |
+| Q2 — Grid Connected Components | `O(1)` / `O(α(N))` | `O(α(N))` | `O(K · α(R · C))` | `O(min(K, RC))` / `O(RC)` |
+| Q3 — Constrained Max Weight | `O(1)` / `O(α(n))` | `O(log n)` | `O((n + m)α(n) + n log n)` | `O(n + m)` |
+| Q4 — Reverse Time-Step DSU ($w \ge 0$) | `O(1)` / `O(α(V))` | `O(α(V))` | `O((V + E) · α(V))` | `O(V + E)` |
+| Q4 — Reverse Time-Step DSU (general) | `O(1)` / `O(α(V))` | `O(log V)` | `O((V + E)α(V) + V log V)` | `O(V + E)` |
+| Q5 — Component Permutation | `O(n + m · α(n))` | `O(n + m · α(n))` | `O(n + m · α(n))` | `O(n + m)` |
+
 <sub>*Linear time O(n) achieved when using LSD Radix Sort on bounded keys; O(n log n) under the general comparison-sorting model.</sub>
 
 </div>
@@ -3351,7 +3658,7 @@ gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
 <br/>
 
 - **WEEK-3 programs** also use <kbd>-O2</kbd> for timing benchmarks and performance measurements.
-- **Q1, Q3, Q4, Q5, Q6** all generate data and use python plotting scripts (e.g., `q1_binary_vs_ternary_search_graph.py`) to generate the corresponding `.png` graphs representing their empirical analysis. You will need `python` with `matplotlib` to reproduce the graphs from the csv outputs.
+- **Q1, Q3, Q4, Q5, Q6** all generate benchmark dataset outputs and plot visualizations (e.g., `full_complexity_analysis.png`, `max_min_comparison_graph.png`, etc.) representing their empirical analysis.
 - **Q4 & Q5** allocate contiguous memory blocks or 2D array blocks via `malloc` and must carefully `free` memory after completion, especially when matrices reach larger bounds where stack memory would overflow.
 - **Q6** features an additional `pseudocode.txt` file demonstrating the structural loop invariants validation logic prior to implementation.
 
@@ -3442,6 +3749,20 @@ gcc -O2 -std=c99 -Wall -Wextra -o q10 q10_greedy_superstring_conjecture.c
 - **Q8 (Meeting Rooms):** Formulates sweep-line events using 64-bit integer bit-encoding ($2s+1$ for starts, $2e$ for ends) to automatically prioritize meeting departures before new arrivals, accelerated by 8-pass LSD Radix Sort into $O(n)$ linear time.
 - **Q9 (Hu-Tucker Alphabetic Tree):** Implements Hu-Tucker in the Garsia-Wachs form. An implicit treap tracking subtree maximums and "violator" flags finds leftmost local minimum pairs in $O(\log n)$ per merge, followed by stack-based recombination to preserve the strict in-order sequence of leaves.
 - **Q10 (Greedy Superstring Conjecture):** Includes both the standard $O(n M + n^2)$ greedy merge heuristic and an exact $O(2^n n^2)$ Held-Karp dynamic programming solver. In addition to testing standard benchmarks, the suite embeds the historic **September 2026 counterexample family (arXiv:2609.01365)** disproving the 40-year-old 2-approximation conjecture for strings of length $k \ge 10$ with approximation ratio $\ge 2.25$.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-10 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-10 programs** compile cleanly with `-O2 -Wall -Wextra -std=c99` (or `-std=c11` for Q2) and require no external math libraries.
+- **Q1 (Online Graph Bipartiteness Testing):** Eliminates graph adjacency storage completely by maintaining only a parity-augmented union-find forest with union-by-size and path compression. Consumes strictly **5 bytes per vertex** (a 4-byte `parent` and a 1-byte relative color parity bit `par`). When running interactively, each answer (`added` / `violates` / `invalid`) is immediately flushed to stdout.
+- **Q2 (Dynamic Connected Components in a Grid):** Employs an adaptive dual-storage architecture. Small and medium grids use a cache-friendly dense flat array indexed directly by flattened ID $r \cdot C + c$. When grid bounds grow arbitrarily large (e.g., $10^9 \times 10^9$), it automatically falls back to an open-addressing sparse hash table with power-of-two capacity and $\le 0.5$ load factor, constraining memory to $O(\min(K, R \cdot C))$ without risking out-of-memory errors. Includes `--verify` (cross-checking against BFS brute force) and `--selftest` flags.
+- **Q3 (Maximum Weight Component with Size Constraints):** Solves the non-monotone objective challenge (where merging valid components into one larger than $K$ vertices disqualifies them and causes maximum weight to drop) via a versioned binary max-heap with **lazy deletion**. Over $m$ edge additions, at most $2n - 1$ component versions are ever created, ensuring strict $O((n + m)\alpha(n) + n \log n)$ total time and $O(n + m)$ memory.
+- **Q4 (Reverse Time-Step DSU Application):** Bypasses the difficulty of decremental dynamic connectivity by **inverting the time axis offline**. Processing vertex deletions in reverse order converts them into incremental vertex additions. Incident edges are bucketed via a single $O(V + E)$ counting sort pass into the re-insertion step of the earlier-deleted endpoint. For non-negative weights, the maximum component sum is tracked monotonically via a simple scalar in $O(1)$; arbitrary weights use lazy max-heap pruning. Includes `--selftest` mode against brute-force connected component scans.
+- **Q5 (Lexicographically Smallest Connected Component Permutation):** Capitalizes on the transitive closure property of allowed index swaps. Instead of sorting each component's positions and values using $O(n \log n)$ comparison sort, it executes a **linear bucket assignment in $O(n + m \alpha(n))$ time**: ascending position linked lists are constructed in $O(n \alpha(n))$ time, and values $1 \dots n$ are assigned directly into the lowest available position of their respective component. Running with `-e` prints an automated invariant verification audit on stderr.
 
 </details>
 
