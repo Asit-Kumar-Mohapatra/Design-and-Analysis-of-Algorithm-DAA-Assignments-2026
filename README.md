@@ -10,7 +10,7 @@
 [![Language](https://img.shields.io/badge/C99-Standard%20C-00BFFF?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C99)
 [![Course](https://img.shields.io/badge/DAA-Algorithm%20Design-FF6B35?style=for-the-badge&logo=bookstack&logoColor=white)](#)
 [![Institute](https://img.shields.io/badge/IIIT-Bhubaneswar-6A0DAD?style=for-the-badge&logo=graduation-cap&logoColor=white)](#)
-[![Labs](https://img.shields.io/badge/Labs%20Completed-10-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
+[![Labs](https://img.shields.io/badge/Labs%20Completed-11-FFD700?style=for-the-badge&logo=checkmarx&logoColor=black)](#)
 [![Status](https://img.shields.io/badge/Status-Completed-2ECC40?style=for-the-badge&logo=statuspage&logoColor=white)](#)
 
 <br/>
@@ -125,6 +125,10 @@ A curated collection of weekly programming assignments for the **Design and Anal
   - [Q3 — Maximum Weight Component with Size Constraints](#q3--maximum-weight-component-with-size-constraints)
   - [Q4 — Reverse Time-Step DSU Application](#q4--reverse-time-step-dsu-application)
   - [Q5 — Lexicographically Smallest Connected Component Permutation](#q5--lexicographically-smallest-connected-component-permutation)
+- [🚀 LAB-11 Overview](#-lab-11--breadth-first-search-bfs-variants--graph-algorithms)
+  - [Q1 — Shortest Path on Parity-Constrained Graphs via 0-1 BFS](#q1--shortest-path-on-parity-constrained-graphs-via-0-1-bfs)
+  - [Q2 — Multi-Source BFS for Radius-Constrained Voronoi Cell Partitioning](#q2--multi-source-bfs-for-radius-constrained-voronoi-cell-partitioning)
+  - [Q3 — Bidirectional BFS for Shortest Transformation Sequence in a Word Graph](#q3--bidirectional-bfs-for-shortest-transformation-sequence-in-a-word-graph)
 - [📈 Complexity Growth Scale](#-complexity-growth-scale)
 - [🔧 Building & Running](#-building--running)
 - [📊 Complexity Quick Reference](#-complexity-quick-reference)
@@ -172,6 +176,9 @@ timeline
                    : LAB-10 Submitted  ·  14-10-2026
                    : 5 Questions
                    : Disjoint Set Union · Dynamic Connectivity · Offline Time Reversal
+                   : LAB-11 Submitted  ·  28-10-2026
+                   : 3 Questions
+                   : BFS Variants · 0-1 BFS · Multi-Source Voronoi · Bidirectional BFS
 ```
 
 ### Lab Index Table
@@ -190,6 +197,7 @@ timeline
 | [**LAB-8**](WEEK-8) | Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST | 9 | 30-09-2026 | ✅ Done |
 | [**LAB-9**](WEEK-9) | Greedy Algorithms — Knapsack Decay, Huffman, Refuel, Hu-Tucker & SCS Conjecture | 10 | 07-10-2026 | ✅ Done |
 | [**LAB-10**](WEEK-10) | Disjoint Set Union (DSU) & Dynamic Graph Algorithms — Bipartiteness, Grid Islands, Size Constraints, Reverse DSU & Component Permutation | 5 | 14-10-2026 | ✅ Done |
+| [**LAB-11**](WEEK-11) | Breadth-First Search (BFS) Variants & Graph Algorithms — 0-1 BFS Parity Path, Multi-Source Voronoi & Bidirectional BFS | 3 | 28-10-2026 | ✅ Done |
 
 </div>
 
@@ -205,6 +213,7 @@ timeline
 - [x] **LAB-8** — Dynamic Programming — Coin Change, Subsequences, Edit Distance, Rod Cutting & OBST *(9 / 9 questions)*
 - [x] **LAB-9** — Greedy Algorithms — Knapsack Decay, Huffman, Refuel, Hu-Tucker & SCS Conjecture *(10 / 10 questions)*
 - [x] **LAB-10** — Disjoint Set Union (DSU) & Dynamic Graph Algorithms *(5 / 5 questions)*
+- [x] **LAB-11** — Breadth-First Search (BFS) Variants & Graph Algorithms *(3 / 3 questions)*
 
 ---
 
@@ -504,6 +513,23 @@ timeline
     └── 📁 Q5/   ← Lexicographically Smallest Connected Component Permutation
         ├── 🔵 q5_lexicographically_smallest_connect_component_permutation.c
         └── 🖼️  fig1_algorithm.png / fig2_complexity.png
+│
+└── 📁 WEEK-11/
+    ├── 📑 2026_Week11_DAA_Lab_11.pdf
+    │
+    ├── 📁 Q1/   ← Shortest Path on Parity-Constrained Graphs via 0-1 BFS
+    │   ├── 🔵 q1_shortest_path_on_parity_constrained_graphs_via_0_1_BFS.c
+    │   └── 🖼️  fig1_problem_graph.png / fig2_state_graph.png / fig3_result_graph.png
+    │            fig4_naive_vs_optimal.png / fig5_bfs_trace.png / fig6_complexity.png
+    │
+    ├── 📁 Q2/   ← Multi-Source BFS for Radius-Constrained Voronoi Cell Partitioning
+    │   ├── 🔵 q2_multi_source_BFS_for_radius_constrained_voronoi_cell_partitioning.c
+    │   └── 🖼️  q2_demo.png
+    │
+    └── 📁 Q3/   ← Bidirectional BFS for Shortest Transformation Sequence in a Word Graph
+        ├── 🔵 q3_bidirectional_BFS_for_shortest_transformation_sequence_in_a_word_graph.c
+        └── 🖼️  fig1_word_graph.png / fig2_bidirectional_steps.png / fig3_neighbour_generation.png
+                 fig4_search_space.png / fig5_frontier_sizes.png
 ```
 
 ---
@@ -3046,6 +3072,176 @@ $$
 
 ---
 
+## 🚀 LAB-11 — Breadth-First Search (BFS) Variants & Graph Algorithms
+
+**Date:** 28-10-2026 &nbsp;|&nbsp; **Total Questions:** 3
+
+### LAB-11 — Overview Map
+
+```mermaid
+mindmap
+  root((DAA<br/>LAB-11))
+    Q1 · Parity-Constrained 0-1 BFS
+      State-Space Doubling v and parity
+      Double-Ended Queue O V + E
+    Q2 · Multi-Source Voronoi BFS
+      Simultaneous Hub Seeding
+      FIFO Tie-Breaking & Radius Guard
+    Q3 · Bidirectional Word Graph BFS
+      Implicit Graph via Rolling Hash
+      Alternating Frontier Expansion
+```
+
+<div align="center">
+
+| # | 📌 Question | ⚙️ Core Technique | ⏱️ Time | 💾 Space |
+|:---:|:---|:---|:---:|:---:|
+| **Q1** | [Shortest Path on Parity-Constrained Graphs via 0-1 BFS](#q1--shortest-path-on-parity-constrained-graphs-via-0-1-bfs) | State-Space Augmentation · 0-1 BFS with Circular Deque · CSR Adjacency | `O(V + E)` | `O(V + E)` |
+| **Q2** | [Multi-Source BFS for Radius-Constrained Voronoi Cell Partitioning](#q2--multi-source-bfs-for-radius-constrained-voronoi-cell-partitioning) | Simultaneous Multi-Source BFS · FIFO Min-Index Tie-Breaking · Radius Pruning | `O(V + E)` | `O(V + E)` |
+| **Q3** | [Bidirectional BFS for Shortest Transformation Sequence in a Word Graph](#q3--bidirectional-bfs-for-shortest-transformation-sequence-in-a-word-graph) | Bidirectional BFS · Open-Addressing Hash Table · O(1) Rolling Hash Mutation | `O(N · L · 26)` | `O(N · L)` |
+
+</div>
+
+---
+
+### Q1 — Shortest Path on Parity-Constrained Graphs via 0-1 BFS
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a weighted undirected graph $G = (V, E)$ where every edge weight is either $0$ or $1$, a source vertex $S$, and a parity penalty constant $C \ge 0$, compute for each vertex $v \in V$ the minimum cost path from $S$ to $v$. The cost of a path $P$ is defined as the sum of its edge weights plus an additional penalty of $C$ if the total count of weight-1 edges traversed is odd.
+
+**Mathematical Cost Formulation:**
+$$
+\text{Cost}(P) = \sum_{e \in P} w_e + C \cdot \left(\sum_{e \in P} w_e \bmod 2\right)
+$$
+
+**Algorithmic Architecture — State-Space Doubling & 0-1 Deque BFS:**
+1. **State-Space Expansion $(v, p)$:**
+   - A standard vertex distance label is insufficient because a path with greater edge weight but even parity might ultimately beat a cheaper path with odd parity once penalty $C$ is added.
+   - Augment each vertex $v$ into two explicit states: $(v, 0)$ representing an accumulated even count of weight-1 edges, and $(v, 1)$ representing an odd count.
+   - Compactly encode state $(v, p)$ as a single integer: $\text{state} = 2v + p$ ($0 \le \text{state} < 2n$).
+2. **0-1 BFS with Monotone Deque Invariant:**
+   - Standard Dijkstra takes $O(E \log V)$ using a priority queue. Because edge weights in the state graph are strictly $0$ or $1$, a double-ended queue (deque) solves single-source shortest paths in optimal $O(V + E)$ time.
+   - For state $(u, p)$ and incident edge $(u, v)$ with weight $w \in \{0, 1\}$:
+     - Transition target state: $t = 2v + (p \oplus w)$.
+     - New candidate distance: $nd = \text{dist}[2u + p] + w$.
+     - If $w = 0$: push $t$ to the **FRONT** of the circular deque (0-weight relaxation; cost does not advance).
+     - If $w = 1$: push $t$ to the **BACK** of the circular deque (unit-weight relaxation; cost advances by $+1$).
+   - This maintains the invariant that deque elements never differ in distance by more than $1$, guaranteeing that states are extracted in non-decreasing order of accumulated edge weight.
+3. **Compressed Sparse Row (CSR) Layout & Fast Unbuffered I/O:**
+   - Graph edges are organized in Compressed Sparse Row format (`start[]`, `pos[]`, `to[]`, `wt[]`), giving cache-optimal contiguous memory traversal during neighbor enumeration.
+   - A custom buffered reader (`fread`-based `read_ll`) handles multi-million edge inputs without `scanf` overhead.
+4. **Candidate Resolution & Answer Extraction:**
+   - For each vertex $v$, two paths terminate at $v$: one with even parity (cost $\text{dist}[2v]$) and one with odd parity (cost $\text{dist}[2v+1] + C$).
+   - Output the minimum of the two reachable candidates:
+$$
+\text{ans}[v] = \min(\text{dist}[2v],\; \text{dist}[2v+1] + C)
+$$
+   - If both states remain unvisited ($\text{dist} = -1$), emit `UNREACHABLE`.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-11/Q1/q1_shortest_path_on_parity_constrained_graphs_via_0_1_BFS.c`](WEEK-11/Q1/q1_shortest_path_on_parity_constrained_graphs_via_0_1_BFS.c) |
+| **Visualizations** | `fig1_problem_graph.png` (Weighted Graph Structure), `fig2_state_graph.png` (Doubled State Space Transitions), `fig3_result_graph.png` (Optimal Costs with Parity Penalty), `fig4_naive_vs_optimal.png` (Dijkstra vs 0-1 BFS Scaling), `fig5_bfs_trace.png` (Front/Back Deque Trace), `fig6_complexity.png` (Empirical $O(V+E)$ Linearity) |
+| **Time Complexity** | `O(V + E)` optimal linear time |
+| **Space Complexity** | `O(V + E)` auxiliary memory &nbsp;(CSR arrays + $2V$ dist array + circular deque of capacity $2E+4$) |
+
+> [!TIP]
+> State-space expansion transforms complex non-linear path constraints (like parity penalties, modulus requirements, or fuel levels) into standard shortest-path instances. When edge costs are restricted to $\{0, 1\}$, 0-1 BFS completely eliminates Dijkstra's $O(\log V)$ priority-queue factor.
+
+</details>
+
+---
+
+### Q2 — Multi-Source BFS for Radius-Constrained Voronoi Cell Partitioning
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given an unweighted undirected graph $G = (V, E)$, $K$ designated hub vertices $h_1, h_2, \dots, h_K$ (1-indexed), and a radius cutoff $R$, partition the graph into Voronoi cells. Each vertex $v$ must be assigned to its nearest hub (by shortest hop distance) provided that distance is $\le R$. When multiple hubs are equidistant to $v$, break ties by choosing the hub with the lowest index in the hub input list. Output `owner dist` for each vertex, or `-1 -1` if unassigned.
+
+**Algorithmic Architecture — Multi-Source Simultaneous Wavefront BFS:**
+1. **Simultaneous Multi-Source Seeding:**
+   - Instead of launching $K$ separate BFS searches taking $O(K(V + E))$ time, all $K$ hubs are enqueued into a single FIFO queue at level $0$ simultaneously before the main search begins.
+   - For each hub $h_i$ ($0 \le i < K$), initialize $\text{owner}[h_i] = i + 1$ and $\text{dist}[h_i] = 0$.
+2. **Natural Minimum-Index Tie-Breaking via Queue FIFO Property:**
+   - Hubs are enqueued in increasing order of their 1-based index: $h_1, h_2, \dots, h_K$.
+   - Because BFS processes vertices level-by-level in strict FIFO order, when two hubs are at the exact same distance to an unvisited vertex $v$, the search wave originating from the lower-indexed hub arrives and claims $v$ first!
+   - This satisfies the minimum-index tie-breaking rule automatically with zero additional comparisons or post-processing.
+3. **Radius Enforcement via Early Cutoff Guard:**
+   - During frontier expansion from vertex $u$, if $\text{dist}[u] \ge R$, no incident edges are explored.
+   - This strictly halts traversal beyond distance $R$, ensuring unreached vertices retain their initial unassigned state (`-1 -1`).
+4. **CSR Graph Representation & Output Buffering:**
+   - Graph edges are converted into Compressed Sparse Row (CSR) arrays (`start[]`, `adj[]`) with zero pointer overhead.
+   - Results are written directly to a fast pre-allocated output buffer and flushed via a single `fwrite` system call.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-11/Q2/q2_multi_source_BFS_for_radius_constrained_voronoi_cell_partitioning.c`](WEEK-11/Q2/q2_multi_source_BFS_for_radius_constrained_voronoi_cell_partitioning.c) |
+| **Visualizations** | `q2_demo.png` (Multi-Source Voronoi Cell Partitioning & Radius Boundaries) |
+| **Time Complexity** | `O(V + E)` optimal linear time |
+| **Space Complexity** | `O(V + E)` auxiliary memory &nbsp;(CSR adjacency + `dist`, `owner`, and BFS queue arrays) |
+
+> [!TIP]
+> Multi-source BFS eliminates the naive $O(K(V + E))$ complexity of running $K$ individual BFS traversals down to a single $O(V + E)$ pass. The FIFO property of the queue guarantees tie-breaking deterministically without comparison keys.
+
+</details>
+
+---
+
+### Q3 — Bidirectional BFS for Shortest Transformation Sequence in a Word Graph
+
+<details>
+<summary><strong>📖 Click to expand</strong></summary>
+
+<br/>
+
+**Goal:** Given a dictionary $D$ of $N$ lowercase words of length $L$, and two words $A$ and $B$, compute the minimum number of single-character mutations needed to transform $A$ into $B$ such that every intermediate word in the sequence belongs to $D$. The start word $A$ need not be in $D$, but target $B$ must be in $D$. Output `-1` if no valid transformation exists.
+
+**Algorithmic Architecture — Bidirectional BFS with Incremental Rolling Hash on Implicit Graph:**
+1. **Implicit Graph Representation:**
+   - Building an explicit adjacency list of $N$ words takes $O(N^2 L)$ time and memory, which is prohibitive for large dictionaries.
+   - Instead, edges are generated on-the-fly: for each active word, mutate each of its $L$ character positions to all 25 alternate characters and test dictionary membership in $O(1)$ expected time.
+2. **Open-Addressing Hash Table with Linear Probing:**
+   - Dictionary words are stored in an open-addressing hash table of capacity $2^{\lceil \log_2(2N) \rceil}$ (load factor $\le 0.5$) with linear probing.
+   - Lookups and insertions run in $O(1)$ expected time without dynamic pointer allocation.
+3. **$O(1)$ Incremental Polynomial Rolling Hash:**
+   - The 64-bit rolling hash uses base $p = 131$. When mutating character $s[p]$ from old character $o$ to new character $c$, the new hash is computed in strict **$O(1)$ time** without re-hashing the string:
+$$
+h_{\text{new}} = h_{\text{old}} + (c - o) \cdot PW[p]
+$$
+4. **Bidirectional Search — Expanding the Smaller Frontier:**
+   - Standard unidirectional BFS searches a volume of $O(b^d)$ nodes, where $b \le 25L$ is the branching factor and $d$ is the shortest path length.
+   - Bidirectional BFS maintains two search frontiers: forward frontier $F$ from $A$ ($\text{side} = 1$) and backward frontier $B$ from $B$ ($\text{side} = 2$).
+   - At each iteration, the algorithm selectively expands the **smaller frontier** ($\min(|F|, |B|)$).
+   - When a mutation reaches a node already marked by the opposite search side, a candidate shortest path is found:
+$$
+\text{length} = \text{dist}[u] + 1 + \text{dist}[v]
+$$
+   - The algorithm finishes exploring the current level before terminating to guarantee minimality.
+   - Search complexity drops from $O(b^d)$ to $O(2 \cdot b^{d/2})$, achieving exponential speedup in practice.
+5. **Source Word Inclusion ($A \notin D$):**
+   - If starting word $A$ is not in dictionary $D$, it is dynamically registered as an extra node at index $N$, seeded into frontier $F$, and searched without corrupting dictionary lookups.
+
+| Property | Detail |
+|---|---|
+| **C Source** | [`WEEK-11/Q3/q3_bidirectional_BFS_for_shortest_transformation_sequence_in_a_word_graph.c`](WEEK-11/Q3/q3_bidirectional_BFS_for_shortest_transformation_sequence_in_a_word_graph.c) |
+| **Visualizations** | `fig1_word_graph.png` (Implicit Graph Topology), `fig2_bidirectional_steps.png` (Alternating Frontier Expansions), `fig3_neighbour_generation.png` (O(1) Rolling Hash Mutation), `fig4_search_space.png` (Search Volume Comparison $b^d$ vs $2b^{d/2}$), `fig5_frontier_sizes.png` (Empirical Frontier Evolution) |
+| **Time Complexity** | `O(N · L · 26)` expected worst-case time &nbsp;|&nbsp; significantly faster on average due to bidirectional pruning |
+| **Space Complexity** | `O(N · L)` linear memory &nbsp;(word buffer $W[N+1][L+1]$, hash table array, frontier queues) |
+
+> [!TIP]
+> In state-space graph search, bidirectional BFS cuts the effective search radius in half. Combined with $O(1)$ incremental rolling hash updates, generating candidate neighbors is practically cache-bound rather than compute-bound.
+
+</details>
+
+---
+
 ## 📈 Complexity Growth Scale
 
 The diagram below maps every complexity class used in this repository from fastest to slowest — from constant-time operations to the exponential growth of Towers of Hanoi.
@@ -3075,7 +3271,7 @@ graph LR
 |:---:|:---:|---|
 | 🟢 Green | `O(1)` | Sorted Array — Max, Min, Pred, Succ; Unsorted Array — Delete; LAB-9 Q5 — Candy Distribution (extra space); LAB-9 Q7 — Minimise Deviation (extra space); LAB-10 Q1/Q2/Q5 — DSU operation ($O(\alpha(n)) \approx O(1)$); LAB-10 Q4 — Reverse DSU ($w \ge 0$ max tracking) |
 | 🟩 Light green | `O(log n)` | Sorted Array — Search (binary search); Q5 — Partition Point |
-| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target; LAB-9 Q4 — Connect Sticks (Radix + Two-Queue); LAB-9 Q5 — Candy Distribution (Single-Pass); LAB-9 Q6 — Reorganise String ($O(n \log \Sigma)$); LAB-9 Q8 — Meeting Rooms (Radix + Sweep); LAB-10 Q1 — Bipartiteness per edge ($O(\alpha(V))$); LAB-10 Q2 — Grid Islands per query ($O(\alpha(RC))$); LAB-10 Q4 — Reverse DSU ($O((V+E)\alpha(V))$); LAB-10 Q5 — Component Permutation ($O(n + m\alpha(n))$) |
+| 🟡 Yellow | `O(n)` | Linked List Search; Coin Simulation per coin; LAB-4 Application of Sorting-1; LAB-5 Q1/Q2 — Median & K-th Smallest (guaranteed worst case); LAB-7 Q1/Q4 — Coin Triangle & Security Switches (O(1) solvers); LAB-7 Q5 — Hitting a Moving Target; LAB-9 Q4 — Connect Sticks (Radix + Two-Queue); LAB-9 Q5 — Candy Distribution (Single-Pass); LAB-9 Q6 — Reorganise String ($O(n \log \Sigma)$); LAB-9 Q8 — Meeting Rooms (Radix + Sweep); LAB-10 Q1 — Bipartiteness per edge ($O(\alpha(V))$); LAB-10 Q2 — Grid Islands per query ($O(\alpha(RC))$); LAB-10 Q4 — Reverse DSU ($O((V+E)\alpha(V))$); LAB-10 Q5 — Component Permutation ($O(n + m\alpha(n))$); LAB-11 Q1 — Parity 0-1 BFS ($O(V+E)$); LAB-11 Q2 — Voronoi Partitioning ($O(V+E)$); LAB-11 Q3 — Word Transformation ($O(N \cdot L \cdot 26)$) |
 | 🟠 Orange | `O(n log n)` | All Merge Sort variants; Q1 — Asymptotic Ordering; LAB-4 Q2, Q4, Q5, Q6; LAB-5 Q3 — Quick Sort; LAB-5 Q4 — Heap Sort; LAB-7 Q6 — Best Time to be Alive; LAB-9 Q1 — Knapsack Decay (Treap); LAB-9 Q2 — Huffman Coding; LAB-9 Q3 — Minimum Initial Fuel; LAB-9 Q9 — Hu-Tucker Alphabetic Tree; LAB-10 Q3 — Constrained Component Weight ($O((n+m)\alpha(n) + n \log n)$); LAB-10 Q4 — Reverse DSU with negative weights ($O((V+E)\alpha(V) + V \log V)$) |
 | 🔴 Red | `O(n²)` | Bubble Sort (worst/avg); Element Uniqueness (worst); Sequential k-Merge; LAB-9 Q10 — Greedy SCS Heuristic ($O(n M + n^2)$) |
 | 🟣 Purple | `O(2ⁿ)` | Towers of Hanoi; LAB-7 Q4 Security Switches — state space; LAB-9 Q10 — Shortest Common Superstring (Exact Held-Karp DP $O(2^n \cdot n^2)$) |
@@ -3424,8 +3620,27 @@ gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_lexicographically_smallest_connect_compo
 ./q5 < input.txt          # or: ./q5 -e < input.txt
 ```
 
+### WEEK-11
+
+```bash
+# Q1 — Shortest Path on Parity-Constrained Graphs via 0-1 BFS
+cd WEEK-11/Q1
+gcc -O2 -std=c11 -Wall -Wextra -o q1 q1_shortest_path_on_parity_constrained_graphs_via_0_1_BFS.c
+./q1 < input.txt          # Add -DZERO_INDEXED for 0-indexed vertex numbering
+
+# Q2 — Multi-Source BFS for Radius-Constrained Voronoi Cell Partitioning
+cd ../Q2
+gcc -O2 -std=c99 -Wall -Wextra -o q2 q2_multi_source_BFS_for_radius_constrained_voronoi_cell_partitioning.c
+./q2 < input.txt
+
+# Q3 — Bidirectional BFS for Shortest Transformation Sequence in a Word Graph
+cd ../Q3
+gcc -O2 -std=c11 -Wall -Wextra -o q3 q3_bidirectional_BFS_for_shortest_transformation_sequence_in_a_word_graph.c
+./q3 < input.txt
+```
+
 > [!NOTE]
-> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8/WEEK-9/WEEK-10 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
+> Run each WEEK-2/WEEK-4/WEEK-5/WEEK-6/WEEK-7/WEEK-8/WEEK-9/WEEK-10/WEEK-11 program **from inside its own `Q*/` subdirectory** so that CSV and graph outputs land next to the source files, matching the committed dataset paths.
 
 ### Compiler Flags Reference
 
@@ -3436,6 +3651,7 @@ gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_lexicographically_smallest_connect_compo
 | <kbd>-O2</kbd> | Level-2 optimisation — used for all timing benchmarks |
 | <kbd>-lm</kbd> | Link the math library (`math.h` — needed by Q1/Q2 LAB-1, Q2 LAB-2, Q1/Q2 LAB-3, and Q4 LAB-5) |
 | <kbd>-march=native</kbd> | Enables CPU-specific instruction sets — used for the highly optimized Q3 LAB-5 Quick Sort benchmark |
+| <kbd>-DZERO_INDEXED</kbd> | Optional preprocessor flag for LAB-11 Q1 to support 0-indexed vertex numbering |
 
 ### Input Reference
 
@@ -3494,6 +3710,9 @@ gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_lexicographically_smallest_connect_compo
 | LAB-10 | Q3 | `n m K`, then `n` vertex weights `w_i`, then `m` lines `u v c`; `--explain`, `--test` |
 | LAB-10 | Q4 | `V`, then `w_1..w_V`, then `E`, then `E` lines `u v`, then `p_1..p_V`; `--selftest [tests] [seed]` |
 | LAB-10 | Q5 | `n m`, then permutation `A_1..A_n`, then `m` lines `u v`; `-e` prints analysis report |
+| LAB-11 | Q1 | `n m S C`, then `m` lines of `u v w` ($w \in \{0, 1\}$); 1-indexed (or `-DZERO_INDEXED`) |
+| LAB-11 | Q2 | `n m K R`, then $K$ hub indices $h_1 \dots h_K$ (1-indexed), then `m` lines `u v` |
+| LAB-11 | Q3 | `N L`, then $N$ dictionary words, then query pair `A B` |
 
 ---
 
@@ -3618,6 +3837,14 @@ gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_lexicographically_smallest_connect_compo
 | Q4 — Reverse Time-Step DSU ($w \ge 0$) | `O(1)` / `O(α(V))` | `O(α(V))` | `O((V + E) · α(V))` | `O(V + E)` |
 | Q4 — Reverse Time-Step DSU (general) | `O(1)` / `O(α(V))` | `O(log V)` | `O((V + E)α(V) + V log V)` | `O(V + E)` |
 | Q5 — Component Permutation | `O(n + m · α(n))` | `O(n + m · α(n))` | `O(n + m · α(n))` | `O(n + m)` |
+
+### LAB-11
+
+| Question | Best Case | Average Case | Worst Case | Space |
+|:---:|:---:|:---:|:---:|:---:|
+| Q1 — Parity-Constrained 0-1 BFS | `O(V + E)` | `O(V + E)` | `O(V + E)` | `O(V + E)` |
+| Q2 — Multi-Source BFS Voronoi | `O(V + E)` | `O(V + E)` | `O(V + E)` | `O(V + E)` |
+| Q3 — Bidirectional BFS Word Graph | `O(L · 26)` | `O(N · L · 26)` | `O(N · L · 26)` | `O(N · L)` |
 
 <sub>*Linear time O(n) achieved when using LSD Radix Sort on bounded keys; O(n log n) under the general comparison-sorting model.</sub>
 
@@ -3763,6 +3990,18 @@ gcc -O2 -std=c99 -Wall -Wextra -o q5 q5_lexicographically_smallest_connect_compo
 - **Q3 (Maximum Weight Component with Size Constraints):** Solves the non-monotone objective challenge (where merging valid components into one larger than $K$ vertices disqualifies them and causes maximum weight to drop) via a versioned binary max-heap with **lazy deletion**. Over $m$ edge additions, at most $2n - 1$ component versions are ever created, ensuring strict $O((n + m)\alpha(n) + n \log n)$ total time and $O(n + m)$ memory.
 - **Q4 (Reverse Time-Step DSU Application):** Bypasses the difficulty of decremental dynamic connectivity by **inverting the time axis offline**. Processing vertex deletions in reverse order converts them into incremental vertex additions. Incident edges are bucketed via a single $O(V + E)$ counting sort pass into the re-insertion step of the earlier-deleted endpoint. For non-negative weights, the maximum component sum is tracked monotonically via a simple scalar in $O(1)$; arbitrary weights use lazy max-heap pruning. Includes `--selftest` mode against brute-force connected component scans.
 - **Q5 (Lexicographically Smallest Connected Component Permutation):** Capitalizes on the transitive closure property of allowed index swaps. Instead of sorting each component's positions and values using $O(n \log n)$ comparison sort, it executes a **linear bucket assignment in $O(n + m \alpha(n))$ time**: ascending position linked lists are constructed in $O(n \alpha(n))$ time, and values $1 \dots n$ are assigned directly into the lowest available position of their respective component. Running with `-e` prints an automated invariant verification audit on stderr.
+
+</details>
+
+<details>
+<summary><strong>⚙️ LAB-11 Notes</strong></summary>
+
+<br/>
+
+- **WEEK-11 programs** compile cleanly with `-O2 -Wall -Wextra -std=c99` (or `-std=c11` for Q1 and Q3) without external library dependencies.
+- **Q1 (Parity-Constrained Shortest Path via 0-1 BFS):** Doubles the graph state space into $2V$ states $(v, \text{parity})$, allowing exact modeling of parity penalties in $O(V + E)$ time. Employs a circular double-ended queue (deque) with front-push for $0$-weight edges and back-push for $1$-weight edges, guaranteeing non-decreasing distance ordering without Dijkstra's $O(E \log V)$ priority queue overhead. Graph is represented in CSR format with custom unbuffered I/O. Supports both 1-indexed (default) and 0-indexed (`-DZERO_INDEXED`) vertex numbering.
+- **Q2 (Multi-Source BFS for Radius-Constrained Voronoi Partitioning):** Avoids redundant per-hub searches by seeding all $K$ hubs simultaneously at distance 0. The natural FIFO ordering of the queue automatically guarantees minimum-index tie-breaking among equidistant hubs without any comparison overhead. A radius cutoff guard `dist[u] >= R` prunes exploration past radius $R$. Employs CSR adjacency and writes all outputs via a pre-buffered single `fwrite` system call.
+- **Q3 (Bidirectional BFS for Shortest Transformation Sequence in a Word Graph):** Operates on an implicit word graph where edges are generated on-the-fly, completely avoiding $O(N^2 L)$ edge construction. Uses an open-addressing hash table with linear probing and load factor $\le 0.5$. Computes neighbor hashes in strict $O(1)$ time via incremental polynomial rolling hash modification ($h + (c - o) \cdot PW[p]$). Alternates search frontiers by always expanding the smaller frontier ($\min(|F|, |B|)$), reducing the effective search depth by half and compressing search volume from $O(b^d)$ to $O(2 \cdot b^{d/2})$. Gracefully handles query words $A \notin D$.
 
 </details>
 
